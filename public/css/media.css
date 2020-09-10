@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+input,
+label {
+  display: inline;
+}
+
+input[type=radio]::-ms-check {
+  border-color: red;
+  color: red;
+}
+
+input[type=checkbox]::-ms-check {
+  border-color: green;
+  color: green;
+}
+
+@media only screen and (max-width: 960px) {
+
+  .c-form .form input,
+  .c-form .form textarea,
+  .c-form .form .dropdown-toggle,
+  .c-form .form .split-wide {
+    background-color: transparent !important;
+  }
+}

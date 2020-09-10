@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" style="shape-rendering:geometricPrecision;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-calendar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-calendar" fill-rule="nonzero" fill="#282828">
+            <rect id="Rectangle-6" x="4" y="0" width="2" height="3"></rect>
+            <rect id="Rectangle-6-Copy" x="11" y="0" width="2" height="3"></rect>
+            <rect id="Rectangle-7" transform="translate(8.500000, 8.000000) scale(-1, 1) rotate(-180.000000) translate(-8.500000, -8.000000) " x="2" y="7" width="13" height="2"></rect>
+            <path d="M2,4.99942248 L2,14.0005775 C2,14.5502355 2.4887136,15 3.09360076,15 L13.9063993,15 C14.5184316,15 15,14.5558638 15,14.0005775 L15,4.99942248 C15,4.44976452 14.5112865,4 13.9063993,4 L3.09360076,4 C2.48156845,4 2,4.44413615 2,4.99942248 Z M0,4.99942248 C0,3.34288718 1.4201705,2 3.19756997,2 L13.80243,2 C15.5683992,2 17,3.34435073 17,4.99942248 L17,14.0005775 C17,15.6571128 15.5798295,17 13.80243,17 L3.19756997,17 C1.43160083,17 0,15.6556493 0,14.0005775 L0,4.99942248 Z" id="Rectangle-8"></path>
+        </g>
+    </g>
+</svg>
