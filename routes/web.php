@@ -14,3 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@index')->name('home');
+Route::get('/contact','PagesController@contact')->name('contact');
+Route::post('/contact-send','PagesController@contactSend')->name('contact-send');
+Route::get('/products','PagesController@products')->name('products');
+Route::get('/product/{id}','PagesController@product')->name('product');
+Route::get('/checkout','PagesController@checkout')->name('checkout');
+Route::post('/review-send','PagesController@reviewSend')->name('review-send');
+Route::post('/cart-add','CartController@cartAdd')->name('cart-add');
+
+
+//dropzone
+Route::post('/admin/product/{id}/upload_images','Admin\ProductCrudController@ajaxUploadImages');
+Route::post('/admin/product/{id}/reorder_images','Admin\ProductCrudController@ajaxReorderImages');
+Route::post('/admin/product/{id}/delete_image','Admin\ProductCrudController@ajaxDeleteImage');
