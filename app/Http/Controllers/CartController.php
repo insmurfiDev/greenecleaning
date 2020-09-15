@@ -7,7 +7,9 @@ use App\Models\Product;
 use App\Models\Shipping;
 use App\Models\State;
 use App\Models\Tax;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Crypt;
 use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
@@ -148,6 +150,10 @@ class CartController extends Controller
         $state=State::where('name',$request->state)->first();
         $shippings=Shipping::where('active',1)->orderby('sort')->get();
         $ret=[];
+
+        $catTotal=floatval(Cart::getTotal());
+        $freeShipping=floatval(Config::get('settings.free_shipping'));
+
         foreach ($shippings as $idx=>$shipping)
         {
             $rets[$idx]['name']=$shipping->name;
@@ -155,24 +161,32 @@ class CartController extends Controller
             $cart=Cart::content();
 
             $s_total=0;
-            foreach ($cart as $item)
+            if ($shipping->free==1 && $catTotal>=$freeShipping)
             {
 
-                $product=Product::find($item->options['id']);
-                if($product->free_shipping==0)
+            }
+            else
+            {
+                foreach ($cart as $item)
                 {
-                    $shipping_index=0;
-                    foreach ($product->attributes as $attr)
+
+                    $product=Product::find($item->options['id']);
+                    if($product->free_shipping==0)
                     {
-                        if ($attr['name']==$item->options['size'])
+                        $shipping_index=0;
+                        foreach ($product->attributes as $attr)
                         {
-                            $shipping_index=$attr['shipping'];
-                            break;
+                            if ($attr['name']==$item->options['size'])
+                            {
+                                $shipping_index=$attr['shipping'];
+                                break;
+                            }
                         }
+                        $s_total+=$price*$shipping_index*$item->quantity;
                     }
-                    $s_total+=$price*$shipping_index*$item->quantity;
                 }
             }
+
             $rets[$idx]['price']=$s_total;
         }
         $ret['shipping']=$rets;

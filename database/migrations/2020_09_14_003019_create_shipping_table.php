@@ -18,6 +18,7 @@ class CreateShippingTable extends Migration
             $table->string('name');
             $table->json('prices')->nullable();
             $table->boolean('active')->nullable()->index();
+            $table->boolean('free')->nullable()->index();
             $table->unsignedInteger('sort')->nullable();
             $table->timestamps();
         });

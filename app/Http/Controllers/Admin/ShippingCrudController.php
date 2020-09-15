@@ -76,10 +76,20 @@ class ShippingCrudController extends CrudController
             'name'=>'active',
             'label'=>' Active',
             'type'=>'checkbox',
+            'default'=>1,
             'wrapper'=>[
-                'class' => 'form-group col-md-12 pt-4',
+                'class' => 'form-group col-md-3 pt-4',
             ],
         ]);
+        $this->crud->addField([
+            'name'=>'free',
+            'label'=>' Use for free shipping',
+            'type'=>'checkbox',
+            'wrapper'=>[
+                'class' => 'form-group col-md-9 pt-4',
+            ],
+        ]);
+
 
         $this->crud->addField([
             'name'=>'name',

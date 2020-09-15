@@ -261,11 +261,20 @@ function getShipping(state)
             var toAdd=''
             $.each(data['shipping'],function (idx,item)
             {
-               toAdd+='<option value="'+item['name']+'/'+item['price']+'">'+item['name']+' - $'+item['price'].toFixed(2)+'</option>';
+               toAdd+='<option value="'+item['name']+'/'+item['price']+'">'+item['name'];
+               if (item['price']==0)
+               {
+                   toAdd+=' - FREE</option>';
+               }
+               else
+               {
+                   toAdd+=' - $'+item['price'].toFixed(2)+'</option>';
+               }
+
             });
             $('#selectShipping').html(toAdd);
             updateTax(data['tax']);
-            //console.log(data['shipping'][0]);
+
             updateShipping(data['shipping'][0]['price']);
 
         },
@@ -277,7 +286,8 @@ function getShipping(state)
 }
 
 $('#selectShipping').on('change',function (){
-    var temp=$(this).val().split('/');
+    svalue=$(this).val();
+    var temp=svalue.split('/');
     updateShipping(temp[1]);
 })
 
@@ -296,12 +306,9 @@ function updateTax(tax)
 function updateShipping(val)
 {
     val=parseInt(val);
-    if(val)
-    {
-        $('#inputShipping').val(val);
-        $('.textShipping').html(val.toFixed(2));
-        updateTotal();
-    }
+    $('#inputShipping').val(val);
+    $('.textShipping').html(val.toFixed(2));
+    updateTotal();
 }
 function updateCTotal(total)
 {
