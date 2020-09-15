@@ -16,6 +16,7 @@ class CartController extends Controller
 {
     //
     protected $cookie_name='scart';
+    public $cid;
 
     public function __construct()
     {

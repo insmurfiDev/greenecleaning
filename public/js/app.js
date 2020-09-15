@@ -19613,6 +19613,11 @@ function getShipping(state) {
   });
 }
 
+$('#selectShipping').on('change', function () {
+  var temp = $(this).val().split('/');
+  updateShipping(temp[1]);
+});
+
 function updateTax(tax) {
   if (tax) {
     tvalue = $('#inputSTotal').val() * tax / 100;
@@ -19623,6 +19628,8 @@ function updateTax(tax) {
 }
 
 function updateShipping(val) {
+  val = parseInt(val);
+
   if (val) {
     $('#inputShipping').val(val);
     $('.textShipping').html(val.toFixed(2));

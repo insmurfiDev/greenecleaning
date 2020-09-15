@@ -276,6 +276,11 @@ function getShipping(state)
     });
 }
 
+$('#selectShipping').on('change',function (){
+    var temp=$(this).val().split('/');
+    updateShipping(temp[1]);
+})
+
 function updateTax(tax)
 {
     if(tax)
@@ -290,6 +295,7 @@ function updateTax(tax)
 
 function updateShipping(val)
 {
+    val=parseInt(val);
     if(val)
     {
         $('#inputShipping').val(val);
