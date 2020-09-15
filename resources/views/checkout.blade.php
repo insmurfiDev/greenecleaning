@@ -18,7 +18,18 @@
                                     <div class="tab-pane fade show active px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
                                         <div class="c-form mt-3">
                                             <form class="form" action="" method="post">
-                                                <p class="e-bold mt-4">Credit card information</p><input class="w-100" type="text" placeholder="Name on the card"><input class="w-100" type="text" placeholder="Credit card number">
+                                                <p class="e-bold mt-4">Credit card information</p>
+                                                <input class="w-100" type="text" placeholder="Name on the card">
+                                                <fieldset class="credit-card-group w-100 ">
+
+                                                    <input placeholder="1234 5678 9012 3456"  type="text" class="card-number" name="card_number" id="card-number">
+                                                    <input placeholder="MM/YY"  type="text" class="card-expiration" name="card_exp" id="card-expiration">
+                                                    <input placeholder="CVV" pattern="[0-9]*" type="text" class="card-cvv" name="cvv" id="card-cvv">
+
+                                                </fieldset>
+<!--
+                                                <input class="w-100" type="text" placeholder="Credit card number">
+-->
                                             </form>
                                         </div>
                                     </div>
@@ -41,7 +52,9 @@
                                         </div>
                                         <div class="d-flex align-items-center mb-3">
                                             <input type="checkbox" checked name="keepme">
-                                            <span class="ml-2">Keep me up to date on news and exclusive offers</span></div>
+                                            <span class="ml-2">Keep me up to date on news and exclusive offers</span>
+                                        </div>
+
                                         <p class="e-bold mt-4">Shipping address</p>
                                         <div class="row">
                                             <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname" placeholder="First Name" required></div>
@@ -51,6 +64,20 @@
                                             <div class="col-12 col-lg-8"><input id="address-input" name="address" class="w-100" type="text" placeholder="Address" required></div>
                                             <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite"></div>
                                         </div>
+
+                                        <p class="e-bold mt-4">Billing address</p>
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname_b" placeholder="First Name" required></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname_b" placeholder="Last Name" required></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-lg-8"><input name="address_b" class="w-100" type="text" placeholder="Address" required></div>
+                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite"></div>
+                                        </div>
+
+
+
+                                        <p class="e-bold mt-4">Shipping</p>
                                         <div class=" simple">
                                             <select class="e-select w-100" name="shipping" id="selectShipping">
                                                 @foreach($shippings as $shipping)
@@ -167,8 +194,11 @@
 
 @section('page_js')
 
-    <script>
+    <script src="{{asset('/js/modernizr.js')}}"></script>
 
-    </script>
+    <script src="{{asset('/js/jquery.inputmask.js')}}"></script>
+    <script src="{{asset('/js/jquery.inputmask.date.extensions.js')}}"></script>
+
+    <script src="{{asset('/js/cc.js')}}"></script>
 
 @endsection

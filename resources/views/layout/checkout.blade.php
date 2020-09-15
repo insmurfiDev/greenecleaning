@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="{{asset('css/media.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/paymentInfo.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&amp;family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
     <script async defer src="{{asset('js/wow.min.js')}}"></script>
     <script>
