@@ -113,6 +113,8 @@
                 <a class="ml-3" id="cartBtn" href="#">
                     @if(isset($cart_count) && $cart_count>0)
                     <span class="cart-counter">{{$cart_count ?? ''}}</span>
+                    @else
+                        <span class="cart-counter d-none"></span>
                     @endif
                     <img src="{{asset('svg/icons/cart.svg')}}">
                 </a>

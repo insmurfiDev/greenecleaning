@@ -97,6 +97,8 @@ $('.btnCartAdd').on('click',function (e){
             //console.log(size(cart_data));
             var cnt=0;
             var etotal=0;
+            location.reload();
+            return;
             for (item in cart_data)
             {
                 cnt++;
@@ -123,8 +125,8 @@ function clearCart()
 
 function cartDrawItem(item)
 {
-    var text=$('#divCart').html();
-    console.log(text);
+    //var text=$('#divCart').html();
+    //console.log(text);
 
 }
 
@@ -314,18 +316,21 @@ function updateTotal()
     $('.textTotal').html(total.toFixed(2));
 }
 
-
-var placesAutocomplete = places({
-    appId: 'pl1CSXYWSFGN',
-    apiKey: '853fe4e9d0c60d0738f10fcf07f60ccf',
-    container: document.querySelector('#address-input'),
-    countries: ['us']
-});
-
-placesAutocomplete.on('change', function resultSelected(e)
+if($('#address-input').length)
 {
-    getShipping(e.suggestion.administrative);
-});
+    var placesAutocomplete = places({
+        appId: 'pl1CSXYWSFGN',
+        apiKey: '853fe4e9d0c60d0738f10fcf07f60ccf',
+        container: document.querySelector('#address-input'),
+        countries: ['us']
+    });
+
+    placesAutocomplete.on('change', function resultSelected(e)
+    {
+        getShipping(e.suggestion.administrative);
+    });
+
+}
 
 $('#btnOrder').on('click',function (){
     form=$('#formOrder');
