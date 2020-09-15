@@ -52,105 +52,7 @@
 </head>
 
 <body class="page">
-<!--
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content pt-4"><button class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"> </span></button>
-            <h5 class="e-sub e-new text-center">Welcome Back!</h5>
-            <p class="text-center mb-0"><span class="e-dark">Kindly fill in your login details to proceed</span></p>
-            <div class="modal-body">
-                <div class="c-form mx-2 mx-lg-5">
-                    <form class="form" action="" method="post">
-                        <input class="w-100" type="text" placeholder="Email">
-                        <input class="w-100" type="text" placeholder="Password">
-                        <div class="text-right mb-3">
-                            <a class="e-decor ml-auto" href="">I forgot my password?</a>
-                        </div>
-                        <input class="mb-0 e-bold" type="submit" value="LOGIN">
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer text-center border-0 mb-4"><span class="mx-auto"><span class="e-dark">Don’t have an account yet? </span><a class="e-bold e-decor" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Sign Up</a></span></div>
-        </div>
-    </div>
-</div>
--->
-<!--
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content pt-4"><button class="close" data-dismiss="modal" aria-label="Close"><span data-feather="x"> </span></button>
-            <h5 class="e-sub e-new text-center">Sign up</h5>
-            <p class="text-center mb-0"><span class="e-dark">There’s no charge upon registration</span></p>
-            <div class="modal-body">
-                <div class="c-form mx-2 mx-lg-5">
-                    <form class="form" action="" method="post">
-                        <input class="w-100" type="text" placeholder="Full Name">
-                        <input class="w-100" type="text" placeholder="Email">
-                        <input class="w-100" type="text" placeholder="Password">
-                        <input class="w-100" type="text" placeholder="Confirm Password">
-                        <input class="mb-0 e-bold" type="submit" value="REGISTER">
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer text-center border-0 mb-4"><span class="mx-auto"><span class="e-dark">Already a member?  </span><a class="e-bold e-decor" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a></span></div>
-        </div>
-    </div>
-</div>
--->
-<div class="c-header">
-    <div class="container-fluid">
-        <div class="c-menu">
-            <div class="c-logo"><a href="/"><img src="{{asset('svg/logos/logo.svg')}}" alt=""></a></div>
-            <div class="c-nav mhide">
-                <a class="mx-3 active" href="{{route('home')}}">Home</a>
-                <a class="mx-3" href="{{route('products')}}">Products</a>
-                <a class="mx-3" href="{{route('contact')}}">Contact Us</a></div>
-            <div class="c-nav">
-                <a class="mx-3" id="mBtn" href="#"><img src="{{asset('svg/icons/mob.svg')}}"></a>
-<!--
-                <a class="mx-3" id="lBtn" href="#" data-toggle="modal" data-target="#loginModal"><img src="svg/icons/login.svg"></a>
--->
-                <a class="ml-3" id="cartBtn" href="#">
-                    @if(isset($cart_count) && $cart_count>0)
-                    <span class="cart-counter">{{$cart_count ?? ''}}</span>
-                    @endif
-                    <img src="{{asset('svg/icons/cart.svg')}}">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="c-mobmenu">
-    <div class="p-3 w-100 text-right pr-3"><a id="closeMob"><span data-feather="x"></span></a></div>
-    <div class="menu-prod-mob">
-        <a class="d-mob-link one border-top border-bottom" href="{{route('home')}}">
-            <div class="e-black p-3">Home</div>
-        </a>
-        <a class="d-mob-link two border-bottom" href="{{route('products')}}">
-            <div class="e-black p-3">Products</div>
-        </a>
-        <a class="d-mob-link three border-bottom" href="{{route('contact')}}">
-            <div class="e-black p-3">Contact Us</div>
-        </a>
-<!--
-        <a class="d-mob-link border-bottom" id="mobLoginBtn" href="#" data-toggle="modal" data-target="#loginModal">
-            <div class="e-black p-3">Login</div>
-        </a>
--->
-    </div>
-</div>
-<div class="c-cart bg-white"><a id="closeCart" href="#"><span data-feather="x"></span></a>
-    <div class="bg-grey text-center py-4">
-        <h3 class="e-sub" id="">Shopping bag
-            @if(isset($cart_count) && $cart_count>0)
-                (<span class="cart-counter">{{$cart_count}}</span>)
-            @else
-                empty
-            @endif
-        </h3>
-    </div>
- @include('partials.cart')
-</div>
+
 <div class="wrapper">
     @yield('content')
 </div>
@@ -187,6 +89,8 @@
 <script src="{{asset('js/site.js')}}"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+
 <script src="{{asset('js/app.js')}}"></script>
 <script>
     feather.replace()

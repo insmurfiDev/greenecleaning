@@ -10,8 +10,13 @@
         <div class="row">
             <div class="col-11 col-lg-5 mx-auto">
                 <h4 class="e-subtitle">Corporate Office</h4>
-                <p>8658 Concord Center Dr. Englewood, CO 80119</p>
-                <div class="d-block my-4"> <iframe class="filter-grey" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1550189.0228022253!2d-74.93965240439967!3d40.63621230993994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sua!4v1594823254547!5m2!1sen!2sua" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+                <p>{{\Illuminate\Support\Facades\Config::get('settings.address')}}</p>
+                <div class="d-block my-4">
+                    <!--
+                    <iframe class="filter-grey" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1550189.0228022253!2d-74.93965240439967!3d40.63621230993994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sua!4v1594823254547!5m2!1sen!2sua" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    -->
+                    <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{\Illuminate\Support\Facades\Config::get('settings.address')}}&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
             </div>
             <div class="col-11 col-lg-6 mx-auto">
                 <h4 class="e-subtitle">Contact form</h4>

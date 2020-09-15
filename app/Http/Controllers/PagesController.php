@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Faq;
 use App\Models\Product;
 use App\Models\Review;
-use App\Models\Reviews;
+
+use App\Models\Shipping;
+use App\Models\State;
 use Carbon\Carbon;
-use Darryldecode\Cart\Cart;
+use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
@@ -28,7 +31,12 @@ class PagesController extends Controller
     {
         $this->preData=[];
         $cc = new CartController();
-        $this->preData['cid']=$cc->cid;
+
+        Cart::restore($cc->cid);
+
+        $this->preData['cart_count']=Cart::count();
+        $this->preData['cart']=Cart::content();
+        $this->preData['cart_etotal']=Cart::getTotal();
     }
 
     public function index(Request $request)
@@ -36,6 +44,7 @@ class PagesController extends Controller
         $data=$this->preData;
         $data['faqs']=Faq::where('active',1)->orderby('sort')->get();
         $data['products']=Product::where('active',1)->orderby('sort')->take(3)->get();
+
         return view('home',$data);
     }
     public function contact(Request $request)
@@ -98,21 +107,18 @@ class PagesController extends Controller
         $review=Review::create($reviewData);
         return redirect()->back()->with(['success'=>'We appreciate your review. Thank you! ']);
     }
-
-    public function cartAdd(Request $request)
+    public function checkout(Request $request)
     {
-        $x=$request;
+        $data=$this->preData;
+        $shippings=Shipping::where('active',1)->orderby('sort')->get();
 
-        Cart::session($this->preData['cid']);
-        $product=Product::find($request->product_id);
-        Cart::add([
-            'id' => $product->id, // inique row ID
-            'name' => $product->name,
-            'price' => $request->price,
-            'quantity' => $request->qty,
-            'attributes' => array()
-        ]);
+        $data['shippings']=$shippings;
+
+        return view('checkout',$data);
     }
+
+
+
 
 
 

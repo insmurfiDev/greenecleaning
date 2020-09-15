@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Darryldecode\Cart\Cart;
+//use Cart;
+use App\Models\Shipping;
+use App\Models\State;
+use App\Models\Tax;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Crypt;
+use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
 
 class CartController extends Controller
 {
@@ -16,8 +20,14 @@ class CartController extends Controller
     public function __construct()
     {
         $this->cid=$this->getcid();
-        //dump($this->cid);
+        Cart::restore($this->cid);
     }
+
+    public function __destruct()
+    {
+        $res=Cart::store($this->cid);
+    }
+
 
     public function getcid()
     {
@@ -45,16 +55,136 @@ class CartController extends Controller
 
     public function cartAdd(Request $request)
     {
+        $x=$request->all();
+
+        $y=Cart::content();
+
+        $product=Product::find($request->product_id);
+        Cart::add(
+            $product->id.'-'.$request->prop,
+            $product->name,
+            $request->price,
+            intval($request->qty),
+            [
+                'size'=>$request->prop,
+                'image'=>array_values($product->images)[0] ?? '',
+                'id'=>$product->id,
+            ]
+        );
+        $y=Cart::content();
+
+
+        return json_encode($y);
+
+    }
+
+    public function getCartQty(Request $request)
+    {
+
+        //return Cart::getTotalQuantity();
+    }
+    public function getCartContent()
+    {
+        /*
+        $ret=Cart::getContent();
+        return $ret;
+        */
+    }
+    public function cartPlus(Request $request)
+    {
+        $product=Product::find($request->product_id);
+        Cart::add(
+            $request->product_id.'-'.$request->product_prop,
+            $product->name,
+            $request->product_price,
+            1,
+            [
+                'size'=>$request->product_prop,
+                'image'=>array_values($product->images)[0] ?? '',
+                'id'=>$product->id,
+            ]
+        );
+
+
+        $ret['cart_etotal']=Cart::getTotal();
+        $ret['cart_count']=Cart::count();
+        return $ret;
+    }
+
+    public function cartMinus(Request $request)
+    {
+        $product=Product::find($request->product_id);
+        Cart::add(
+            $request->product_id.'-'.$request->product_prop,
+            $product->name,
+            $request->product_price,
+            -1,
+            [
+                'size'=>$request->product_prop,
+                'image'=>array_values($product->images)[0] ?? '',
+                'id'=>$product->id,
+            ]
+        );
+
+        $ret['cart_etotal']=Cart::getTotal();
+        $ret['cart_count']=Cart::count();
+        return $ret;
+    }
+
+    public function cartRemove(Request $request)
+    {
         $x=$request;
 
-        \Cart::session($this->preData['cid']);
-        $product=Product::find($request->product_id);
-        Cart::add([
-            'id' => $product->id, // inique row ID
-            'name' => $product->name,
-            'price' => $request->price,
-            'quantity' => $request->qty,
-            'attributes' => array()
-        ]);
+        Cart::remove($request->item_uid);
+
+        $ret['cart_etotal']=Cart::getTotal();
+        $ret['cart_count']=Cart::count();
+        return $ret;
+    }
+
+    public function getShipping(Request $request)
+    {
+        $state=State::where('name',$request->state)->first();
+        $shippings=Shipping::where('active',1)->orderby('sort')->get();
+        $ret=[];
+        foreach ($shippings as $idx=>$shipping)
+        {
+            $rets[$idx]['name']=$shipping->name;
+            $price=$shipping->prices[$state->code];
+            $cart=Cart::content();
+
+            $s_total=0;
+            foreach ($cart as $item)
+            {
+
+                $product=Product::find($item->options['id']);
+                if($product->free_shipping==0)
+                {
+                    $shipping_index=0;
+                    foreach ($product->attributes as $attr)
+                    {
+                        if ($attr['name']==$item->options['size'])
+                        {
+                            $shipping_index=$attr['shipping'];
+                            break;
+                        }
+                    }
+                    $s_total+=$price*$shipping_index*$item->quantity;
+                }
+            }
+            $rets[$idx]['price']=$s_total;
+        }
+        $ret['shipping']=$rets;
+
+        $tax=Tax::where('state',$state->code)->first();
+        $ret['tax']=$tax->value;
+
+        return $ret;
+    }
+
+    public function makeOrder(Request $request)
+    {
+        $x=$request;
+
     }
 }

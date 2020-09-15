@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->boolean('sale')->nullable()->index();
             $table->unsignedFloat('price')->index()->nullable();
             $table->json('images')->nullable();
+            $table->json('attributes')->nullable();
+            $table->boolean('free_shipping')->nullable();
             $table->timestamps();
         });
     }

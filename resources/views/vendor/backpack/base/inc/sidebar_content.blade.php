@@ -5,4 +5,9 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('faq') }}'><i class='nav-icon la la-question'></i> FAQs</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('product') }}'><i class='nav-icon la la-boxes'></i> Products</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('review') }}'><i class='nav-icon la la-paper-plane'></i> Reviews</a></li>
+<!--
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('state') }}'><i class='nav-icon la la-question'></i> States</a></li>
+-->
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('shipping') }}'><i class='nav-icon la la-truck-loading'></i> Shipping</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('coupon') }}'><i class='nav-icon la la-envira'></i> Coupons</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('tax') }}'><i class='nav-icon la la-percent'></i> Taxes</a></li>

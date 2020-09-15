@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Shipping;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -76,7 +77,6 @@ class ProductCrudController extends CrudController
             'label' => 'Product name',
             'type'  => 'text'
         ]);
-
         $this->crud->addField([
             'name'  => 'active',
             'label' => 'Active',
@@ -87,6 +87,25 @@ class ProductCrudController extends CrudController
             ],
         ]);
         $this->crud->addField([
+            'name'  => 'free_shipping',
+            'label' => 'Free shipping',
+            'type'  => 'checkbox',
+            'default'=>0,
+            'wrapper'=>[
+                'class' => 'form-group col-md-3 pt-4',
+            ],
+        ]);
+        $this->crud->addField([
+            'name'  => 'sale',
+            'label' => 'Sale',
+            'type'  => 'checkbox',
+            'default'=>0,
+            'wrapper'=>[
+                'class' => 'form-group col-md-2 pt-4',
+            ],
+        ]);
+
+        $this->crud->addField([
             'name'  => 'sort',
             'label' => 'Sort order',
             'type'  => 'number',
@@ -94,6 +113,7 @@ class ProductCrudController extends CrudController
                 'class' => 'form-group col-md-4 ',
             ],
         ]);
+/*
         $this->crud->addField([
             'name'=>'price',
             'label'=>'Price',
@@ -102,6 +122,7 @@ class ProductCrudController extends CrudController
                 'class' => 'form-group col-md-3',
             ],
         ]);
+*/
         $this->crud->addField([
             'name'  => 'sale',
             'label' => 'Sale',
@@ -111,6 +132,24 @@ class ProductCrudController extends CrudController
                 'class' => 'form-group col-md-2 pt-4',
             ],
         ]);
+
+        $this->crud->addField([
+            'name'            => 'attributes',
+            'label'           => 'Attributes',
+            'type'            => 'table',
+            'entity_singular' => 'attribute', // used on the "Add X" button
+            'columns'         => [
+                'name'  => 'Name',
+                'price' => 'Price',
+                'shipping'  => 'Shipping',
+                'count'  => 'Available',
+            ],
+            'max' => 5, // maximum rows allowed in the table
+            'min' => 0, // minimum rows allowed in the table
+        ]);
+
+
+
         $this->crud->addField([
             'name'  => 'short_desc',
             'label' => 'Short',
@@ -121,6 +160,8 @@ class ProductCrudController extends CrudController
             'label' => 'Description',
             'type'  => 'wysiwyg'
         ]);
+
+
     }
 
     /**

@@ -34,13 +34,13 @@
                             <hr>
                             <h4 class="e-subtitle mini">size</h4>
                             <div class="d-flex justify-content-between my-3">
-                                <div class="c-prop active">500 ml</div>
-                                <div class="c-prop">1000 ml</div>
-                                <div class="c-prop">1500 ml</div>
+                                @foreach($product->attributes as $attribute)
+                                    <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price']}}" data-count="{{$attribute['count']}}">{{$attribute['name']}}</div>
+                                @endforeach
                             </div>
                             <h4 class="e-subtitle mini">quantity</h4>
-                            <div class="e-select my-3 w-25 mx-0">
-                                <select name="qty">
+                            <div class="e-select1 my-3 w-25 mx-0">
+                                <select class="e-select selectQty"  name="qty">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -49,12 +49,21 @@
                                 </select>
                             </div>
                             <input type="hidden" name="prop" id="inputProp" value="1000 ml">
+                            <input type="hidden" name="price" id="inputPrice" value="{{$product->attributes[0]['price'] ?? 0}}">
                             <input type="hidden" name="product_id" id="inputProductId" value="{{$product->id}}">
-                            <h4 class="e-subtitle mini">pre-order</h4>
-                            <h4 class="e-subtitle e-serif e-theme">${{number_format($product->price)}}</h4>
+                            <h4 class="e-subtitle mini" id="textCount">
+
+                                @if(isset($product->attributes[0]) && $product->attributes[0]['count']>0)
+                                    in stock
+                                @else
+                                    pre-oder
+                                @endif
+                            </h4>
+                            <h4 class="e-subtitle e-serif e-theme" id="textPrice">${{number_format($product->attributes[0]['price'] ?? 0,2)}}</h4>
                             <p class="my-4 py-3">
                                 {{$product->short}}
-                            </p><a class="btn w-100 btnCartAdd" href="#">ADD to CART</a>
+                            </p>
+                            <a class="btn w-100 btnCartAdd" href="#">ADD to CART</a>
                         </form>
                     </div>
                 </div>
@@ -79,8 +88,6 @@
                     <div class="tab-pane fade show active" id="desc" role="tabpanel" aria-labelledby="desc-tab">
                         <div class="row">
                             {!! $product->description !!}
-
-
                         </div>
                     </div>
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
