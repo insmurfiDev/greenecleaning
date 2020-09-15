@@ -477,10 +477,32 @@ body .wrapper .main {
 }
 
 .c-form .form input[type="checkbox"] {
+  display: block;
+  position: relative;
   min-width: 18px;
   width: 18px;
   height: 18px;
+  padding: 0;
+  margin: 0;
   margin-bottom: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid transparent;
+}
+
+.c-form .form input[type="checkbox"]:before {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  content: '';
+  border-radius: 3px;
+  border: 1px solid #e1e1e1;
+}
+
+.c-form .form input[type="checkbox"].checks:before {
+  background: #fff url("../svg/icons/checks.svg") center center no-repeat;
 }
 
 .c-form .form label {
@@ -1099,6 +1121,14 @@ button {
   background-color: #F1F5E5;
 }
 
+@media only screen and (max-width: 480px) {
+  .c-cart__info .cart-block {
+    height: 32px;
+    width: 48px;
+    margin: 0 0 10px 10px;
+  }
+}
+
 @media only screen and (max-width: 960px) {
   .col-3.col-lg.mx-auto.mb-4.mb-lg-0 .greys {
     width: 52px !important;
@@ -1586,6 +1616,16 @@ span.e-stroke {
   font-weight: 300 !important;
 }
 
+@media only screen and (max-width: 960px) {
+  #mobileCheckout {
+    margin-top: -30px !important;
+  }
+}
+
+.logo-cart {
+  width: 80px;
+}
+
 .filter-grey {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -1637,13 +1677,27 @@ img.p-50 {
 #nav-tab {
   border-color: #A2CF27;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 960px) {
+  #nav-tab {
+    justify-content: center;
+  }
 }
 
 #nav-tab .nav-link {
+  width: 100px;
+  margin-left: 20px;
+  text-align: center;
   border: 1px solid #A2CF27;
-  margin-left: 10px;
-  margin-right: 10px;
+}
+
+@media only screen and (max-width: 960px) {
+  #nav-tab .nav-link {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 
 #nav-tab .nav-link.active {
@@ -1750,16 +1804,16 @@ hr.green {
   width: 60%;
   height: auto;
   position: absolute;
-  bottom: 10%;
+  bottom: 17%;
   left: 19.5%;
   right: 20.5%;
   z-index: 1;
 }
 
 .c-intro .carousel-inner .img-up.third {
-  width: 30%;
-  left: 33%;
-  right: 37%;
+  width: 28%;
+  left: 32%;
+  right: 40%;
 }
 
 .c-intro .carousel-inner .img-up img {
