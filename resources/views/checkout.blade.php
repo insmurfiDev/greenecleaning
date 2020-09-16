@@ -66,16 +66,18 @@
                                         </div>
 
                                         <p class="e-bold mt-4">Billing address</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <input type="checkbox" id="chkSameShipping">
+                                            <span class="ml-2">Same as shipping</span>
+                                        </div>
                                         <div class="row">
                                             <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname_b" placeholder="First Name" required></div>
                                             <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname_b" placeholder="Last Name" required></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-lg-8"><input name="address_b" class="w-100" type="text" placeholder="Address" required></div>
-                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite"></div>
+                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt_b" placeholder="Apartment, suite"></div>
                                         </div>
-
-
 
                                         <p class="e-bold mt-4">Shipping</p>
                                         <div class=" simple">
@@ -150,7 +152,7 @@
                                             <div class="col-9 text-right">
                                                 <div class="d-flex">
                                                     <h3 class="e-mini w-50 text-right my-0">
-                                                        <a href="{{route('product',$item->options['id'])}}">Name bottle 1</a>
+                                                        <a href="{{route('product',$item->options['id'])}}">{{$item->name}}</a>
                                                     </h3>
                                                     <a class="rem_prod w-50 text-right aCartRemove" data-uid="{{$item->getUniqueId()}}" href=""><img src="{{asset('svg/icons/trash.svg')}}"></a>
                                                 </div>

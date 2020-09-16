@@ -13,20 +13,25 @@
         <div class="container-fluid py-5">
             <div class="mx-3">
                 <div class="row">
-                    <div class="col-11 col-lg-2 mx-auto c-product__item">
-                        @foreach($product->images as $image)
-                            <div class="card mb-4"><img class="p-50" src="{{asset('storage/'.$image)}}" alt=""></div>
-                        @endforeach
 
+                    <div class="col-lg-7">
+                        <div class="row " id="carousel-component">
+                            <div class="col-11 col-lg-2 mx-auto c-product__item">
+                                @foreach($product->images as $image)
+                                    <div class="card mb-4"><img class="p-50" src="{{asset('storage/'.$image)}}" alt=""></div>
+                                @endforeach
 
-                    </div>
-                    <div class="col-11 col-lg-5 mx-auto c-product__item">
-                        <div class="prod-img h-100 d-flex align-items-center">
-                            @if(!empty($product->images))
-                            <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="">
-                            @endif
+                            </div>
+                            <div class="col-11 col-lg-5 mx-auto c-product__item">
+                                <div class="prod-img h-100 d-flex align-items-center">
+                                    @if(!empty($product->images))
+                                    <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="">
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="col-11 col-lg-4 mx-auto c-product__item py-5 py-lg-0">
                         <form id="formProduct">
                             @csrf
@@ -38,28 +43,46 @@
                                     <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price']}}" data-count="{{$attribute['count']}}">{{$attribute['name']}}</div>
                                 @endforeach
                             </div>
-                            <h4 class="e-subtitle mini">quantity</h4>
-                            <div class="e-select1 my-3 w-25 mx-0">
-                                <select class="e-select selectQty"  name="qty">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4 class="e-subtitle mini">quantity</h4>
+                                    <select class="e-select w-100 selectQty"  name="qty" id="selectQty">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="e-subtitle mini">price</h4>
+                                    <h4 class="e-subtitle mini " id="textPrice">
+                                    ${{number_format($product->attributes[0]['price'],2) ?? 0.00}}
+                                    </h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="e-subtitle mini">in stock</h4>
+                                    <h4 class="e-subtitle mini" id="textCount">
+                                        @if(isset($product->attributes[0]))
+                                            @if($product->attributes[0]['count']>10)
+                                                yes
+                                            @elseif($product->attributes[0]['count']>0 && $product->attributes[0]['count']<=10)
+                                                limited
+                                            @else
+                                                pre-orer
+                                            @endif
+                                        @endif
+                                    </h4>
+                                </div>
                             </div>
-                            <input type="hidden" name="prop" id="inputProp" value="1000 ml">
+
+                            <input type="hidden" name="prop" id="inputProp" value="{{$product->attributes[0]['name'] ?? ''}}">
                             <input type="hidden" name="price" id="inputPrice" value="{{$product->attributes[0]['price'] ?? 0}}">
                             <input type="hidden" name="product_id" id="inputProductId" value="{{$product->id}}">
-                            <h4 class="e-subtitle mini" id="textCount">
-
-                                @if(isset($product->attributes[0]) && $product->attributes[0]['count']>0)
-                                    in stock
-                                @else
-                                    pre-oder
-                                @endif
+                            <h4 class="e-subtitle mini">
+                                Total:
                             </h4>
-                            <h4 class="e-subtitle e-serif e-theme" id="textPrice">${{number_format($product->attributes[0]['price'] ?? 0,2)}}</h4>
+                            <h4 class="e-subtitle e-serif e-theme" id="textTotal">${{number_format($product->attributes[0]['price'] ?? 0,2)}}</h4>
                             <p class="my-4 py-3">
                                 {{$product->short}}
                             </p>
@@ -122,7 +145,6 @@
                                     </div>
                                     <div class="my-4">
                                         <button class="btn small color" type="submit">Add</button>
-
                                     </div>
                                     <input type="hidden" value="5" name="rating">
                                     <input type="hidden" value="{{$product->id}}" name="product_id">

@@ -61,11 +61,22 @@ $('.c-prop').on('click',function (){
     $('.c-prop').removeClass('active');
     $(this).addClass('active');
     $('#inputProp').val($(this).html());
-    $('#inputPrice').val($(this).data('price'));
-    $('#textPrice').html('$'+$(this).data('price').toFixed(2));
-    if ($(this).data('count')>0)
+    price=$(this).data('price');
+    $('#inputPrice').val(price);
+    $('#textPrice').html('$'+price.toFixed(2));
+
+    cnt=$('#selectQty').val();
+    total=price*cnt;
+    $('#textTotal').html('$'+total.toFixed(2));
+
+
+    if ($(this).data('count')>10)
     {
-        $('#textCount').html('in stock');
+        $('#textCount').html('yes');
+    }
+    else if($(this).data('count') && $(this).data('count')<=10)
+    {
+        $('#textCount').html('limited');
     }
     else
     {
@@ -74,8 +85,12 @@ $('.c-prop').on('click',function (){
 
 })
 
-$('.selectQty').on('click',function (){
-    //console.log($(this).val());
+$('#selectQty').on('change',function (){
+    cnt=$(this).val();
+    price = $('.c-prop.active').data('price');
+    console.log(price);
+    total=cnt*price;
+    $('#textTotal').html('$'+total.toFixed(2));
 })
 
 
@@ -166,7 +181,6 @@ $('.aCartPlus').on('click',function (e){
         success : function(response)
         {
             var data = response;
-            console.log(data);
             updateCounter(data['cart_count']);
             updateCTotal(data['cart_etotal']);
             inp.val(parseInt(inp.val())+1);
@@ -235,7 +249,6 @@ $('.aCartMinus').on('click',function (e){
         success : function(response)
         {
             var data = response;
-            console.log(data);
             updateCounter(data['cart_count']);
             updateCTotal(data['cart_etotal']);
             inp.val(item_cnt-1);
@@ -351,3 +364,15 @@ $('#btnOrder').on('click',function (){
     console.log(res);
    //$('#formOrder').submit();
 });
+
+$('#chkSameShipping').on('change',function (){
+    if ($(this).checked)
+    {
+        console.log(1);
+    }
+    else
+    {
+        console.log(2);
+
+    }
+})
