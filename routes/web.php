@@ -17,6 +17,7 @@ Route::get('/', 'PagesController@index')->name('home');
 Route::get('/contact','PagesController@contact')->name('contact');
 Route::post('/contact-send','PagesController@contactSend')->name('contact-send');
 Route::get('/products','PagesController@products')->name('products');
+Route::get('/sale','PagesController@sale')->name('sale');
 Route::get('/product/{id}','PagesController@product')->name('product');
 Route::get('/checkout','PagesController@checkout')->name('checkout');
 Route::post('/review-send','PagesController@reviewSend')->name('review-send');
@@ -25,6 +26,8 @@ Route::post('/make-order','CartController@makeOrder')->name('make-order');
 
 Route::get('/cart-minus','CartController@cartMinus')->name('cart-minus');
 Route::get('/cart-plus','CartController@cartPlus')->name('cart-plus');
+Route::get('/order-success/{id}','CartController@orderSuccess')->name('order-success');
+//success
 Route::get('/cart-remove','CartController@cartRemove')->name('cart-remove');
 
 Route::get('/shipping-get','CartController@getShipping')->name('shipping-get');

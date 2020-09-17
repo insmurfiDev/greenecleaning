@@ -79,8 +79,72 @@ class PagesController extends Controller
 
     public function products(Request $request)
     {
+
         $data=$this->preData;
-        $data['products']=Product::where('active',1)->orderby('sort')->get();
+        $data['sort']=$request->sort ?? '';
+        $products=Product::where('active',1);
+        if (!empty($data['sort']))
+        {
+            switch ($data['sort'])
+            {
+                case 1:
+                    $products->orderby('name');
+                    break;
+                case 2:
+                    $products->orderby('name','DESC');
+                    break;
+                case 3:
+                    $products->orderby('sort');
+                    break;
+                case 4:
+                    $products->orderby('sort', 'DESC');
+                    break;
+            }
+
+        }
+        else
+        {
+            $products->orderby('sort');
+        }
+
+        $data['paginator']=$products->paginate(9);
+        $data['products']=$products->get();
+        return view('products',$data);
+    }
+
+    public function sale(Request $request)
+    {
+        $data=$this->preData;
+        $data['sort']=$request->sort ?? '';
+
+        $products=Product::where('active',1)->where('sale',1);
+        if (!empty($data['sort']))
+        {
+            switch ($data['sort'])
+            {
+                case 1:
+                    $products->orderby('name');
+                    break;
+                case 2:
+                    $products->orderby('name','DESC');
+                    break;
+                case 3:
+                    $products->orderby('sort');
+                    break;
+                case 4:
+                    $products->orderby('sort', 'DESC');
+                    break;
+            }
+
+        }
+        else
+        {
+            $products->orderby('sort');
+        }
+
+        $data['paginator']=$products->paginate(9);
+        $data['products']=$products->get();
+
         return view('products',$data);
     }
 

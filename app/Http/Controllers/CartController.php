@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 //use Cart;
 use App\Models\Shipping;
 use App\Models\State;
 use App\Models\Tax;
+
+use Omnipay\Omnipay;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -200,6 +203,102 @@ class CartController extends Controller
     public function makeOrder(Request $request)
     {
         $x=$request;
+        $gateway = Omnipay::create('PayPal_Pro');
+        $gateway->setUsername('sb-8tjax1237520_api1.business.example.com');
+        $gateway->setPassword('2N3UZ4CMB42TXCMT');
+        $gateway->setSignature('AjfGFMhBA9ZkKUHMY1lmbYgdnhS0AMr5XVjZJ0n4rk5las5powxIF0CB');
+        $gateway->setTestMode(true);
 
+        $cart=Cart::content();
+        $order_text='';
+        foreach ($cart as $item)
+        {
+
+            $order_text.=$item->name.' ';
+            $order_text.=$item->options['size'].' ';
+            $order_text.=$item->price.' x '.$item->quantity.'\n';
+
+        }
+        $order_text.="Subtotal: $".$request->stotal.'\n';
+        $order_text.="Shipping: $".$request->shipping.'\n';
+        $order_text.="Total: $".$request->total.'\n';
+
+        $order_data=[
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'fname'=>$request->fname,
+            'lname'=>$request->lname,
+            'address'=>$request->address,
+            'apt'=>$request->apt,
+            'fname_b'=>$request->fname_b,
+            'lname_b'=>$request->lname_b,
+            'address_b'=>$request->address_b,
+            'apt_b'=>$request->apt_b,
+            'status'=>0,
+            'order_date'=>date('Y-m-d H:i:s'),
+           // 'transaction'=>$request->email,
+            'details'=>$order_text,
+            'cid'=>$this->cid,
+        ];
+        $order=Order::create($order_data);
+
+
+
+        $arr_expiry = explode("/", $request->card_exp);
+
+            $formData = array(
+                'firstName' => $request->fname_b,
+                'lastName' => $request->lname_b,
+                'number' => '4111111111111111',
+                'expiryMonth' => trim($arr_expiry[0]),
+                'expiryYear' => trim($arr_expiry[1]),
+                'cvv' => $request->cvv,
+                'description'=>'order '.$order->id.' at shadesofgreene.com'
+            );
+
+            try {
+                // Send purchase request
+                $response = $gateway->purchase([
+                    'amount' => $request->total,
+                    'currency' => 'USD',
+                    'card' => $formData
+                ])->send();
+
+                // Process response
+                if ($response->isSuccessful()) {
+
+                    // Payment was successful
+                    //echo "Payment is successful. Your Transaction ID is: ". $response->getTransactionReference();
+
+                    $order->status=1;
+                    $order->transaction=$response->getData()['TRANSACTIONID'];
+                    $order->save();
+                    $data['orderno']=$order->id;
+                    return redirect(route('order-success',$order->id));// view('order_success',$data);
+
+
+                } else {
+                    // Payment failed
+                    //echo "Payment failed. ". $response->getMessage();
+                    return back()->with(['error'=>$response->getMessage()]);
+                }
+            } catch(Exception $e) {
+                echo $e->getMessage();
+            }
+
+    }
+
+    public function orderSuccess($id)
+    {
+        $order=Order::find($id);
+
+        if (!$order || $order->cid!=$this->cid)
+        {
+            return back();
+        }
+        $cart=Cart::content();
+        $data['order']=$order;
+        $data['cart']=$cart;
+        return view('order_success',$data);
     }
 }

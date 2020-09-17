@@ -26,6 +26,7 @@
         "@babel/plugin-syntax-jsx": "^7.10.4",
         "@babel/plugin-transform-react-jsx": "^7.10.4",
         "babel": "^6.23.0",
+        "bootstrap-select": "^1.13.18",
         "pnotify": "^5.1.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

@@ -342,37 +342,62 @@ function updateTotal()
     $('.textTotal').html(total.toFixed(2));
 }
 
+
+
+$('#btnOrder').on('click',function (){
+/*
+    form=$('#formOrder');
+    res=form.validate();
+    console.log(res);
+
+ */
+   //$('#formOrder').submit();
+});
+
+$('#chkSameShipping').on('click',function (){
+    if (!$(this).hasClass('checks'))
+    {
+        $('input[name="fname_b"]').val($('input[name="fname"]').val());
+        $('input[name="lname_b"]').val($('input[name="lname"]').val());
+        $('input[name="apt_b"]').val($('input[name="apt"]').val());
+        $('input[name="address_b"]').val($('input[name="address"]').val());
+    }
+})
+
 if($('#address-input').length)
 {
     var placesAutocomplete = places({
         appId: 'pl1CSXYWSFGN',
         apiKey: '853fe4e9d0c60d0738f10fcf07f60ccf',
         container: document.querySelector('#address-input'),
-        countries: ['us']
+        countries: ['us'],
+        templates: {
+            value: function (suggestion) {
+                return suggestion.name+suggestion.city+', '
+                +suggestion.administrative+', '
+                +suggestion.postcode;
+            },
+            suggestion: function (suggestion) {
+                return suggestion.name+suggestion.city+', '
+                    +suggestion.administrative+', '
+                    +suggestion.postcode;
+            }
+        }
     });
 
     placesAutocomplete.on('change', function resultSelected(e)
     {
+        //e.preventDefault();
+        //console.log(e.suggestion);
         getShipping(e.suggestion.administrative);
+/*
+        var addr=e.suggestion.name+', '
+            +e.suggestion.city+', '
+            +e.suggestion.administrative+', '
+            +e.suggestion.postcode;
+        console.log(addr);
+        $('#address-input').val('');
+*/
     });
 
 }
-
-$('#btnOrder').on('click',function (){
-    form=$('#formOrder');
-    res=form.validate();
-    console.log(res);
-   //$('#formOrder').submit();
-});
-
-$('#chkSameShipping').on('change',function (){
-    if ($(this).checked)
-    {
-        console.log(1);
-    }
-    else
-    {
-        console.log(2);
-
-    }
-})

@@ -1,23 +1,39 @@
 @extends('layout.checkout')
 
 @section('content')
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <div class="c-checkout mt-5">
         <div class="container-fluid px-0">
             <div class="row no-gutters">
                 <div class="col-11 col-lg-7 mx-auto pb-lg-5 order-2 order-lg-1">
                     <div class="bg-white pt-5">
                         <div class="ml-lg-5 pl-lg-2">
-                            <div class="mx-4">
+                            <div class="mx-4 c-form">
                                 <div class="d-none d-lg-block ml-lg-5 mb-4"><a href="{{route('home')}}"><img class="logo-cart" src="{{asset('svg/logos/logo.svg')}}"></a></div>
                                 <nav class="pt-2">
                                     <div class="mx-lg-5">
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist"><a class="nav-item nav-link active" id="nav-card-tab" data-toggle="tab" href="#nav-card" role="tab" aria-controls="nav-card" aria-selected="true"><img src="svg/icons/card-w.svg"><img class="d-none" src="svg/icons/card.svg"></a><a class="nav-item nav-link" id="nav-pp-tab" data-toggle="tab" href="#nav-pp" role="tab" aria-controls="nav-pp" aria-selected="false"><img src="svg/icons/pp.svg"><img class="d-none" src="svg/icons/pp-w.svg"></a></div>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <!--
+                                            <a class="nav-item nav-link active" id="nav-card-tab" data-toggle="tab" href="#nav-card" role="tab" aria-controls="nav-card" aria-selected="true">
+                                                <img src="svg/icons/card-w.svg"><img class="d-none" src="{{asset('svg/icons/card.svg')}}">
+                                            </a>
+                                        -->
+
+                                            <a class="nav-item nav-link active" id="nav-pp-tab" data-toggle="tab" href="#nav-pp" role="tab" aria-controls="nav-pp" aria-selected="false">
+                                                <!--
+                                                <img src="{{asset('svg/icons/pp.svg')}}">
+                                                -->
+                                                <img class="" src="{{asset('svg/icons/pp-w.svg')}}">
+                                                <img class="d-none" src="{{asset('svg/icons/pp-w.svg')}}">
+                                            </a>
+
+                                        </div>
                                     </div>
                                 </nav>
+                               <form class="form" action="{{route('make-order')}}" method="post" id="formOrder">
                                 <div class="tab-content" id="nav-tabContent">
-                                    <div class="tab-pane fade show active px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
+                                    <div class="tab-pane fade show active px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
                                         <div class="c-form mt-3">
-                                            <form class="form" action="" method="post">
                                                 <p class="e-bold mt-4">Credit card information</p>
                                                 <input class="w-100" type="text" placeholder="Name on the card">
                                                 <fieldset class="credit-card-group w-100 ">
@@ -30,20 +46,21 @@
 <!--
                                                 <input class="w-100" type="text" placeholder="Credit card number">
 -->
-                                            </form>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
+<!--
+                                    <div class="tab-pane fade px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
                                         <div class="c-form mt-3">
                                             <form class="form" action="" method="post">
                                                 <p class="e-bold mt-4">PayPal information</p><input class="w-100" type="text" placeholder="Enter your email address">
                                             </form>
                                         </div>
                                     </div>
+-->
                                 </div>
                                 <div class="c-form mx-lg-5 mb-5">
                                     <hr class="green my-4">
-                                    <form class="form" action="{{route('make-order')}}" method="post" id="formOrder">
+
                                         @csrf
                                         <p class="e-bold">Contact Information</p>
                                         <div class="row">
@@ -62,6 +79,9 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-lg-8"><input id="address-input" name="address" class="w-100" type="text" placeholder="Address" required></div>
+                                            <!--
+                                            <div class="col-12 col-lg-8"><input id="autocomplete" name="address" class="w-100" type="text" placeholder="Address" required></div>
+                                            -->
                                             <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite"></div>
                                         </div>
 
@@ -99,7 +119,7 @@
                                         <input type="hidden" name="stotal" value="{{$cart_etotal}}" id="inputSTotal">
                                         <input type="hidden" name="shipping" value="0" id="inputShipping">
                                         <input type="hidden" name="total" value="0" id="inputTotal">
-                                    </form>
+
                                 </div>
                                 <div class="d-block d-lg-flex justify-content-between mx-lg-5">
                                     <div class="d-block my-3 py-3 border-top w-70 mr-3">
@@ -130,6 +150,7 @@
 
                                     </div>
                                 </div>
+                               </form>
                             </div>
                         </div>
                     </div>
@@ -202,5 +223,28 @@
     <script src="{{asset('/js/jquery.inputmask.date.extensions.js')}}"></script>
 
     <script src="{{asset('/js/cc.js')}}"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDthcDr1vRScZI-s9R_AAqWgwLWKJQxBnk&v=3.exp&sensor=false&libraries=places"></script>
+    <script>
+/*
+        var autocomplete;
+        function initialize()
+        {
+            autocomplete = new google.maps.places.Autocomplete(
+                (document.getElementById('autocomplete')),
+                { types: ['geocode'] });
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            });
+        }
+*/
+/*
+    google.maps.event.addDomListener(window, 'load', function () {
+        var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+        google.maps.event.addListener(places, 'place_changed', function () {
+
+        });
+    });
+*/
+    </script>
 
 @endsection

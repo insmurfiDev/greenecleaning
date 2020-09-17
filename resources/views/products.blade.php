@@ -10,16 +10,20 @@
                     <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span><span class="e-black">All</span>
                 </h3>
                 <div class="prod-nav mx-auto py-3 py-lg-0">
-                    <span class="e-bold e-black mx-3">All Products</span>
-                    <a class="e-black mx-3" href="{{route('products')}}?sale=1">Sale</a>
+                    <a class="mr-3" href="{{route('products')}}">
+                        <span class="e-bold @if(request()->route()->getName()=='products') e-black @endif ">All Products</span>
+                    </a>
+                    <a class="" href="{{route('sale')}}">
+                        <span class="e-bold @if(request()->route()->getName()=='sale') e-black @endif mx-3">Sale</span>
+                    </a>
                 </div>
                 <div class="c-sort d-flex align-items-center py-3 py-lg-0"><span class="e-black mr-lg-3 d-none d-lg-inline-block">Sort:</span>
-                    <div class="e-select mb-0">
-                        <select class="selectProductsSort" name="">
-                            <option value="">Price Up</option>
-                            <option value="">Price Low</option>
-                            <option value="">A-Z</option>
-                            <option value="">Z-A</option>
+                    <div class="mt-2">
+                        <select class="e-select selectProductsSort" name="" id="selectProductsSort">
+                            <option value="1" @if(!empty($sort) && $sort==1) selected @endif>Price Up</option>
+                            <option value="2" @if(!empty($sort) && $sort==2) selected @endif>Price Low</option>
+                            <option value="3" @if(!empty($sort) && $sort==3) selected @endif>A-Z</option>
+                            <option value="4" @if(!empty($sort) && $sort==4) selected @endif>Z-A</option>
                         </select>
                     </div>
                 </div>
@@ -58,5 +62,9 @@
 @endsection
 
 @section('page_js')
-
+<script>
+    $('#selectProductsSort').on('change',function (){
+        location.replace('?sort='+$(this).val());
+    })
+</script>
 @endsection

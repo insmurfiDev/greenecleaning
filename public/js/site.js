@@ -1,4 +1,8 @@
-$(document).ready(function($) { 
+$(document).ready(function($) {
+
+  $('input[type="checkbox"]').on('click', function() {
+    $(this).toggleClass('checks');
+  });
 
   $('#mBtn').on('click', function(e) {
     e.preventDefault();

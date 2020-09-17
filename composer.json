@@ -17,7 +17,9 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
-        "melihovv/laravel-shopping-cart": "^7.0"
+        "league/omnipay": "^3.0",
+        "melihovv/laravel-shopping-cart": "^7.0",
+        "omnipay/paypal": "^3.0"
     },
     "require-dev": {
         "backpack/generators": "^3.1",
@@ -45,7 +47,10 @@
         "classmap": [
             "database/seeds",
             "database/factories"
-        ]
+        ],
+      "files": [
+            "app/helpers.php"
+        ]        
     },
     "autoload-dev": {
         "psr-4": {

@@ -142,7 +142,7 @@ class ProductCrudController extends CrudController
                 'name'  => 'Name',
                 'price' => 'Price',
                 'shipping'  => 'Shipping',
-                'count'  => 'Available',
+                'count'  => 'Qty Available',
             ],
             'max' => 5, // maximum rows allowed in the table
             'min' => 0, // minimum rows allowed in the table
