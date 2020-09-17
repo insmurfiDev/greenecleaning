@@ -461,10 +461,10 @@ $('#btnCoupon').on('click',function (e){
 })
 
 $('#formOrder').on('submit',function (e){
-    e.preventDefault();
+    //e.preventDefault();
     cc_input=$('input[name="card_number"]');
-    console.log(cc_input.val());
+    //console.log(cc_input.val());
     cc_input.val(cc_input.data('ccNumber'));
-    console.log(cc_input.val());
+    //console.log(cc_input.val());
 
 })
