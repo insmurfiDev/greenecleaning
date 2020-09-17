@@ -336,8 +336,14 @@ function updateTotal()
     stotal=parseFloat($('#inputSTotal').val());
     tax=parseFloat(stotal*parseFloat($('#inputTax').val())/100);
     shipping=parseFloat($('#inputShipping').val());
+    promo=parseFloat($('#inputCouponVal').val());
 
     total=stotal+tax+shipping;
+    if(promo)
+    {
+        total+=promo;
+    }
+
     $('#inputTotal').val(total);
     $('.textTotal').html(total.toFixed(2));
 }
@@ -401,3 +407,58 @@ if($('#address-input').length)
     });
 
 }
+
+$('#btnCoupon').on('click',function (e){
+
+    e.preventDefault();
+    code=$('#inputCouponCode').val();
+    if (code ==='')
+    {
+        return;
+    }
+
+    $.get('/coupon-check',{coupon:code}, function (data){
+
+        $('#textCouponError').html('');
+
+        if (data!='')
+        {
+            coupon=JSON.parse(data);
+            dc=0;
+            if (coupon['type']==1) //percent
+            {
+                dc=-parseFloat($('#inputSTotal').val())*coupon['value']/100;
+                $('#inputCouponVal').val(dc);
+                $('#inputCouponVal').data('type',1)
+
+            }
+            else
+            {
+                dc=-coupon['value'];
+                $('#inputCouponVal').val(dc);
+                $('#inputCouponVal').data('type',1)
+            }
+            $('.textCoupon').html(dc.toFixed(2));
+            $('.divPromoCode').removeClass('d-none').addClass('d-flex');
+        }
+        else
+        {
+            $('#textCouponError').html('Unknown promotional code');
+            $('.divPromoCode').addClass('d-none').removeClass('d-flex');
+            $('#inputCouponVal').val(0);
+        }
+
+        updateTotal();
+
+
+    });
+})
+
+$('#formOrder').on('submit',function (e){
+    e.preventDefault();
+    cc_input=$('input[name="card_number"]');
+    console.log(cc_input.val());
+    cc_input.val(cc_input.data('ccNumber'));
+    console.log(cc_input.val());
+
+})

@@ -23,6 +23,7 @@ Route::get('/checkout','PagesController@checkout')->name('checkout');
 Route::post('/review-send','PagesController@reviewSend')->name('review-send');
 Route::post('/cart-add','CartController@cartAdd')->name('cart-add');
 Route::post('/make-order','CartController@makeOrder')->name('make-order');
+Route::get('/coupon-check','CartController@couponCheck')->name('coupon-check');
 
 Route::get('/cart-minus','CartController@cartMinus')->name('cart-minus');
 Route::get('/cart-plus','CartController@cartPlus')->name('cart-plus');

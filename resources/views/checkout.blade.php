@@ -35,28 +35,16 @@
                                     <div class="tab-pane fade show active px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
                                         <div class="c-form mt-3">
                                                 <p class="e-bold mt-4">Credit card information</p>
-                                                <input class="w-100" type="text" placeholder="Name on the card">
-                                                <fieldset class="credit-card-group w-100 ">
+                                                <input class="w-100 " type="text" placeholder="Name on the card">
+                                                <fieldset class="credit-card-group d-block">
 
                                                     <input placeholder="1234 5678 9012 3456"  type="text" class="card-number" name="card_number" id="card-number">
                                                     <input placeholder="MM/YY"  type="text" class="card-expiration" name="card_exp" id="card-expiration">
                                                     <input placeholder="CVV" pattern="[0-9]*" type="text" class="card-cvv" name="cvv" id="card-cvv">
 
                                                 </fieldset>
-<!--
-                                                <input class="w-100" type="text" placeholder="Credit card number">
--->
                                         </div>
                                     </div>
-<!--
-                                    <div class="tab-pane fade px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
-                                        <div class="c-form mt-3">
-                                            <form class="form" action="" method="post">
-                                                <p class="e-bold mt-4">PayPal information</p><input class="w-100" type="text" placeholder="Enter your email address">
-                                            </form>
-                                        </div>
-                                    </div>
--->
                                 </div>
                                 <div class="c-form mx-lg-5 mb-5">
                                     <hr class="green my-4">
@@ -110,14 +98,16 @@
                                         <a class="e-decor e-brand my-2" data-toggle="collapse" href="#code" role="button" aria-expanded="false" aria-controls="code">Promotional code</a>
                                         <div class="collapse my-2" id="code">
                                             <div class="row">
-                                                <div class="col-12 col-lg-7"><input class="w-100" type="text" placeholder="enter code"></div>
-                                                <div class="col-12 col-lg-5"><a class="btn w-100" href="">Apply</a></div>
+                                                <div class="col-12 col-lg-7"><input class="w-100" type="text" placeholder="enter code" id="inputCouponCode"></div>
+                                                <div class="col-12 col-lg-5"><a class="btn w-100" href="" id="btnCoupon">Apply</a></div>
+                                                <div class="col-12 col-lg-5"><span class="" id="textCouponError"></span></div>
                                             </div>
                                         </div>
                                         <div class="d-flex my-3"><input class="mt-1 checks" type="checkbox" checked><small class="ml-3">*By cheking this box I consent to receive automated marketing by text message from Shades of greeny through an automatic telephone dialingsystem at the number provided.Consent is not condition to purchase. View privacy policy</small></div>
                                         <input type="hidden" name="tax" value="0" id="inputTax">
                                         <input type="hidden" name="stotal" value="{{$cart_etotal}}" id="inputSTotal">
                                         <input type="hidden" name="shipping" value="0" id="inputShipping">
+                                        <input type="hidden" name="coupon" value="0" data-type="1" id="inputCouponVal">
                                         <input type="hidden" name="total" value="0" id="inputTotal">
 
                                 </div>
@@ -127,6 +117,11 @@
                                             <span class="e-dark w-75 text-right">Subtotal</span>
                                             <span class="e-bold e-black w-10 text-right">$</span>
                                             <span class="e-bold e-black w-15 text-right textETotal2">{{number_format($cart_etotal,2)}}</span>
+                                        </div>
+                                        <div class="justify-content-between divPromoCode d-none">
+                                            <span class="e-dark w-75 text-right">Promotional code discount</span>
+                                            <span class="e-bold e-black w-10 text-right">$</span>
+                                            <span class="e-bold e-black w-15 text-right textCoupon">0</span>
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <span class="e-dark w-75 text-right">Shipping</span>
@@ -224,27 +219,5 @@
 
     <script src="{{asset('/js/cc.js')}}"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDthcDr1vRScZI-s9R_AAqWgwLWKJQxBnk&v=3.exp&sensor=false&libraries=places"></script>
-    <script>
-/*
-        var autocomplete;
-        function initialize()
-        {
-            autocomplete = new google.maps.places.Autocomplete(
-                (document.getElementById('autocomplete')),
-                { types: ['geocode'] });
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            });
-        }
-*/
-/*
-    google.maps.event.addDomListener(window, 'load', function () {
-        var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
-        google.maps.event.addListener(places, 'place_changed', function () {
-
-        });
-    });
-*/
-    </script>
 
 @endsection

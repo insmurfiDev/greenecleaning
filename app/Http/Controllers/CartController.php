@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
 //use Cart;
@@ -202,7 +203,7 @@ class CartController extends Controller
 
     public function makeOrder(Request $request)
     {
-        $x=$request;
+        $x=$request->all();
         $gateway = Omnipay::create('PayPal_Pro');
         $gateway->setUsername('sb-8tjax1237520_api1.business.example.com');
         $gateway->setPassword('2N3UZ4CMB42TXCMT');
@@ -220,6 +221,10 @@ class CartController extends Controller
 
         }
         $order_text.="Subtotal: $".$request->stotal.'\n';
+        if(!empty($request->coupon))
+        {
+            $order_text.="Promotuional code discount: $".$request->coupon.'\n';
+        }
         $order_text.="Shipping: $".$request->shipping.'\n';
         $order_text.="Total: $".$request->total.'\n';
 
@@ -300,5 +305,18 @@ class CartController extends Controller
         $data['order']=$order;
         $data['cart']=$cart;
         return view('order_success',$data);
+    }
+    public function couponCheck(Request $request)
+    {
+        $x=$request;
+        if(!empty($request->coupon))
+        {
+            $coupon=Coupon::where('code',$request->coupon)->where('active',1)->first();
+            if ($coupon)
+            {
+                return json_encode($coupon->toArray());
+            }
+        }
+        return false;
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="c-page py-lg-5">
         <div class="c-page__title">
-            <h2 class="e-title e-white">Contact Us</h2>
+            <h2 class="e-title e-white">{{$page->title ?? 'Contact Us'}}</h2>
         </div>
     </div>
     <div class="container py-5">
@@ -19,8 +19,7 @@
                 </div>
             </div>
             <div class="col-11 col-lg-6 mx-auto">
-                <h4 class="e-subtitle">Contact form</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum, dapibus et sociis sed orci porttitor velit accumsan. Ligula leo id sit tincidunt lorem adipiscing vitae. Eu euismod adipiscing. </p>
+                {!! $page->content ?? '' !!}
                 <div class="c-form my-4">
                     @if (\Session::has('success'))
                         <div class="alert alert-success">

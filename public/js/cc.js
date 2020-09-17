@@ -35,20 +35,14 @@
 			// regex pattern. If it does, break the loop and return the credit card type.
 
 			getCreditCardType: function (number) {
-
 				var ccType;
-
 				$.each(ccDefinitions, function (i, v) {
-
 					if (v.test(number)) {
 						ccType = i;
 						return false;
 					}
-
 				});
-
 				return ccType;
-
 			},
 
 			// Our matchNumbers function. Probably does more than it should.
@@ -302,10 +296,11 @@
 
 				if (window.navigator.standalone || !Modernizr.touch) {
 					// Focus on the credit card expiration input.
-					$("." + opts.cardZipClass).focus();
+					//$("." + opts.cardZipClass).focus();
 
 					// Update instruction message
-					helpers.updateInstruction(opts.messageZip);
+					//helpers.updateInstruction(opts.messageZip);
+					helpers.updateInstruction(opts.messageSuccess);
 				}
 
 				
@@ -518,7 +513,7 @@
 		messageCVV : "Please enter the three-digit CVV number found on the back of your card",
 		messageCVVAmEx : "Please enter your four-digit CVV number on the front of your card",
 		messageZip : "Please enter your billing zip code",
-		//messageSuccess : "Hooray! You've successfully filled out your credit card information."
+		//messageSuccess : "Hooray! You've successfully filled out your credit card information.",
 		messageSuccess : ""
 	};
 

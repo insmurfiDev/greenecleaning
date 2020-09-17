@@ -8,6 +8,7 @@ use App\Models\Review;
 
 use App\Models\Shipping;
 use App\Models\State;
+use Backpack\PageManager\app\Models\Page;
 use Carbon\Carbon;
 use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
 
@@ -49,7 +50,9 @@ class PagesController extends Controller
     }
     public function contact(Request $request)
     {
+        $page=Page::findBySlug('contact_page');
         $data=$this->preData;
+        $data['page']=$page;
         return view('contact',$data);
     }
     public function contactSend(Request $request)

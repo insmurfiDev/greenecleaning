@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <h4 class="e-subtitle mini">quantity</h4>
-                                    <select class="e-select w-100 selectQty"  name="qty" id="selectQty">
+                                    <select class="e-select w-50 selectQty"  name="qty" id="selectQty">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>

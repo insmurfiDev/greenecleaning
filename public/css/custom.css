@@ -874,7 +874,7 @@ body .wrapper .main {
 
 .e-select {
   position: relative;
-  min-width: 160px;
+  //min-width: 160px;
   height: 50px;
   margin-bottom: 15px;
   padding: 7.5px 12px;
