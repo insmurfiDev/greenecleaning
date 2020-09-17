@@ -205,9 +205,9 @@ class CartController extends Controller
     {
         $x=$request->all();
         $gateway = Omnipay::create('PayPal_Pro');
-        $gateway->setUsername('sb-8tjax1237520_api1.business.example.com');
-        $gateway->setPassword('2N3UZ4CMB42TXCMT');
-        $gateway->setSignature('AjfGFMhBA9ZkKUHMY1lmbYgdnhS0AMr5XVjZJ0n4rk5las5powxIF0CB');
+        $gateway->setUsername(Config::get('settings.pp_username'));
+        $gateway->setPassword(Config::get('settings.pp_password'));
+        $gateway->setSignature(Config::get('settings.pp_signature'));
         $gateway->setTestMode(true);
 
         $cart=Cart::content();
@@ -254,7 +254,7 @@ class CartController extends Controller
             $formData = array(
                 'firstName' => $request->fname_b,
                 'lastName' => $request->lname_b,
-                'number' => '4111111111111111',
+                'number' => $request->card_number,
                 'expiryMonth' => trim($arr_expiry[0]),
                 'expiryYear' => trim($arr_expiry[1]),
                 'cvv' => $request->cvv,

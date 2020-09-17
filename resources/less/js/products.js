@@ -436,7 +436,6 @@ $('#btnCoupon').on('click',function (e){
                 dc=-parseFloat($('#inputSTotal').val())*coupon['value']/100;
                 $('#inputCouponVal').val(dc);
                 $('#inputCouponVal').data('type',1)
-
             }
             else
             {
