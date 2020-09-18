@@ -64,10 +64,19 @@
     margin-bottom: 10px;
     cursor: pointer;
     min-width: 65%;
+    max-height: 600px;
+    object-fit: scale-down;
+    align-content: center;
+
 
 }
 .sales__image_main img {
-    width: 100%;
+    //width: 100%;
+    margin: auto;
+    max-height: 600px;
+    object-fit: scale-down;
+    align-content: center;
+    display: block;
 }
 
 .sales__current-image,
@@ -110,4 +119,8 @@
     align-items: center;
     height: 100%;
 
+}
+
+.react-images__view-image{
+    max-height: 600px !important;
 }
