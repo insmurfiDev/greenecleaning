@@ -21,7 +21,7 @@
                     <p class="mb-0 w-50 e-middle">quantity:</p>
                     <div class="c-cart__info w-50 d-flex justify-content-end">
                         <a class="cart-block aCartPlus" data-price="{{$item->price}}" data-itemid="{{$item->options['id']}}" data-size="{{$item->options['size']}}" href="#"><img src="{{asset('svg/icons/plus.svg')}}"></a>
-                        <span class="cart-block"><input class="w-100" type="number" value="{{$item->quantity}}"></span>
+                        <span class="cart-block"><input class="w-100" type="text" value="{{$item->quantity}}"></span>
                         <a class="cart-block aCartMinus" data-uid="{{$item->getUniqueId()}}" data-price="{{$item->price}}" data-itemid="{{$item->options['id']}}" data-size="{{$item->options['size']}}" href="#"><img src="{{asset('svg/icons/minus.svg')}}"></a></div>
                 </div>
             </div>

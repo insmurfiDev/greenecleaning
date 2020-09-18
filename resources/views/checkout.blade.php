@@ -35,7 +35,18 @@
                                     <div class="tab-pane fade show active px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
                                         <div class="c-form mt-3">
                                                 <p class="e-bold mt-4">Credit card information</p>
+<!--
                                                 <input class="w-100 " type="text" placeholder="Name on the card">
+
+-->
+                                            @if (\Session::has('error'))
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        <li>We could not process your payment. Please try another credit card.</li>
+                                                        <li>{!! \Session::get('error') !!}</li>
+                                                    </ul>
+                                                </div>
+                                            @endif
                                                 <fieldset class="credit-card-group d-block">
 
                                                     <input placeholder="1234 5678 9012 3456"  type="text" class="card-number" name="card_number" id="card-number">
@@ -52,8 +63,8 @@
                                         @csrf
                                         <p class="e-bold">Contact Information</p>
                                         <div class="row">
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="email" placeholder="Email" required></div>
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="phone" placeholder="Phone" required></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="email" placeholder="Email" required value="{{old('email')}}"></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="phone" placeholder="Phone" required value="{{old('phone')}}"></div>
                                         </div>
                                         <div class="d-flex align-items-center mb-3">
                                             <input type="checkbox" checked name="keepme">
@@ -62,15 +73,15 @@
 
                                         <p class="e-bold mt-4">Shipping address</p>
                                         <div class="row">
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname" placeholder="First Name" required></div>
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname" placeholder="Last Name" required></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname" placeholder="First Name" required value="{{old('fname')}}"></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname" placeholder="Last Name" required value="{{old('lname')}}"></div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-12 col-lg-8"><input id="address-input" name="address" class="w-100" type="text" placeholder="Address" required></div>
+                                            <div class="col-12 col-lg-8"><input id="address-input" name="address" class="w-100" type="text" placeholder="Address" required  value="{{old('address')}}"></div>
                                             <!--
                                             <div class="col-12 col-lg-8"><input id="autocomplete" name="address" class="w-100" type="text" placeholder="Address" required></div>
                                             -->
-                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite"></div>
+                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt" placeholder="Apartment, suite" value="{{old('apt')}}"></div>
                                         </div>
 
                                         <p class="e-bold mt-4">Billing address</p>
@@ -79,12 +90,12 @@
                                             <span class="ml-2">Same as shipping</span>
                                         </div>
                                         <div class="row">
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname_b" placeholder="First Name" required></div>
-                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname_b" placeholder="Last Name" required></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="fname_b" placeholder="First Name" required value="{{old('fname_b')}}"></div>
+                                            <div class="col-12 col-lg-6"><input class="w-100" type="text" name="lname_b" placeholder="Last Name" required value="{{old('lname_b')}}"></div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-12 col-lg-8"><input name="address_b" class="w-100" type="text" placeholder="Address" required></div>
-                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt_b" placeholder="Apartment, suite"></div>
+                                            <div class="col-12 col-lg-8"><input id="address-input2" name="address_b" class="w-100" type="text" placeholder="Address" required value="{{old('address_b')}}"></div>
+                                            <div class="col-12 col-lg-4"><input class="w-100" type="text" name="apt_b" placeholder="Apartment, suite" value="{{old('apt_b')}}"></div>
                                         </div>
 
                                         <p class="e-bold mt-4">Shipping</p>
@@ -98,17 +109,18 @@
                                         <a class="e-decor e-brand my-2" data-toggle="collapse" href="#code" role="button" aria-expanded="false" aria-controls="code">Promotional code</a>
                                         <div class="collapse my-2" id="code">
                                             <div class="row">
-                                                <div class="col-12 col-lg-7"><input class="w-100" type="text" placeholder="enter code" id="inputCouponCode"></div>
+                                                <div class="col-12 col-lg-7"><input class="w-100" type="text" name="coupon_code" placeholder="enter code" id="inputCouponCode" value="{{old('coupon_code')}}"></div>
                                                 <div class="col-12 col-lg-5"><a class="btn w-100" href="" id="btnCoupon">Apply</a></div>
                                                 <div class="col-12 col-lg-5"><span class="" id="textCouponError"></span></div>
                                             </div>
                                         </div>
                                         <div class="d-flex my-3"><input class="mt-1 checks" type="checkbox" checked><small class="ml-3">*By cheking this box I consent to receive automated marketing by text message from Shades of greeny through an automatic telephone dialingsystem at the number provided.Consent is not condition to purchase. View privacy policy</small></div>
-                                        <input type="hidden" name="tax" value="0" id="inputTax">
+                                        <input type="hidden" name="tax" value="{{old('tax')}}" id="inputTax" >
                                         <input type="hidden" name="stotal" value="{{$cart_etotal}}" id="inputSTotal">
-                                        <input type="hidden" name="shipping" value="0" id="inputShipping">
-                                        <input type="hidden" name="coupon" value="0" data-type="1" id="inputCouponVal">
-                                        <input type="hidden" name="total" value="0" id="inputTotal">
+                                        <input type="hidden" name="shipping" value="{{old('shipping')}}" id="inputShipping">
+                                        <input type="hidden" name="coupon" value="{{old('coupon')}}" data-type="1" id="inputCouponVal">
+                                        <input type="hidden" name="total" value="{{old('total')}}" id="inputTotal">
+                                        <input type="hidden" name="state" value="{{old('state')}}" id="inputState">
 
                                 </div>
                                 <div class="d-block d-lg-flex justify-content-between mx-lg-5">

@@ -53,7 +53,7 @@
 </head>
 
 <body class="page">
-
+<div class="d-none" id="preloader"></div>
 <div class="wrapper">
     @yield('content')
 </div>

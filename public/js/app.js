@@ -66327,7 +66327,12 @@ $('.aCartPlus').on('click', function (e) {
       updateCounter(data['cart_count']);
       updateCTotal(data['cart_etotal']);
       inp.val(parseInt(inp.val()) + 1);
-      placesAutocomplete.onChange;
+      state = $('#inputState').val();
+
+      if (state != '') {
+        getShipping(state);
+      }
+
       updateTotal();
     },
     error: function error() {}
@@ -66385,8 +66390,14 @@ $('.aCartMinus').on('click', function (e) {
       var data = response;
       updateCounter(data['cart_count']);
       updateCTotal(data['cart_etotal']);
-      inp.val(item_cnt - 1);
-      placesAutocomplete.onChange;
+      inp.val(item_cnt - 1); //placesAutocomplete.onChange;
+
+      state = $('#inputState').val();
+
+      if (state != '') {
+        getShipping(state);
+      }
+
       updateTotal();
     },
     error: function error() {}
@@ -66394,6 +66405,7 @@ $('.aCartMinus').on('click', function (e) {
 });
 
 function getShipping(state) {
+  $('#inputState').val(state);
   $.ajax({
     type: "GET",
     url: "/shipping-get",
@@ -66415,6 +66427,7 @@ function getShipping(state) {
       $('#selectShipping').html(toAdd);
       updateTax(data['tax']);
       updateShipping(data['shipping'][0]['price']);
+      updateTotal();
     },
     error: function error() {}
   });
@@ -66453,7 +66466,17 @@ function updateTotal() {
   stotal = parseFloat($('#inputSTotal').val());
   tax = parseFloat(stotal * parseFloat($('#inputTax').val()) / 100);
   shipping = parseFloat($('#inputShipping').val());
-  promo = parseFloat($('#inputCouponVal').val());
+  promo_val = parseFloat($('#inputCouponVal').data('val'));
+  promo_type = $('#inputCouponVal').data('type');
+  console.log(promo_val, promo_type);
+
+  if (promo_type == 1) {
+    promo = -stotal * promo_val / 100;
+    $('.textCoupon').html(promo.toFixed(2));
+  } else {
+    promo = promo_val;
+  }
+
   total = stotal + tax + shipping;
 
   if (promo) {
@@ -66498,17 +66521,26 @@ if ($('#address-input').length) {
     }
   });
   placesAutocomplete.on('change', function resultSelected(e) {
-    //e.preventDefault();
-    //console.log(e.suggestion);
     getShipping(e.suggestion.administrative);
-    /*
-            var addr=e.suggestion.name+', '
-                +e.suggestion.city+', '
-                +e.suggestion.administrative+', '
-                +e.suggestion.postcode;
-            console.log(addr);
-            $('#address-input').val('');
-    */
+  });
+}
+
+if ($('#address-input2').length) {
+  var placesAutocomplete2 = places({
+    appId: 'pl1CSXYWSFGN',
+    apiKey: '853fe4e9d0c60d0738f10fcf07f60ccf',
+    container: document.querySelector('#address-input2'),
+    countries: ['us'],
+    templates: {
+      value: function value(suggestion) {
+        return suggestion.name + suggestion.city + ', ' + suggestion.administrative + ', ' + suggestion.postcode;
+      },
+      suggestion: function suggestion(_suggestion2) {
+        return _suggestion2.name + _suggestion2.city + ', ' + _suggestion2.administrative + ', ' + _suggestion2.postcode;
+      }
+    }
+  });
+  placesAutocomplete2.on('change', function resultSelected(e) {//getShipping(e.suggestion.administrative);
   });
 }
 
@@ -66533,11 +66565,13 @@ $('#btnCoupon').on('click', function (e) {
         {
           dc = -parseFloat($('#inputSTotal').val()) * coupon['value'] / 100;
           $('#inputCouponVal').val(dc);
+          $('#inputCouponVal').data('val', coupon['value']);
           $('#inputCouponVal').data('type', 1);
         } else {
         dc = -coupon['value'];
         $('#inputCouponVal').val(dc);
-        $('#inputCouponVal').data('type', 1);
+        $('#inputCouponVal').data('val', coupon['value']);
+        $('#inputCouponVal').data('type', 2);
       }
 
       $('.textCoupon').html(dc.toFixed(2));
@@ -66555,7 +66589,8 @@ $('#formOrder').on('submit', function (e) {
   //e.preventDefault();
   cc_input = $('input[name="card_number"]'); //console.log(cc_input.val());
 
-  cc_input.val(cc_input.data('ccNumber')); //console.log(cc_input.val());
+  cc_input.val(cc_input.data('ccNumber'));
+  $('#preloader').removeClass('d-none'); //console.log(cc_input.val());
 });
 
 /***/ }),

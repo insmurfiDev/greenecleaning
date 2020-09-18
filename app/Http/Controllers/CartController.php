@@ -208,7 +208,7 @@ class CartController extends Controller
         $gateway->setUsername(Config::get('settings.pp_username'));
         $gateway->setPassword(Config::get('settings.pp_password'));
         $gateway->setSignature(Config::get('settings.pp_signature'));
-        $gateway->setTestMode(true);
+        $gateway->setTestMode(false);
 
         $cart=Cart::content();
         $order_text='';
@@ -285,7 +285,7 @@ class CartController extends Controller
                 } else {
                     // Payment failed
                     //echo "Payment failed. ". $response->getMessage();
-                    return back()->with(['error'=>$response->getMessage()]);
+                    return back()->with('error',$response->getMessage())->withInput();
                 }
             } catch(Exception $e) {
                 echo $e->getMessage();
