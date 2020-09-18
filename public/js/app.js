@@ -66598,11 +66598,17 @@ $('#btnCoupon').on('click', function (e) {
   });
 });
 $('#formOrder').on('submit', function (e) {
-  //e.preventDefault();
-  cc_input = $('input[name="card_number"]'); //console.log(cc_input.val());
-
+  cc_input = $('input[name="card_number"]');
   cc_input.val(cc_input.data('ccNumber'));
-  $('#preloader').removeClass('d-none'); //console.log(cc_input.val());
+
+  if ($('#nav-card').hasClass('active')) {
+    $('#inputCheckoutType').val('card');
+  } else {
+    $('#inputCheckoutType').val('pp');
+  } //inputCheckoutType
+
+
+  $('#preloader').removeClass('d-none');
 });
 
 /***/ }),

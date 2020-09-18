@@ -39,7 +39,7 @@
 
                                 @if(!empty($product->images))
                                 <a class="card" href="{{route('product',$product->id)}}">
-                                    <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" style="max-height: 600px; object-fit: scale-down; ">
+                                    <img class="mt-2 mb-2" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" style="max-height: 500px; object-fit: scale-down; ">
                                 </a>
                                 @endif
 
@@ -53,7 +53,6 @@
                         </div>
 
                     @endforeach
-
 
                 </div>
             </div>

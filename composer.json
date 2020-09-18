@@ -19,7 +19,8 @@
         "laravel/tinker": "^2.0",
         "league/omnipay": "^3.0",
         "melihovv/laravel-shopping-cart": "^7.0",
-        "omnipay/paypal": "^3.0"
+        "omnipay/paypal": "^3.0",
+        "srmklive/paypal": "^1.8"
     },
     "require-dev": {
         "backpack/generators": "^3.1",

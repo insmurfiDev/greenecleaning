@@ -28,6 +28,8 @@ Route::get('/coupon-check','CartController@couponCheck')->name('coupon-check');
 Route::get('/cart-minus','CartController@cartMinus')->name('cart-minus');
 Route::get('/cart-plus','CartController@cartPlus')->name('cart-plus');
 Route::get('/order-success/{id}','CartController@orderSuccess')->name('order-success');
+Route::get('/order-failed','CartController@orderFailed')->name('order-failed');
+
 //success
 Route::get('/cart-remove','CartController@cartRemove')->name('cart-remove');
 

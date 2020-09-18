@@ -13,17 +13,18 @@
                                 <nav class="pt-2">
                                     <div class="mx-lg-5">
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <!--
-                                            <a class="nav-item nav-link active" id="nav-card-tab" data-toggle="tab" href="#nav-card" role="tab" aria-controls="nav-card" aria-selected="true">
-                                                <img src="svg/icons/card-w.svg"><img class="d-none" src="{{asset('svg/icons/card.svg')}}">
-                                            </a>
-                                        -->
 
-                                            <a class="nav-item nav-link active" id="nav-pp-tab" data-toggle="tab" href="#nav-pp" role="tab" aria-controls="nav-pp" aria-selected="false">
+                                            <a class="nav-item nav-link active" id="nav-card-tab" data-toggle="tab" href="#nav-card" role="tab" aria-controls="nav-card" aria-selected="true">
+                                                <img src="{{asset('svg/icons/card-w.svg')}}">
+                                                <img class="d-none" src="{{asset('svg/icons/card.svg')}}">
+                                            </a>
+
+
+                                            <a class="nav-item nav-link" id="nav-pp-tab" data-toggle="tab" href="#nav-pp" role="tab" aria-controls="nav-pp" aria-selected="false">
                                                 <!--
                                                 <img src="{{asset('svg/icons/pp.svg')}}">
                                                 -->
-                                                <img class="" src="{{asset('svg/icons/pp-w.svg')}}">
+                                                <img class="" src="{{asset('svg/icons/pp.svg')}}">
                                                 <img class="d-none" src="{{asset('svg/icons/pp-w.svg')}}">
                                             </a>
 
@@ -31,31 +32,47 @@
                                     </div>
                                 </nav>
                                <form class="form" action="{{route('make-order')}}" method="post" id="formOrder">
-                                <div class="tab-content" id="nav-tabContent">
-                                    <div class="tab-pane fade show active px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
-                                        <div class="c-form mt-3">
-                                                <p class="e-bold mt-4">Credit card information</p>
-<!--
-                                                <input class="w-100 " type="text" placeholder="Name on the card">
--->
-                                            @if (\Session::has('error'))
-                                                <div class="alert alert-danger">
-                                                    <ul>
-                                                        <li>We could not process your payment. Please try another credit card.</li>
-                                                        <li>{!! \Session::get('error') !!}</li>
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                                <fieldset class="credit-card-group d-block">
+                                   <div class="tab-content" id="nav-tabContent">
+                                       <div class="tab-pane fade show active px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
+                                           <div class="c-form mt-3">
+                                               <p class="e-bold mt-4">Credit card information</p>
+                                               <!--
+                                                                                               <input class="w-100 " type="text" placeholder="Name on the card">
+                                               -->
+                                               @if (\Session::has('error'))
+                                                   <div class="alert alert-danger">
+                                                       <ul>
+                                                           <li>We could not process your payment. Please try another credit card.</li>
+                                                           <li>{!! \Session::get('error') !!}</li>
+                                                       </ul>
+                                                   </div>
+                                               @endif
+                                               <fieldset class="credit-card-group d-block">
 
-                                                    <input placeholder="1234 5678 9012 3456"  type="text" class="card-number" name="card_number" id="card-number">
-                                                    <input placeholder="MM/YY"  type="text" class="card-expiration" name="card_exp" id="card-expiration">
-                                                    <input placeholder="CVV" pattern="[0-9]*" type="text" class="card-cvv" name="cvv" id="card-cvv">
+                                                   <input placeholder="1234 5678 9012 3456"  type="text" class="card-number" name="card_number" id="card-number">
+                                                   <input placeholder="MM/YY"  type="text" class="card-expiration" name="card_exp" id="card-expiration">
+                                                   <input placeholder="CVV" pattern="[0-9]*" type="text" class="card-cvv" name="cvv" id="card-cvv">
 
-                                                </fieldset>
-                                        </div>
-                                    </div>
-                                </div>
+                                               </fieldset>
+                                           </div>
+                                       </div>
+                                       <div class="tab-pane fade px-lg-5" id="nav-pp" role="tabpanel" aria-labelledby="nav-pp-tab">
+                                           <div class="c-form mt-3">
+                                               <p class="e-bold mt-4">PayPal information</p>
+                                               <input class="w-100" name="ppemail" type="text" placeholder="Enter your email address" value="{{old('ppemail')}}">
+                                               @if (\Session::has('error'))
+                                                   <div class="alert alert-danger">
+                                                       <ul>
+                                                           <li>We could not process your payment. Please try another credit card.</li>
+                                                           <li>{!! \Session::get('error') !!}</li>
+                                                       </ul>
+                                                   </div>
+                                               @endif
+
+                                           </div>
+                                       </div>
+                                   </div>
+
                                 <div class="c-form mx-lg-5 mb-5">
                                     <hr class="green my-4">
 
@@ -120,6 +137,7 @@
                                         <input type="hidden" name="coupon" value="{{old('coupon')}}" data-type="1" id="inputCouponVal">
                                         <input type="hidden" name="total" value="{{old('total')}}" id="inputTotal">
                                         <input type="hidden" name="state" value="{{old('state')}}" id="inputState">
+                                        <input type="hidden" name="chekout_type" value="card" id="inputCheckoutType">
 
                                 </div>
                                 <div class="d-block d-lg-flex justify-content-between mx-lg-5">

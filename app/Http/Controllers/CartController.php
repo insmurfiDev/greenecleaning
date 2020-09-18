@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Crypt;
 use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
+use Srmklive\PayPal\Services\ExpressCheckout;
 
 class CartController extends Controller
 {
@@ -204,21 +205,15 @@ class CartController extends Controller
     public function makeOrder(Request $request)
     {
         $x=$request->all();
-        $gateway = Omnipay::create('PayPal_Pro');
-        $gateway->setUsername(Config::get('settings.pp_username'));
-        $gateway->setPassword(Config::get('settings.pp_password'));
-        $gateway->setSignature(Config::get('settings.pp_signature'));
-        $gateway->setTestMode(false);
+
 
         $cart=Cart::content();
         $order_text='';
         foreach ($cart as $item)
         {
-
             $order_text.=$item->name.' ';
             $order_text.=$item->options['size'].' ';
             $order_text.=$item->price.' x '.$item->quantity.'\n';
-
         }
         $order_text.="Subtotal: $".$request->stotal.'\n';
         if(!empty($request->coupon))
@@ -241,15 +236,22 @@ class CartController extends Controller
             'apt_b'=>$request->apt_b,
             'status'=>0,
             'order_date'=>date('Y-m-d H:i:s'),
-           // 'transaction'=>$request->email,
+            // 'transaction'=>$request->email,
             'details'=>$order_text,
             'cid'=>$this->cid,
         ];
         $order=Order::create($order_data);
 
 
+        if ($request->checkout_type=='card')
+        {
+            $gateway = Omnipay::create('PayPal_Pro');
+            $gateway->setUsername(Config::get('settings.pp_username'));
+            $gateway->setPassword(Config::get('settings.pp_password'));
+            $gateway->setSignature(Config::get('settings.pp_signature'));
+            $gateway->setTestMode(false);
 
-        $arr_expiry = explode("/", $request->card_exp);
+            $arr_expiry = explode("/", $request->card_exp);
 
             $formData = array(
                 'firstName' => $request->fname_b,
@@ -291,6 +293,53 @@ class CartController extends Controller
                 echo $e->getMessage();
             }
 
+        }
+        else
+        {
+            $provider = new ExpressCheckout();
+            $config['mode']                 = 'live';
+            $config['live']['username']     = Config::get('settings.pp_express_username');
+            $config['live']['password']     = Config::get('settings.pp_express_password');
+            $config['live']['secret']       = Config::get('settings.pp_express_secret');
+            $config['live']['certificate']  = '';
+
+            $config['payment_action']       = 'Sale';
+            $config['currency']             = 'USD';
+            $config['billing_type']         = 'MerchantInitiatedBilling';
+            $config['notify_url']           = '';
+            $config['locale']               = '';
+            $config['validate_ssl']         = true;
+            $provider->setApiCredentials($config);
+
+            $cart = [];
+            $cart['items'] = [
+                [
+                    'name' => 'Payment for shdesofgreene.com order #'.$order->id,
+                    'price' => $request->total,
+                    'qty' => 1
+                ]
+            ];
+            $cart['invoice_id'] = $order->id;
+            $cart['invoice_description'] = "Payment for shdesofgreene.com order #".$order->id;
+            $cart['return_url'] = route('order-success',$order->id);
+            $cart['cancel_url'] = route('order-failed', $order->id);
+
+            $cart['total'] = $request->total;
+            try {
+                $response = $provider->setExpressCheckout($cart, false);
+                if(isset($response['TOKEN']))
+                {
+                    $order->status=1;
+                    $order->transaction=$response->getData()['TRANSACTIONID'];
+                    $order->save();
+                    $data['orderno']=$order->id;
+
+                }
+                return redirect($response['paypal_link']);
+            } catch (\Exception $e) {}
+
+        }
+
     }
 
     public function orderSuccess($id)
@@ -306,6 +355,13 @@ class CartController extends Controller
         $data['cart']=$cart;
         return view('order_success',$data);
     }
+
+    public function orderFailed(Request $request)
+    {
+        $data=[];
+        return view('order_failed',$data);
+    }
+
     public function couponCheck(Request $request)
     {
         $x=$request;
