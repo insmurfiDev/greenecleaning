@@ -357,22 +357,38 @@ function updateTotal()
     stotal=parseFloat($('#inputSTotal').val());
     tax=parseFloat(stotal*parseFloat($('#inputTax').val())/100);
     shipping=parseFloat($('#inputShipping').val());
+    //console.log(stotal,tax,shipping);
 
-    promo_val=parseFloat($('#inputCouponVal').data('val'));
-    promo_type=$('#inputCouponVal').data('type');
-    console.log(promo_val,promo_type);
-    if (promo_type==1)
+    promo_val=0;
+    if ($('#inputCouponVal').data('val')!='')
     {
-        promo=-stotal*promo_val/100;
-        $('.textCoupon').html(promo.toFixed(2));
+
+        promo_val=parseFloat($('#inputCouponVal').data('val'));
+        promo_type=$('#inputCouponVal').data('type');
+        //console.log(promo_val,promo_type);
+
+        if (promo_type==1)
+        {
+            promo=-stotal*promo_val/100;
+            $('.textCoupon').html(promo.toFixed(2));
+        }
+        else
+        {
+            promo=promo_val;
+        }
     }
-    else
+
+
+
+    total=stotal;
+    if (tax)
     {
-        promo=promo_val;
+        total+=tax;
     }
-
-
-    total=stotal+tax+shipping;
+    if (shipping)
+    {
+        total+=shipping;
+    }
     if(promo)
     {
         total+=promo;
