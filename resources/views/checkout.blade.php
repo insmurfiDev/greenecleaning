@@ -37,7 +37,6 @@
                                                 <p class="e-bold mt-4">Credit card information</p>
 <!--
                                                 <input class="w-100 " type="text" placeholder="Name on the card">
-
 -->
                                             @if (\Session::has('error'))
                                                 <div class="alert alert-danger">
