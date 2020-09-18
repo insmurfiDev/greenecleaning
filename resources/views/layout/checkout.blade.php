@@ -67,11 +67,11 @@
             </div>
             <div class="c-nav"><span class="e-white mx-auto">Copyright © 2020 by Shades of greene</span></div>
             <div class="c-nav mx-auto">
-                <a class="mx-3" href="">
+                <a class="mx-3" target="_blank" href="{{\Illuminate\Support\Facades\Config::get('settings.facebook')}}">
                     <img class="vis" src="{{asset('svg/icons/facebook.svg')}}" alt="facebook">
                     <img class="hid" src="{{asset('svg/icons/facebook-hr.svg')}}" alt="facebook">
                 </a>
-                <a class="mx-3" href="">
+                <a class="mx-3" target="_blank" href="{{\Illuminate\Support\Facades\Config::get('settings.twitter')}}">
                     <img class="vis" src="{{asset('svg/icons/twitter.svg')}}" alt="twitter">
                     <img class="hid" src="{{asset('svg/icons/twitter-hr.svg')}}" alt="twitter">
                 </a>

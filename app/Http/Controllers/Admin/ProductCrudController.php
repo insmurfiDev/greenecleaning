@@ -75,7 +75,10 @@ class ProductCrudController extends CrudController
         $this->crud->addField([
             'name'  => 'name',
             'label' => 'Product name',
-            'type'  => 'text'
+            'type'  => 'text',
+            'attributes' => [
+                'required' => true,
+            ],
         ]);
         $this->crud->addField([
             'name'  => 'active',
@@ -113,16 +116,16 @@ class ProductCrudController extends CrudController
                 'class' => 'form-group col-md-4 ',
             ],
         ]);
-/*
+
         $this->crud->addField([
             'name'=>'price',
-            'label'=>'Price',
+            'label'=>'Price on the products list',
             'type'=>'text',
             'wrapper'=>[
                 'class' => 'form-group col-md-3',
             ],
         ]);
-*/
+
         $this->crud->addField([
             'name'  => 'sale',
             'label' => 'Sale',
