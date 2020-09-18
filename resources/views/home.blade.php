@@ -64,7 +64,7 @@
                     <div class="c-product__item">
                         @if(!empty($product->images))
                             <a class="card" href="{{route('product',$product->id)}}">
-                                <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="">
+                                <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" style="max-height: 600px; object-fit: scale-down; ">
                             </a>
                         @endif
                         <div class="pr-footer">
