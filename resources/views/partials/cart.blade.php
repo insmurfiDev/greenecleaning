@@ -4,7 +4,7 @@
         <div class="row no-gutters border-bottom py-3 cartItem">
             <div class="col-3"><a href="{{route('product',$item->options['id'])}}"></a>
 
-                <img src="{{asset('storage/'.$item->options['image'])}}">
+                <img src="{{asset('storage/'.$item->options['image'])}}" style="max-height: 200px; object-fit: scale-down;">
             </div>
             <div class="col-9 text-right">
                 <div class="d-flex">
