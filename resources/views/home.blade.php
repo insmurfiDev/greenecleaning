@@ -11,12 +11,16 @@
                 <li class="second" data-target="#sliderHome" data-slide-to="1"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active"><img class="wow zoomIn" data-wow-duration="2s" src="{{asset('img/intro/intro1.jpg')}}" alt="">
+                <div class="carousel-item active"><img class="wow zoomIn" data-wow-duration="2s" src="{{asset('img/intro/intro3.png')}}" alt="">
                     <div class="carousel-caption">
                         <h1 class="e-title--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1s">Glass Cleaner</h1>
                         <p class="e-subtitle--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.25s">Praesent commodo cursus magna, vel scelerisque nisl consectetur adipiscing elit.</p><a class="btn mt-3 wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.5s" href="{{route('products')}}">Shop Now</a>
                     </div>
-                    <div class="img-up third wow slideInUp d-none d-lg-block" data-wow-duration=".75s" data-wow-delay="2.5s"><img src="{{asset('img/intro/gr.png')}}"></div>
+                    <div class="img-up third wow slideInUp d-none d-lg-block" data-wow-duration=".75s" data-wow-delay="2.5s">
+<!--
+                        <img src="{{asset('img/intro/gr.png')}}">
+-->
+                    </div>
                 </div>
                 <div class="carousel-item first"><img class="wow zoomIn" data-wow-duration="2s" src="{{asset('img/intro/intro2.jpg')}}" alt="">
                     <div class="carousel-caption">
