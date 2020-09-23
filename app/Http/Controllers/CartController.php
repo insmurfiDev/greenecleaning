@@ -206,7 +206,6 @@ class CartController extends Controller
     {
         $x=$request->all();
 
-
         $cart=Cart::content();
         $order_text='';
         foreach ($cart as $item)
@@ -298,9 +297,9 @@ class CartController extends Controller
         {
             $provider = new ExpressCheckout();
             $config['mode']                 = 'live';
-            $config['live']['username']     = Config::get('settings.pp_express_username');
-            $config['live']['password']     = Config::get('settings.pp_express_password');
-            $config['live']['secret']       = Config::get('settings.pp_express_secret');
+            $config['live']['username']     = Config::get('settings.pp_username');
+            $config['live']['password']     = Config::get('settings.pp_password');
+            $config['live']['secret']       = Config::get('settings.pp_signature');
             $config['live']['certificate']  = '';
 
             $config['payment_action']       = 'Sale';
