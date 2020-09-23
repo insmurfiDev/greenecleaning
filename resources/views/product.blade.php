@@ -57,7 +57,9 @@
                                 <div class="col-md-4">
                                     <h4 class="e-subtitle mini">price</h4>
                                     <h4 class="e-subtitle mini " id="textPrice">
+                                    @if(isset($product->attributes[0]['price']))
                                     ${{number_format($product->attributes[0]['price'],2) ?? 0.00}}
+                                    @endif
                                     </h4>
                                 </div>
                                 <div class="col-md-4">
