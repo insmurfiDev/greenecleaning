@@ -46,6 +46,12 @@ class PagesController extends Controller
         $data['faqs']=Faq::where('active',1)->orderby('sort')->get();
         $data['products']=Product::where('active',1)->orderby('sort')->take(3)->get();
 
+        $content['block1']=Page::findBySlug('main-block-1');
+        $content['block2']=Page::findBySlug('main-block-2');
+        $content['block3']=Page::findBySlug('main-block-3');
+        $content['block4']=Page::findBySlug('main-block-4');
+        $data['content']=$content;
+
         return view('home',$data);
     }
     public function contact(Request $request)

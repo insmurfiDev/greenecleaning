@@ -13,8 +13,9 @@
             <div class="carousel-inner">
                 <div class="carousel-item active"><img class="wow zoomIn" data-wow-duration="2s" src="{{asset('img/intro/intro3.png')}}" alt="">
                     <div class="carousel-caption">
-                        <h1 class="e-title--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1s">Glass Cleaner</h1>
-                        <p class="e-subtitle--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.25s">Praesent commodo cursus magna, vel scelerisque nisl consectetur adipiscing elit.</p><a class="btn mt-3 wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.5s" href="{{route('products')}}">Shop Now</a>
+                        <h1 class="e-title--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1s">{{$content['block1']->title ?? ''}}</h1>
+                        <p class="e-subtitle--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.25s">
+                            {!! $content['block1']->content ?? '' !!}</p><a class="btn mt-3 wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.5s" href="{{route('products')}}">Shop Now</a>
                     </div>
                     <div class="img-up third wow slideInUp d-none d-lg-block" data-wow-duration=".75s" data-wow-delay="2.5s">
 <!--
@@ -24,8 +25,8 @@
                 </div>
                 <div class="carousel-item first"><img class="wow zoomIn" data-wow-duration="2s" src="{{asset('img/intro/intro2.jpg')}}" alt="">
                     <div class="carousel-caption">
-                        <h1 class="e-title--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1s">Glass Cleaner</h1>
-                        <p class="e-subtitle--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.25s">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p><a class="btn mt-3 wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.5s" href="{{route('products')}}">Shop Now</a>
+                        <h1 class="e-title--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1s">{{$content['block2']->title ?? ''}}</h1>
+                        <p class="e-subtitle--intro wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.25s">{!! $content['block2']->content ?? '' !!}</p><a class="btn mt-3 wow slideInUp" data-wow-duration=".75s" data-wow-delay="1.5s" href="{{route('products')}}">Shop Now</a>
                     </div>
                     <div class="img-up third wow slideInUp d-none d-lg-block" data-wow-duration=".75s" data-wow-delay="2.5s"><img src="{{asset('img/about.png')}}"></div>
                 </div>
@@ -39,17 +40,12 @@
                     <div class="c-about__image wow zoomOut" data-wow-duration="2s"><img src="{{asset('img/about.png')}}"></div>
                 </div>
                 <div class="col-11 col-lg-6 mx-auto pt-lg-4">
-                    <h1 class="e-title e-title--part wow fadeInUp" data-wow-duration=".75s">What is a Natural Cleaner? </h1>
-                    <p class="wow fadeInUp" data-wow-duration=".75s">A natural cleaner is formulated from ingredients that are renewable, such as natural products extracted from plants. Many excellent cleaning agents are available in plants and they are renewed every year.</p>
-                    <p class="wow fadeInUp" data-wow-duration=".75s">A natural cleaner should also be non-toxic and not harmful to life. Because of the natural source of these ingredients, they are 100% biodegradable.</p>
-                    <h1 class="e-title e-title--part wow fadeInUp" data-wow-duration=".75s">What are the benefits of Natural Cleaners?</h1>
-                    <p class="wow slideInUp" data-wow-duration=".75s">The benefits of Natural Cleaners are many. A few beneflts are:</p>
-                    <ul class="wow slideInUp" data-wow-duration=".75s">
-                        <li><span class="e-color">r.</span><span class="ml-2">Minimizing the use of natural resources that are not renewable, such as crude oil and natural gas.</span></li>
-                        <li><span class="e-color">z.</span><span class="ml-2">Natural Cleaners do not liberate "greenhouse" gases.</span></li>
-                        <li><span class="e-color">s.</span><span class="ml-2">The health of our family and pets are protected by eliminating harmful chemicals and toxic fumes.</span></li>
-                        <li><span class="e-color">+.</span><span class="ml-2">Protecting the environment by using readily biodeg radable products.</span></li>
-                    </ul>
+                    <h1 class="e-title e-title--part wow fadeInUp" data-wow-duration=".75s">{{$content['block3']->title ?? ''}}</h1>
+                    {!! $content['block3']->content  ?? ''!!}
+
+                    <h1 class="e-title e-title--part wow fadeInUp" data-wow-duration=".75s">{{$content['block4']->title ?? ''}}</h1>
+                    {!! $content['block4']->content ?? '' !!}
+
                 </div>
             </div>
         </div>
