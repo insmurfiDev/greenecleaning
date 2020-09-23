@@ -40,7 +40,7 @@
                             <h4 class="e-subtitle mini">size</h4>
                             <div class="d-flex justify-content-between my-3">
                                 @foreach($product->attributes as $attribute)
-                                    <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price']}}" data-count="{{$attribute['count']}}">{{$attribute['name']}}</div>
+                                    <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price'] ?? 0}}" data-count="{{$attribute['count'] ?? 0}}">{{$attribute['name'] ?? ''}}</div>
                                 @endforeach
                             </div>
                             <div class="row">
@@ -63,7 +63,8 @@
                                 <div class="col-md-4">
                                     <h4 class="e-subtitle mini">in stock</h4>
                                     <h4 class="e-subtitle mini" id="textCount">
-                                        @if(isset($product->attributes[0]))
+                                        @if(isset($product->attributes[0]['count']))
+
                                             @if($product->attributes[0]['count']>10)
                                                 yes
                                             @elseif($product->attributes[0]['count']>0 && $product->attributes[0]['count']<=10)
