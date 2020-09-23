@@ -58,7 +58,7 @@
                                     <h4 class="e-subtitle mini">price</h4>
                                     <h4 class="e-subtitle mini " id="textPrice">
                                     @if(isset($product->attributes[0]['price']))
-                                    ${{number_format($product->attributes[0]['price'],2) ?? 0.00}}
+                                    ${{number_format(floatval($product->attributes[0]['price']),2) ?? 0.00}}
                                     @endif
                                     </h4>
                                 </div>
@@ -80,12 +80,12 @@
                             </div>
 
                             <input type="hidden" name="prop" id="inputProp" value="{{$product->attributes[0]['name'] ?? ''}}">
-                            <input type="hidden" name="price" id="inputPrice" value="{{$product->attributes[0]['price'] ?? 0}}">
+                            <input type="hidden" name="price" id="inputPrice" value="{{floatval(str_replace(',','.',$product->attributes[0]['price'] ?? 0))}}">
                             <input type="hidden" name="product_id" id="inputProductId" value="{{$product->id}}">
                             <h4 class="e-subtitle mini">
                                 Total:
                             </h4>
-                            <h4 class="e-subtitle e-serif e-theme" id="textTotal">${{number_format($product->attributes[0]['price'] ?? 0,2)}}</h4>
+                            <h4 class="e-subtitle e-serif e-theme" id="textTotal">${{floatval(str_replace(',','.',$product->attributes[0]['price'] ?? 0))}}</h4>
                             <p class="my-4 py-3">
                                 {{$product->short}}
                             </p>
