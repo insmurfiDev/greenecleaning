@@ -129,7 +129,7 @@
 }
 
 .product-image{
-    max-height: 300px;
+    max-height: 450px;
     max-width: 80%;
     object-fit: scale-down;
     margin: auto;
