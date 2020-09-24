@@ -39,20 +39,30 @@
 
                                 @if(!empty($product->images))
                                 <a class="card" href="{{route('product',$product->id)}}">
-                                    <img class="mt-2 mb-2" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" style="max-height: 500px; object-fit: scale-down; ">
+                                    <img class="mt-4 mb-4 product-image" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" >
                                 </a>
                                 @endif
 
                             <div class="pr-footer">
-                                <div class="pr-footer__info">
-                                    <h3 class="e-mini"> <a href="{{route('product',$product->id)}}">{{$product->name}}</a></h3>
+                                <div class="pr-footer__info w-50">
+                                        <h3 class="e-mini"> <a href="{{route('product',$product->id)}}">{{$product->name}}</a></h3>
+
                                     <p class="pr-price"><span>${{number_format($product->price,2)}}</span></p>
                                 </div>
-                                <a class="btn small" href="{{route('product',$product->id)}}">ADD to CART</a>
+                                <div class="w-50 d-flex">
+                                    <a class="btn small" href="{{route('product',$product->id)}}">ADD to CART</a>
+                                </div>
                             </div>
                         </div>
 
                     @endforeach
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid py-5">
+            <div class="mx-3">
+                <div class="row">
 
                 </div>
             </div>

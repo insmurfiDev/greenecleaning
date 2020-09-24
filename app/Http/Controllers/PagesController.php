@@ -97,16 +97,16 @@ class PagesController extends Controller
             switch ($data['sort'])
             {
                 case 1:
-                    $products->orderby('name');
+                    $products->orderby('price','DESC');
                     break;
                 case 2:
-                    $products->orderby('name','DESC');
+                    $products->orderby('price');
                     break;
                 case 3:
-                    $products->orderby('sort');
+                    $products->orderby('name');
                     break;
                 case 4:
-                    $products->orderby('sort', 'DESC');
+                    $products->orderby('name', 'DESC');
                     break;
             }
 
@@ -116,7 +116,7 @@ class PagesController extends Controller
             $products->orderby('sort');
         }
 
-        $data['paginator']=$products->paginate(9);
+        //$data['paginator']=$products->paginate(9);
         $data['products']=$products->get();
         return view('products',$data);
     }
@@ -132,16 +132,16 @@ class PagesController extends Controller
             switch ($data['sort'])
             {
                 case 1:
-                    $products->orderby('name');
+                    $products->orderby('price','DESC');
                     break;
                 case 2:
-                    $products->orderby('name','DESC');
+                    $products->orderby('price');
                     break;
                 case 3:
-                    $products->orderby('sort');
+                    $products->orderby('name');
                     break;
                 case 4:
-                    $products->orderby('sort', 'DESC');
+                    $products->orderby('name', 'DESC');
                     break;
             }
 
@@ -151,7 +151,7 @@ class PagesController extends Controller
             $products->orderby('sort');
         }
 
-        $data['paginator']=$products->paginate(9);
+        //$data['paginator']=$products->paginate(9);
         $data['products']=$products->get();
 
         return view('products',$data);

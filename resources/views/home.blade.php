@@ -57,10 +57,10 @@
             </div>
             <div class="c-products__items">
                 @foreach($products as $product)
-                    <div class="c-product__item">
+                    <div class="col-11 col-lg-4 mx-auto mx-lg-0 c-product__item">
                         @if(!empty($product->images))
                             <a class="card" href="{{route('product',$product->id)}}">
-                                <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" style="max-height: 600px; object-fit: scale-down; ">
+                                <img class="mt-4 mb-4 product-image" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" >
                             </a>
                         @endif
                         <div class="pr-footer">
