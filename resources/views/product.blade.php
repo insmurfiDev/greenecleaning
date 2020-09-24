@@ -17,16 +17,20 @@
                     <div class="col-lg-7">
                         <div class="row " id="carousel-component">
                             <div class="col-11 col-lg-2 mx-auto c-product__item">
-                                @foreach($product->images as $image)
-                                    <div class="card mb-4"><img class="p-50" src="{{asset('storage/'.$image)}}" alt=""></div>
-                                @endforeach
+                                @if(Arr::accessible($product->images))
+                                    @foreach($product->images as $image)
+                                        <div class="card mb-4"><img class="p-50" src="{{asset('storage/'.$image)}}" alt=""></div>
+                                    @endforeach
+                                @endif
 
                             </div>
                             <div class="col-11 col-lg-5 mx-auto c-product__item">
                                 <div class="prod-img h-100 d-flex align-items-center">
+
                                     @if(!empty($product->images))
                                     <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="">
                                     @endif
+
                                 </div>
                             </div>
                         </div>
@@ -39,9 +43,11 @@
                             <hr>
                             <h4 class="e-subtitle mini">size</h4>
                             <div class="d-flex justify-content-between my-3">
-                                @foreach($product->attributes as $attribute)
-                                    <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price'] ?? 0}}" data-count="{{$attribute['count'] ?? 0}}">{{$attribute['name'] ?? ''}}</div>
-                                @endforeach
+                                @if(Arr::accessible($product->attributes))
+                                    @foreach($product->attributes as $attribute)
+                                        <div class="c-prop @if($loop->first) active @endif " data-price="{{$attribute['price'] ?? 0}}" data-count="{{$attribute['count'] ?? 0}}">{{$attribute['name'] ?? ''}}</div>
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
@@ -58,7 +64,7 @@
                                     <h4 class="e-subtitle mini">price</h4>
                                     <h4 class="e-subtitle mini " id="textPrice">
                                     @if(isset($product->attributes[0]['price']))
-                                    ${{number_format(floatval($product->attributes[0]['price']),2) ?? 0.00}}
+                                        ${{number_format(floatval($product->attributes[0]['price']),2) ?? 0.00}}
                                     @endif
                                     </h4>
                                 </div>

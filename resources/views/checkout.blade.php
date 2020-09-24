@@ -137,7 +137,7 @@
                                         <input type="hidden" name="coupon" value="{{old('coupon')}}" data-type="1" id="inputCouponVal">
                                         <input type="hidden" name="total" value="{{old('total')}}" id="inputTotal">
                                         <input type="hidden" name="state" value="{{old('state')}}" id="inputState">
-                                        <input type="hidden" name="chekout_type" value="card" id="inputCheckoutType">
+                                        <input type="hidden" name="checkout_type" value="card" id="inputCheckoutType">
 
                                 </div>
                                 <div class="d-block d-lg-flex justify-content-between mx-lg-5">

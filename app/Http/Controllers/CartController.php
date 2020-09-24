@@ -217,7 +217,7 @@ class CartController extends Controller
         $order_text.="Subtotal: $".$request->stotal.'\n';
         if(!empty($request->coupon))
         {
-            $order_text.="Promotuional code discount: $".$request->coupon.'\n';
+            $order_text.="Promo code discount: $".$request->coupon.'\n';
         }
         $order_text.="Shipping: $".$request->shipping.'\n';
         $order_text.="Total: $".$request->total.'\n';
@@ -329,10 +329,9 @@ class CartController extends Controller
                 if(isset($response['TOKEN']))
                 {
                     $order->status=1;
-                    $order->transaction=$response->getData()['TRANSACTIONID'];
+                    $order->transaction=$response->getData()['TRANSACTIONID'] ?? '';
                     $order->save();
                     $data['orderno']=$order->id;
-
                 }
                 return redirect($response['paypal_link']);
             } catch (\Exception $e) {}
