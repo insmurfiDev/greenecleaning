@@ -49,8 +49,10 @@
 
                                     <p class="pr-price"><span>${{number_format($product->price,2)}}</span></p>
                                 </div>
-                                <div class="w-50 d-flex">
-                                    <a class="btn small" href="{{route('product',$product->id)}}">ADD to CART</a>
+                                <div class="w-50 d-block">
+                                    <a class="btn small" href="{{route('product',$product->id)}}">
+                                        ADD to CART
+                                    </a>
                                 </div>
                             </div>
                         </div>

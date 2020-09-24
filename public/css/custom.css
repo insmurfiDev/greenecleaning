@@ -1421,7 +1421,9 @@ ul li span.e-color {
 }
 
 .btn.small {
-  padding: 0 3vw;
+  //padding: 0 3vw ;
+  padding: 0 0 0 0;
+  width: 100%;
   text-transform: none;
 }
 

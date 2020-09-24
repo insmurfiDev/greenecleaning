@@ -149,13 +149,11 @@
     margin-right: 20px;
 }
 
-.c-products .card{
-    max-height: 500px;
-    margin: auto;
-}
+
 
 .c-products .card{
     max-height: 500px;
+    min-height: 500px;
     margin: auto;
 }html{
     min-height:100%;/* make sure it is at least as tall as the viewport */
