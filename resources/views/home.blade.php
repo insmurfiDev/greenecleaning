@@ -53,21 +53,28 @@
     <div class="c-products pb-5">
         <div class="container-fluid">
             <div class="c-products__header py-4 py-lg-0">
-                <h2 class="e-sub e-white ml-3 ml-lg-0">Newest Products</h2><a class="btn small yellow" href="{{route('products')}}">View all</a>
+                <h2 class="e-sub e-white ml-3 ml-lg-0">Newest Products</h2><a class="btn small yellow w-10" href="{{route('products')}}">View all</a>
             </div>
-            <div class="c-products__items">
+
+            <div class="c-products__items d-flex ">
                 @foreach($products as $product)
-                    <div class="col-11 col-lg-4 mx-auto mx-lg-0 c-product__item">
+                    <div class="col-12 col-lg-4 mx-lg-0 c-product__item">
                         @if(!empty($product->images))
-                            <a class="card" href="{{route('product',$product->id)}}">
+                            <a class="card w-75" href="{{route('product',$product->id)}}">
                                 <img class="mt-4 mb-4 product-image" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" >
                             </a>
                         @endif
-                        <div class="pr-footer">
-                            <div class="pr-footer__info">
+                        <div class="pr-footer w-75 mx-auto">
+                            <div class="pr-footer__info w-50">
                                 <h3 class="e-mini"> <a href="{{route('product',$product->id)}}">{{$product->name}}</a></h3>
+
                                 <p class="pr-price"><span>${{number_format($product->price,2)}}</span></p>
-                            </div><a class="btn small" href="{{route('product',$product->id)}}">ADD to CART</a>
+                            </div>
+                            <div class="w-50 d-block">
+                                <a class="btn small" href="{{route('product',$product->id)}}">
+                                    ADD to CART
+                                </a>
+                            </div>
                         </div>
                     </div>
                 @endforeach

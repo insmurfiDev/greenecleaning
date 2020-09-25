@@ -32,6 +32,17 @@ trait PageTemplates
 
 	}
 
+	private function common_page2()
+    {
+        $this->crud->addField([
+            'name' => 'content',
+            'label' => trans('backpack::pagemanager.content'),
+            'type' => 'textarea',
+            'placeholder' => trans('backpack::pagemanager.content_placeholder'),
+        ]);
+
+    }
+
 	private function extended_page()
 	{
 		$this->crud->addField([   // CustomHTML

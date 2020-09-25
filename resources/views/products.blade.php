@@ -35,7 +35,7 @@
             <div class="mx-3">
                 <div class="row">
                     @foreach($products as $product)
-                        <div class="col-11 col-lg-4 mx-auto mx-lg-0 c-product__item">
+                        <div class="col-12 col-lg-4 mx-auto mx-lg-0 c-product__item w-25">
 
                                 @if(!empty($product->images))
                                 <a class="card" href="{{route('product',$product->id)}}">
@@ -43,7 +43,7 @@
                                 </a>
                                 @endif
 
-                            <div class="pr-footer">
+                            <div class="pr-footer w-75 mx-auto">
                                 <div class="pr-footer__info w-50">
                                         <h3 class="e-mini"> <a href="{{route('product',$product->id)}}">{{$product->name}}</a></h3>
 

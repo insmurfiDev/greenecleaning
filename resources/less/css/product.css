@@ -129,7 +129,7 @@
 }
 
 .product-image{
-    max-height: 450px;
+    max-height: 350px;
     max-width: 80%;
     object-fit: scale-down;
     margin: auto;
@@ -137,17 +137,19 @@
 }
 
 .c-product__item{
-    //max-width: 30%;
+    //max-width: 33%;
     //max-height: 300px;
     object-fit: scale-down;
+    //margin: auto;
     margin-left: 20px;
     margin-right: 20px;
+
 }
 
-
-
 .c-products .card{
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 400px;
+    min-height: 400px;
+    max-width: 80%;
     margin: auto;
+
 }
