@@ -1480,7 +1480,8 @@ ul li span.e-color {
   color: #434343;
   font-size: 4em;
   font-weight: 600;
-  margin-bottom: 0;
+  margin-bottom: 20px;
+  line-height: normal;
 }
 
 @media only screen and (max-width: 960px) {

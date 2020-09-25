@@ -60,11 +60,11 @@
                 @foreach($products as $product)
                     <div class="col-12 col-lg-4 mx-lg-0 c-product__item">
                         @if(!empty($product->images))
-                            <a class="card w-75" href="{{route('product',$product->id)}}">
+                            <a class="card w-100" href="{{route('product',$product->id)}}">
                                 <img class="mt-4 mb-4 product-image" src="{{asset('storage/'.array_values($product->images)[0])}}" alt="" >
                             </a>
                         @endif
-                        <div class="pr-footer w-75 mx-auto">
+                        <div class="pr-footer w-100 mx-auto">
                             <div class="pr-footer__info w-50">
                                 <h3 class="e-mini"> <a href="{{route('product',$product->id)}}">{{$product->name}}</a></h3>
 
