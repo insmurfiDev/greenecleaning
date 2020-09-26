@@ -120,7 +120,9 @@ class ProductCrudController extends CrudController
         $this->crud->addField([
             'name'=>'price',
             'label'=>'Price on the products list',
-            'type'=>'text',
+            'type'=>'number',
+            'prefix'=>'$',
+            'attributes' => ["step" => "any"],
             'wrapper'=>[
                 'class' => 'form-group col-md-3',
             ],
