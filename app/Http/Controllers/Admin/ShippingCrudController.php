@@ -58,7 +58,6 @@ class ShippingCrudController extends CrudController
 
         $this->crud->addColumn(['name'=>'sort','label'=>'Order','type'=>'text']);
         $this->crud->addColumn(['name'=>'active','label'=>'Active','type'=>'boolean']);
-
     }
 
     /**

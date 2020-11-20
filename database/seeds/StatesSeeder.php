@@ -65,7 +65,5 @@ class StatesSeeder extends Seeder
                 array('name' => 'Wisconsin', 'code' => 'WI'),
                 array('name' => 'Wyoming', 'code' => 'WY')
             ));
-
-        //
     }
 }

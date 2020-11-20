@@ -50,6 +50,10 @@ class PagesController extends Controller
         $content['block2']=Page::findBySlug('main-block-2');
         $content['block3']=Page::findBySlug('main-block-3');
         $content['block4']=Page::findBySlug('main-block-4');
+
+        $content['main-why-block1']=Page::findBySlug('main-block-why-1');
+        $content['main-why-block2']=Page::findBySlug('main-block-why-2');
+        $content['main-why-block3']=Page::findBySlug('main-block-why-3');
         $data['content']=$content;
 
         return view('home',$data);
@@ -156,6 +160,7 @@ class PagesController extends Controller
 
         return view('products',$data);
     }
+
 
     public function product($id)
     {

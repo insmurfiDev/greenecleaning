@@ -89,19 +89,29 @@
                 <div class="col-11 col-lg-4 mx-auto">
                     <div class="mx-lg-5">
                         <h4 class="e-mini top e-new">01</h4><img class="wow fadeInUp" data-wow-delay=".25s" src="{{asset('img/about/a1.png')}}" alt="">
-                        <p class="wow fadeInUp mt-4" data-wow-delay=".5s">Green Living is extremely impoftant to the health and safety of all of us. Natural resources that we enjoy are being used up. For ourselves and future"generations, we need to be good stewards of our planet. Recycling these natural resources will assure a supply for many years to come, It is also impoftant to guard the health of ourselvbs, our fellow man, our pets and wildlife whenever possible. </p>
+                        <p class="wow fadeInUp mt-4" data-wow-delay=".5s">
+                            {!! $content['main-why-block1']->content  ?? ''!!}
+
+                        </p>
                     </div>
                 </div>
                 <div class="col-11 col-lg-4 mx-auto col-middle">
                     <div class="mx-lg-5">
                         <h4 class="e-mini top e-yellow">02</h4><img class="wow fadeInUp" data-wow-delay=".5s" src="{{asset('img/about/a2.png')}}" alt="">
-                        <p class="wow fadeInUp mt-4" data-wow-delay=".75s">Using "natural" and renewable products to meet our needs assures us that we will not be exposed to toxic and harmful chemicals and fumes. </p>
+                        <p class="wow fadeInUp mt-4" data-wow-delay=".75s">
+                            {!! $content['main-why-block2']->content  ?? ''!!}
+
+
+                        </p>
                     </div>
                 </div>
                 <div class="col-11 col-lg-4 mx-auto">
                     <div class="mx-lg-5">
                         <h4 class="e-mini top e-new">03</h4><img class="wow fadeInUp" data-wow-delay=".75s" src="{{asset('img/about/a3.png')}}" alt="">
-                        <p class="wow fadeInUp mt-4" data-wow-delay="1s">Using natural cleaners that are non-toxic, biodegradable and 100% sustainable is a great way to contribute to everyone's good health and the health of our planet.</p>
+                        <p class="wow fadeInUp mt-4" data-wow-delay="1s">
+                            {!! $content['main-why-block3']->content  ?? ''!!}
+
+                        </p>
                     </div>
                 </div>
             </div>

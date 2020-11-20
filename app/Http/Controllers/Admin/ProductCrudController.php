@@ -188,7 +188,6 @@ class ProductCrudController extends CrudController
                 'mimes'         => 'image/*', //allowed mime types separated by comma. eg. image/*, application/*, etc
                 'filesize'      => 10, // maximum file size in MB
                 'entry'=>'properties',
-
             ]
         //'update'=>['images'=>['disk'=>'public']],
         );

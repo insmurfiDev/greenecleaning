@@ -21,7 +21,6 @@ class CreateOrdersTable extends Migration
             $table->string('lname')->nullable();
             $table->string('address')->nullable();
             $table->string('apt')->nullable();
-
             $table->string('fname_b')->nullable();
             $table->string('lname_b')->nullable();
             $table->string('address_b')->nullable();
