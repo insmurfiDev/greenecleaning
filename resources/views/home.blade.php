@@ -84,7 +84,7 @@
     </div>
     <div class="c-why py-5">
         <div class="container-fluid">
-            <h2 class="e-title e-title--part m-5 wow fadeInUp" data-wow-duration=".75s">Why Creen Living Important?</h2>
+            <h2 class="e-title e-title--part m-5 wow fadeInUp" data-wow-duration=".75s">Why Green Living Important?</h2>
             <div class="row">
                 <div class="col-11 col-lg-4 mx-auto">
                     <div class="mx-lg-5">
