@@ -66007,7 +66007,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Carousel */ "./resources/js/components/Carousel.js");
 
-__webpack_require__(/*! ../less/js/products */ "./resources/less/js/products.js"); //require('bootstrap-select');
+__webpack_require__(/*! ../less/js/products */ "./resources/less/js/products.js");
 
 /***/ }),
 
@@ -66340,7 +66340,7 @@ $('.aCartRemove').on('click', function (e) {
   e.preventDefault();
   var uid = $(this).data('uid');
   cartRemove(uid);
-  $(this).closest('.product').remove();
+  $(this).closest('.cartItem').remove();
 });
 
 function cartRemove(uid) {

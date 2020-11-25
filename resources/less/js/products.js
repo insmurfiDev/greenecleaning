@@ -203,7 +203,7 @@ $('.aCartRemove').on('click',function (e){
     e.preventDefault();
     var uid=$(this).data('uid');
     cartRemove(uid);
-    $(this).closest('.product').remove();
+    $(this).closest('.cartItem').remove();
 })
 
 function cartRemove(uid)
