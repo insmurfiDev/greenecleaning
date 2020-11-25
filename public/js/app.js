@@ -66267,8 +66267,6 @@ $('.btnCartAdd').on('click', function (e) {
     success: function success(response) {
       var data = response;
       var cart_data = $.parseJSON(data);
-      console.log(cart_data); //console.log(size(cart_data));
-
       var cnt = 0;
       var etotal = 0;
       location.reload();
@@ -66342,7 +66340,7 @@ $('.aCartRemove').on('click', function (e) {
   e.preventDefault();
   var uid = $(this).data('uid');
   cartRemove(uid);
-  $(this).closest('.cartItem').remove();
+  $(this).closest('.product').remove();
 });
 
 function cartRemove(uid) {

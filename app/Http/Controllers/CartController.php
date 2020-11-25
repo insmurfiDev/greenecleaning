@@ -88,15 +88,10 @@ class CartController extends Controller
 
     public function getCartQty(Request $request)
     {
-
-        //return Cart::getTotalQuantity();
     }
     public function getCartContent()
     {
-        /*
-        $ret=Cart::getContent();
-        return $ret;
-        */
+
     }
     public function cartPlus(Request $request)
     {

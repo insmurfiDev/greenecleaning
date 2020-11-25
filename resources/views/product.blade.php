@@ -24,15 +24,7 @@
                                 @endif
 
                             </div>
-                            <div class="col-11 col-lg-5 mx-auto c-product__item">
-                                <div class="prod-img h-100 d-flex align-items-center">
 
-                                    @if(!empty($product->images))
-                                    <img src="{{asset('storage/'.array_values($product->images)[0])}}" alt="">
-                                    @endif
-
-                                </div>
-                            </div>
                         </div>
                     </div>
 
