@@ -344,6 +344,7 @@ function updateShipping(val)
     $('.textShipping').html(val.toFixed(2));
     updateTotal();
 }
+
 function updateCTotal(total)
 {
     $('#inputSTotal').val(total);
