@@ -309,9 +309,13 @@ class CartController extends Controller
                     $order->save();
                     $data['orderno'] = $order->id;
                 }
-                return redirect($response['paypal_link']);
+                if (!empty($response['paypal_link'])) {
+                    return redirect($response['paypal_link']);
+                } else {
+                    return back()->with('error', $response['L_LONGMESSAGE0'] ?? 'Payment error')->withInput();
+                }
             } catch (\Exception $e) {
-                //return back()->with('error', $response->getMessage())->withInput();
+                return back()->with('error', 'Payment error')->withInput();
             }
         }
     }

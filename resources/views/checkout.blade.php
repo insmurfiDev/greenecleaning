@@ -36,13 +36,10 @@
                                        <div class="tab-pane fade show active px-lg-5" id="nav-card" role="tabpanel" aria-labelledby="nav-card-tab">
                                            <div class="c-form mt-3">
                                                <p class="e-bold mt-4">Credit card information</p>
-                                               <!--
-                                                                                               <input class="w-100 " type="text" placeholder="Name on the card">
-                                               -->
                                                @if (\Session::has('error'))
                                                    <div class="alert alert-danger">
                                                        <ul>
-                                                           <li>We could not process your payment. Please try another credit card.</li>
+                                                           <li>We could not process your payment.</li>
                                                            <li>{!! \Session::get('error') !!}</li>
                                                        </ul>
                                                    </div>
