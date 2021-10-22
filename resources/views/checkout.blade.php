@@ -39,7 +39,7 @@
                                                @if (\Session::has('error'))
                                                    <div class="alert alert-danger">
                                                        <ul>
-                                                           <li>We could not process your payment.</li>
+                                                           <li>We could not process your payment. Please try another credit card.</li>
                                                            <li>{!! \Session::get('error') !!}</li>
                                                        </ul>
                                                    </div>
@@ -60,7 +60,7 @@
                                                @if (\Session::has('error'))
                                                    <div class="alert alert-danger">
                                                        <ul>
-                                                           <li>We could not process your payment. Please try another credit card.</li>
+                                                           <li>We could not process your payment.</li>
                                                            <li>{!! \Session::get('error') !!}</li>
                                                        </ul>
                                                    </div>
