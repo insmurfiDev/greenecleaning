@@ -134,8 +134,6 @@ class CartController extends Controller
 
     public function cartRemove(Request $request)
     {
-        $x = $request;
-
         Cart::remove($request->item_uid);
 
         $ret['cart_etotal'] = Cart::getTotal();
@@ -303,7 +301,8 @@ class CartController extends Controller
 
             $cart['total'] = $request->total;
             try {
-                $response = $provider->setExpressCheckout($cart, false);
+                $response = $provider->setExpressCheckout($cart);
+                $response = $provider->setExpressCheckout($cart, true);
                 if (isset($response['TOKEN'])) {
                     $order->status = 1;
                     $order->transaction = $response->getData()['TRANSACTIONID'] ?? '';

@@ -81,8 +81,8 @@ class PagesController extends Controller
 
         $res=Mail::send('emails.contact', $data, function ($message) use ($data)
         {
-            //$message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-            $message->from('noreply@greene.com', 'noreply');
+            $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            //$message->from('noreply@greene.com', 'noreply');
             $message->replyTo($data['email'], $data['name']);
             $message->to(Config::get('settings.contact_email'), '')->subject('Contact us request');
         });
