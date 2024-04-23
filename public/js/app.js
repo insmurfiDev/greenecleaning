@@ -96,7 +96,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
+
 function _defineProperty(obj, key, value) {
+  key = Object(_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -107,7 +110,6 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-
   return obj;
 }
 
@@ -124,20 +126,17 @@ function _defineProperty(obj, key, value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
 function _extends() {
-  _extends = Object.assign || function (target) {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
-
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
-
     return target;
   };
-
   return _extends.apply(this, arguments);
 }
 
@@ -153,10 +152,100 @@ function _extends() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inheritsLoose; });
+/* harmony import */ var _setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js");
+
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
+  Object(_setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(subClass, superClass);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _setPrototypeOf; });
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+  return _setPrototypeOf(o, p);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return toPrimitive; });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+
+function toPrimitive(t, r) {
+  if ("object" != Object(_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != Object(_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return toPropertyKey; });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
+
+
+function toPropertyKey(t) {
+  var i = Object(_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
+  return "symbol" == Object(_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _typeof; });
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
 }
 
 /***/ }),
@@ -173,8 +262,7 @@ function _interopRequireDefault(obj) {
     "default": obj
   };
 }
-
-module.exports = _interopRequireDefault;
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -429,55 +517,104 @@ module.exports = exports['default'];
 /*!*******************************************************!*\
   !*** ./node_modules/aria-hidden/dist/es2015/index.js ***!
   \*******************************************************/
-/*! exports provided: hideOthers */
+/*! exports provided: hideOthers, inertOthers, supportsInert, suppressOthers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hideOthers", function() { return hideOthers; });
-var defaultParent = typeof document !== 'undefined' ? document.body : null;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inertOthers", function() { return inertOthers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "supportsInert", function() { return supportsInert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "suppressOthers", function() { return suppressOthers; });
+var getDefaultParent = function (originalTarget) {
+    if (typeof document === 'undefined') {
+        return null;
+    }
+    var sampleTarget = Array.isArray(originalTarget) ? originalTarget[0] : originalTarget;
+    return sampleTarget.ownerDocument.body;
+};
 var counterMap = new WeakMap();
 var uncontrolledNodes = new WeakMap();
 var markerMap = {};
 var lockCount = 0;
-var hideOthers = function (originalTarget, parentNode, markerName) {
-    if (parentNode === void 0) { parentNode = defaultParent; }
-    if (markerName === void 0) { markerName = "data-aria-hidden"; }
-    var targets = Array.isArray(originalTarget) ? originalTarget : [originalTarget];
+var unwrapHost = function (node) {
+    return node && (node.host || unwrapHost(node.parentNode));
+};
+var correctTargets = function (parent, targets) {
+    return targets
+        .map(function (target) {
+        if (parent.contains(target)) {
+            return target;
+        }
+        var correctedTarget = unwrapHost(target);
+        if (correctedTarget && parent.contains(correctedTarget)) {
+            return correctedTarget;
+        }
+        console.error('aria-hidden', target, 'in not contained inside', parent, '. Doing nothing');
+        return null;
+    })
+        .filter(function (x) { return Boolean(x); });
+};
+/**
+ * Marks everything except given node(or nodes) as aria-hidden
+ * @param {Element | Element[]} originalTarget - elements to keep on the page
+ * @param [parentNode] - top element, defaults to document.body
+ * @param {String} [markerName] - a special attribute to mark every node
+ * @param {String} [controlAttribute] - html Attribute to control
+ * @return {Undo} undo command
+ */
+var applyAttributeToOthers = function (originalTarget, parentNode, markerName, controlAttribute) {
+    var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
     if (!markerMap[markerName]) {
         markerMap[markerName] = new WeakMap();
     }
     var markerCounter = markerMap[markerName];
     var hiddenNodes = [];
+    var elementsToKeep = new Set();
+    var elementsToStop = new Set(targets);
+    var keep = function (el) {
+        if (!el || elementsToKeep.has(el)) {
+            return;
+        }
+        elementsToKeep.add(el);
+        keep(el.parentNode);
+    };
+    targets.forEach(keep);
     var deep = function (parent) {
-        if (!parent || targets.indexOf(parent) >= 0) {
+        if (!parent || elementsToStop.has(parent)) {
             return;
         }
         Array.prototype.forEach.call(parent.children, function (node) {
-            if (targets.some(function (target) { return node.contains(target); })) {
+            if (elementsToKeep.has(node)) {
                 deep(node);
             }
             else {
-                var attr = node.getAttribute('aria-hidden');
-                var alreadyHidden = attr !== null && attr !== 'false';
-                var counterValue = (counterMap.get(node) || 0) + 1;
-                var markerValue = (markerCounter.get(node) || 0) + 1;
-                counterMap.set(node, counterValue);
-                markerCounter.set(node, markerValue);
-                hiddenNodes.push(node);
-                if (counterValue === 1 && alreadyHidden) {
-                    uncontrolledNodes.set(node, true);
+                try {
+                    var attr = node.getAttribute(controlAttribute);
+                    var alreadyHidden = attr !== null && attr !== 'false';
+                    var counterValue = (counterMap.get(node) || 0) + 1;
+                    var markerValue = (markerCounter.get(node) || 0) + 1;
+                    counterMap.set(node, counterValue);
+                    markerCounter.set(node, markerValue);
+                    hiddenNodes.push(node);
+                    if (counterValue === 1 && alreadyHidden) {
+                        uncontrolledNodes.set(node, true);
+                    }
+                    if (markerValue === 1) {
+                        node.setAttribute(markerName, 'true');
+                    }
+                    if (!alreadyHidden) {
+                        node.setAttribute(controlAttribute, 'true');
+                    }
                 }
-                if (markerValue === 1) {
-                    node.setAttribute(markerName, 'true');
-                }
-                if (!alreadyHidden) {
-                    node.setAttribute('aria-hidden', 'true');
+                catch (e) {
+                    console.error('aria-hidden: cannot operate on ', node, e);
                 }
             }
         });
     };
     deep(parentNode);
+    elementsToKeep.clear();
     lockCount++;
     return function () {
         hiddenNodes.forEach(function (node) {
@@ -487,7 +624,7 @@ var hideOthers = function (originalTarget, parentNode, markerName) {
             markerCounter.set(node, markerValue);
             if (!counterValue) {
                 if (!uncontrolledNodes.has(node)) {
-                    node.removeAttribute('aria-hidden');
+                    node.removeAttribute(controlAttribute);
                 }
                 uncontrolledNodes.delete(node);
             }
@@ -497,12 +634,63 @@ var hideOthers = function (originalTarget, parentNode, markerName) {
         });
         lockCount--;
         if (!lockCount) {
+            // clear
             counterMap = new WeakMap();
             counterMap = new WeakMap();
             uncontrolledNodes = new WeakMap();
             markerMap = {};
         }
     };
+};
+/**
+ * Marks everything except given node(or nodes) as aria-hidden
+ * @param {Element | Element[]} originalTarget - elements to keep on the page
+ * @param [parentNode] - top element, defaults to document.body
+ * @param {String} [markerName] - a special attribute to mark every node
+ * @return {Undo} undo command
+ */
+var hideOthers = function (originalTarget, parentNode, markerName) {
+    if (markerName === void 0) { markerName = 'data-aria-hidden'; }
+    var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
+    var activeParentNode = parentNode || getDefaultParent(originalTarget);
+    if (!activeParentNode) {
+        return function () { return null; };
+    }
+    // we should not hide ariaLive elements - https://github.com/theKashey/aria-hidden/issues/10
+    targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll('[aria-live]')));
+    return applyAttributeToOthers(targets, activeParentNode, markerName, 'aria-hidden');
+};
+/**
+ * Marks everything except given node(or nodes) as inert
+ * @param {Element | Element[]} originalTarget - elements to keep on the page
+ * @param [parentNode] - top element, defaults to document.body
+ * @param {String} [markerName] - a special attribute to mark every node
+ * @return {Undo} undo command
+ */
+var inertOthers = function (originalTarget, parentNode, markerName) {
+    if (markerName === void 0) { markerName = 'data-inert-ed'; }
+    var activeParentNode = parentNode || getDefaultParent(originalTarget);
+    if (!activeParentNode) {
+        return function () { return null; };
+    }
+    return applyAttributeToOthers(originalTarget, activeParentNode, markerName, 'inert');
+};
+/**
+ * @returns if current browser supports inert
+ */
+var supportsInert = function () {
+    return typeof HTMLElement !== 'undefined' && HTMLElement.prototype.hasOwnProperty('inert');
+};
+/**
+ * Automatic function to "suppress" DOM elements - _hide_ or _inert_ in the best possible way
+ * @param {Element | Element[]} originalTarget - elements to keep on the page
+ * @param [parentNode] - top element, defaults to document.body
+ * @param {String} [markerName] - a special attribute to mark every node
+ * @return {Undo} undo command
+ */
+var suppressOthers = function (originalTarget, parentNode, markerName) {
+    if (markerName === void 0) { markerName = 'data-suppressed'; }
+    return (supportsInert() ? inertOthers : hideOthers)(originalTarget, parentNode, markerName);
 };
 
 
@@ -2788,11 +2976,37 @@ module.exports = warning;
 
 /***/ }),
 
+/***/ "./node_modules/focus-lock/dist/es2015/commands.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/commands.js ***!
+  \*********************************************************/
+/*! exports provided: focusOn */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusOn", function() { return focusOn; });
+var focusOn = function (target, focusOptions) {
+    if (!target) {
+        // not clear how, but is possible https://github.com/theKashey/focus-lock/issues/53
+        return;
+    }
+    if ('focus' in target) {
+        target.focus(focusOptions);
+    }
+    if ('contentWindow' in target && target.contentWindow) {
+        target.contentWindow.focus();
+    }
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/focus-lock/dist/es2015/constants.js":
 /*!**********************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/constants.js ***!
   \**********************************************************/
-/*! exports provided: FOCUS_GROUP, FOCUS_DISABLED, FOCUS_ALLOW, FOCUS_AUTO */
+/*! exports provided: FOCUS_GROUP, FOCUS_DISABLED, FOCUS_ALLOW, FOCUS_AUTO, FOCUS_NO_AUTOFOCUS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2801,10 +3015,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOCUS_DISABLED", function() { return FOCUS_DISABLED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOCUS_ALLOW", function() { return FOCUS_ALLOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOCUS_AUTO", function() { return FOCUS_AUTO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOCUS_NO_AUTOFOCUS", function() { return FOCUS_NO_AUTOFOCUS; });
+/**
+ * defines a focus group
+ */
 var FOCUS_GROUP = 'data-focus-lock';
+/**
+ * disables element discovery inside a group marked by key
+ */
 var FOCUS_DISABLED = 'data-focus-lock-disabled';
+/**
+ * allows uncontrolled focus within the marked area, effectively disabling focus lock for it's content
+ */
 var FOCUS_ALLOW = 'data-no-focus-lock';
+/**
+ * instructs autofocus engine to pick default autofocus inside a given node
+ * can be set on the element or container
+ */
 var FOCUS_AUTO = 'data-autofocus-inside';
+/**
+ * instructs autofocus to ignore elements within a given node
+ * can be set on the element or container
+ */
+var FOCUS_NO_AUTOFOCUS = 'data-no-autofocus';
+
 
 /***/ }),
 
@@ -2812,36 +3046,39 @@ var FOCUS_AUTO = 'data-autofocus-inside';
 /*!************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/focusInside.js ***!
   \************************************************************/
-/*! exports provided: default */
+/*! exports provided: focusInside */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_all_affected__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/all-affected */ "./node_modules/focus-lock/dist/es2015/utils/all-affected.js");
-/* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusInside", function() { return focusInside; });
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony import */ var _utils_all_affected__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/all-affected */ "./node_modules/focus-lock/dist/es2015/utils/all-affected.js");
+/* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+/* harmony import */ var _utils_getActiveElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/getActiveElement */ "./node_modules/focus-lock/dist/es2015/utils/getActiveElement.js");
 
 
 
-var focusInFrame = function focusInFrame(frame) {
-  return frame === document.activeElement;
+
+var focusInFrame = function (frame, activeElement) { return frame === activeElement; };
+var focusInsideIframe = function (topNode, activeElement) {
+    return Boolean(Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["toArray"])(topNode.querySelectorAll('iframe')).some(function (node) { return focusInFrame(node, activeElement); }));
+};
+/**
+ * @returns {Boolean} true, if the current focus is inside given node or nodes.
+ * Supports nodes hidden inside shadowDom
+ */
+var focusInside = function (topNode, activeElement) {
+    // const activeElement = document && getActiveElement();
+    if (activeElement === void 0) { activeElement = Object(_utils_getActiveElement__WEBPACK_IMPORTED_MODULE_3__["getActiveElement"])(Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["getFirst"])(topNode).ownerDocument); }
+    if (!activeElement || (activeElement.dataset && activeElement.dataset.focusGuard)) {
+        return false;
+    }
+    return Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_1__["getAllAffectedNodes"])(topNode).some(function (node) {
+        return Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["contains"])(node, activeElement) || focusInsideIframe(node, activeElement);
+    });
 };
 
-var focusInsideIframe = function focusInsideIframe(topNode) {
-  return !!Object(_utils_array__WEBPACK_IMPORTED_MODULE_1__["arrayFind"])(Object(_utils_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(topNode.querySelectorAll('iframe')), focusInFrame);
-};
-
-var focusInside = function focusInside(topNode) {
-  var activeElement = document && document.activeElement;
-
-  if (!activeElement || activeElement.dataset && activeElement.dataset.focusGuard) {
-    return false;
-  }
-  return Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_0__["default"])(topNode).reduce(function (result, node) {
-    return result || node.contains(activeElement) || focusInsideIframe(node);
-  }, false);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (focusInside);
 
 /***/ }),
 
@@ -2849,239 +3086,179 @@ var focusInside = function focusInside(topNode) {
 /*!**************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/focusIsHidden.js ***!
   \**************************************************************/
-/*! exports provided: default */
+/*! exports provided: focusIsHidden */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusIsHidden", function() { return focusIsHidden; });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+/* harmony import */ var _utils_getActiveElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/getActiveElement */ "./node_modules/focus-lock/dist/es2015/utils/getActiveElement.js");
 
 
 
-var focusIsHidden = function focusIsHidden() {
-  return document && Object(_utils_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(document.querySelectorAll('[' + _constants__WEBPACK_IMPORTED_MODULE_1__["FOCUS_ALLOW"] + ']')).some(function (node) {
-    return node.contains(document.activeElement);
-  });
+
+/**
+ * checks if focus is hidden FROM the focus-lock
+ * ie contained inside a node focus-lock shall ignore
+ *
+ * This is a utility function coupled with {@link FOCUS_ALLOW} constant
+ *
+ * @returns {boolean} focus is currently is in "allow" area
+ */
+var focusIsHidden = function (inDocument) {
+    if (inDocument === void 0) { inDocument = document; }
+    var activeElement = Object(_utils_getActiveElement__WEBPACK_IMPORTED_MODULE_3__["getActiveElement"])(inDocument);
+    if (!activeElement) {
+        return false;
+    }
+    // this does not support setting FOCUS_ALLOW within shadow dom
+    return Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["toArray"])(inDocument.querySelectorAll("[".concat(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_ALLOW"], "]"))).some(function (node) { return Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["contains"])(node, activeElement); });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (focusIsHidden);
 
 /***/ }),
 
-/***/ "./node_modules/focus-lock/dist/es2015/focusMerge.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/focus-lock/dist/es2015/focusMerge.js ***!
-  \***********************************************************/
-/*! exports provided: NEW_FOCUS, newFocus, getFocusabledIn, default */
+/***/ "./node_modules/focus-lock/dist/es2015/focusSolver.js":
+/*!************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/focusSolver.js ***!
+  \************************************************************/
+/*! exports provided: focusSolver */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_FOCUS", function() { return NEW_FOCUS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newFocus", function() { return newFocus; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFocusabledIn", function() { return getFocusabledIn; });
-/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
-/* harmony import */ var _utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/firstFocus */ "./node_modules/focus-lock/dist/es2015/utils/firstFocus.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusSolver", function() { return focusSolver; });
+/* harmony import */ var _solver__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./solver */ "./node_modules/focus-lock/dist/es2015/solver.js");
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
 /* harmony import */ var _utils_all_affected__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/all-affected */ "./node_modules/focus-lock/dist/es2015/utils/all-affected.js");
 /* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
-/* harmony import */ var _utils_correctFocus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/correctFocus */ "./node_modules/focus-lock/dist/es2015/utils/correctFocus.js");
+/* harmony import */ var _utils_auto_focus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/auto-focus */ "./node_modules/focus-lock/dist/es2015/utils/auto-focus.js");
+/* harmony import */ var _utils_getActiveElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/getActiveElement */ "./node_modules/focus-lock/dist/es2015/utils/getActiveElement.js");
+/* harmony import */ var _utils_is__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+/* harmony import */ var _utils_parenting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/parenting */ "./node_modules/focus-lock/dist/es2015/utils/parenting.js");
 
 
 
 
 
 
-var findAutoFocused = function findAutoFocused(autoFocusables) {
-  return function (node) {
-    return !!node.autofocus || node.dataset && !!node.dataset.autofocus || autoFocusables.indexOf(node) >= 0;
-  };
+
+
+var reorderNodes = function (srcNodes, dstNodes) {
+    var remap = new Map();
+    // no Set(dstNodes) for IE11 :(
+    dstNodes.forEach(function (entity) { return remap.set(entity.node, entity); });
+    // remap to dstNodes
+    return srcNodes.map(function (node) { return remap.get(node); }).filter(_utils_is__WEBPACK_IMPORTED_MODULE_6__["isDefined"]);
 };
-
-var isGuard = function isGuard(node) {
-  return node && node.dataset && node.dataset.focusGuard;
-};
-var notAGuard = function notAGuard(node) {
-  return !isGuard(node);
-};
-
-var NEW_FOCUS = 'NEW_FOCUS';
-
-var newFocus = function newFocus(innerNodes, outerNodes, activeElement, lastNode) {
-  var cnt = innerNodes.length;
-  var firstFocus = innerNodes[0];
-  var lastFocus = innerNodes[cnt - 1];
-  var isOnGuard = isGuard(activeElement);
-
-  // focus is inside
-  if (innerNodes.indexOf(activeElement) >= 0) {
-    return undefined;
-  }
-
-  var activeIndex = outerNodes.indexOf(activeElement);
-  var lastIndex = outerNodes.indexOf(lastNode || activeIndex);
-  var lastNodeInside = innerNodes.indexOf(lastNode);
-  var indexDiff = activeIndex - lastIndex;
-  var firstNodeIndex = outerNodes.indexOf(firstFocus);
-  var lastNodeIndex = outerNodes.indexOf(lastFocus);
-
-  var correctedNodes = Object(_utils_correctFocus__WEBPACK_IMPORTED_MODULE_4__["correctNodes"])(outerNodes);
-  var correctedIndexDiff = correctedNodes.indexOf(activeElement) - correctedNodes.indexOf(lastNode || activeIndex);
-
-  var returnFirstNode = Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFocusable"])(innerNodes, 0);
-  var returnLastNode = Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFocusable"])(innerNodes, cnt - 1);
-
-  // new focus
-  if (activeIndex === -1 || lastNodeInside === -1) {
-    return NEW_FOCUS;
-  }
-  // old focus
-  if (!indexDiff && lastNodeInside >= 0) {
-    return lastNodeInside;
-  }
-  // first element
-  if (activeIndex <= firstNodeIndex && isOnGuard && Math.abs(indexDiff) > 1) {
-    return returnLastNode;
-  }
-  // last element
-  if (activeIndex >= lastNodeIndex && isOnGuard && Math.abs(indexDiff) > 1) {
-    return returnFirstNode;
-  }
-  // jump out, but not on the guard
-  if (indexDiff && Math.abs(correctedIndexDiff) > 1) {
-    return lastNodeInside;
-  }
-  // focus above lock
-  if (activeIndex <= firstNodeIndex) {
-    return returnLastNode;
-  }
-  // focus below lock
-  if (activeIndex > lastNodeIndex) {
-    return returnFirstNode;
-  }
-  // index is inside tab order, but outside Lock
-  if (indexDiff) {
-    if (Math.abs(indexDiff) > 1) {
-      return lastNodeInside;
-    }
-    return (cnt + lastNodeInside + indexDiff) % cnt;
-  }
-  // do nothing
-  return undefined;
-};
-
-var getTopCommonParent = function getTopCommonParent(baseActiveElement, leftEntry, rightEntries) {
-  var activeElements = Object(_utils_array__WEBPACK_IMPORTED_MODULE_3__["asArray"])(baseActiveElement);
-  var leftEntries = Object(_utils_array__WEBPACK_IMPORTED_MODULE_3__["asArray"])(leftEntry);
-  var activeElement = activeElements[0];
-  var topCommon = null;
-  leftEntries.filter(Boolean).forEach(function (entry) {
-    topCommon = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getCommonParent"])(topCommon || entry, entry) || topCommon;
-    rightEntries.filter(Boolean).forEach(function (subEntry) {
-      var common = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getCommonParent"])(activeElement, subEntry);
-      if (common) {
-        if (!topCommon || common.contains(topCommon)) {
-          topCommon = common;
-        } else {
-          topCommon = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getCommonParent"])(common, topCommon);
-        }
-      }
+/**
+ * contains the main logic of the `focus-lock` package.
+ *
+ * ! you probably dont need this function !
+ *
+ * given top node(s) and the last active element returns the element to be focused next
+ * @returns element which should be focused to move focus inside
+ * @param topNode
+ * @param lastNode
+ */
+var focusSolver = function (topNode, lastNode) {
+    var activeElement = Object(_utils_getActiveElement__WEBPACK_IMPORTED_MODULE_5__["getActiveElement"])(Object(_utils_array__WEBPACK_IMPORTED_MODULE_3__["asArray"])(topNode).length > 0 ? document : Object(_utils_array__WEBPACK_IMPORTED_MODULE_3__["getFirst"])(topNode).ownerDocument);
+    var entries = Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_2__["getAllAffectedNodes"])(topNode).filter(_utils_is__WEBPACK_IMPORTED_MODULE_6__["isNotAGuard"]);
+    var commonParent = Object(_utils_parenting__WEBPACK_IMPORTED_MODULE_7__["getTopCommonParent"])(activeElement || topNode, topNode, entries);
+    var visibilityCache = new Map();
+    var anyFocusable = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getFocusableNodes"])(entries, visibilityCache);
+    var innerElements = anyFocusable.filter(function (_a) {
+        var node = _a.node;
+        return Object(_utils_is__WEBPACK_IMPORTED_MODULE_6__["isNotAGuard"])(node);
     });
-  });
-  return topCommon;
-};
-
-var allParentAutofocusables = function allParentAutofocusables(entries) {
-  return entries.reduce(function (acc, node) {
-    return acc.concat(Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["parentAutofocusables"])(node));
-  }, []);
-};
-
-var reorderNodes = function reorderNodes(srcNodes, dstNodes) {
-  var remap = new Map();
-  // no Set(dstNodes) for IE11 :(
-  dstNodes.forEach(function (entity) {
-    return remap.set(entity.node, entity);
-  });
-  // remap to dstNodes
-  return srcNodes.map(function (node) {
-    return remap.get(node);
-  }).filter(Boolean);
-};
-
-var getFocusabledIn = function getFocusabledIn(topNode) {
-  var entries = Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_2__["default"])(topNode).filter(notAGuard);
-  var commonParent = getTopCommonParent(topNode, topNode, entries);
-  var outerNodes = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getTabbableNodes"])([commonParent], true);
-  var innerElements = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getTabbableNodes"])(entries).filter(function (_ref) {
-    var node = _ref.node;
-    return notAGuard(node);
-  }).map(function (_ref2) {
-    var node = _ref2.node;
-    return node;
-  });
-
-  return outerNodes.map(function (_ref3) {
-    var node = _ref3.node,
-        index = _ref3.index;
-    return {
-      node: node,
-      index: index,
-      lockItem: innerElements.indexOf(node) >= 0,
-      guard: isGuard(node)
-    };
-  });
-};
-
-var getFocusMerge = function getFocusMerge(topNode, lastNode) {
-  var activeElement = document && document.activeElement;
-  var entries = Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_2__["default"])(topNode).filter(notAGuard);
-
-  var commonParent = getTopCommonParent(activeElement || topNode, topNode, entries);
-
-  var anyFocusable = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getAllTabbableNodes"])(entries);
-  var innerElements = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getTabbableNodes"])(entries).filter(function (_ref4) {
-    var node = _ref4.node;
-    return notAGuard(node);
-  });
-
-  if (!innerElements[0]) {
-    innerElements = anyFocusable;
     if (!innerElements[0]) {
-      return undefined;
+        return undefined;
     }
-  }
-
-  var outerNodes = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getAllTabbableNodes"])([commonParent]).map(function (_ref5) {
-    var node = _ref5.node;
-    return node;
-  });
-  var orderedInnerElements = reorderNodes(outerNodes, innerElements);
-  var innerNodes = orderedInnerElements.map(function (_ref6) {
-    var node = _ref6.node;
-    return node;
-  });
-
-  var newId = newFocus(innerNodes, outerNodes, activeElement, lastNode);
-
-  if (newId === "NEW_FOCUS") {
-    var autoFocusable = anyFocusable.map(function (_ref7) {
-      var node = _ref7.node;
-      return node;
-    }).filter(findAutoFocused(allParentAutofocusables(entries)));
-
-    return {
-      node: autoFocusable && autoFocusable.length ? Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["default"])(autoFocusable) : Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["default"])(innerNodes)
-    };
-  }
-
-  if (newId === undefined) {
-    return newId;
-  }
-  return orderedInnerElements[newId];
+    var outerNodes = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getFocusableNodes"])([commonParent], visibilityCache).map(function (_a) {
+        var node = _a.node;
+        return node;
+    });
+    var orderedInnerElements = reorderNodes(outerNodes, innerElements);
+    // collect inner focusable and separately tabbables
+    var innerFocusables = orderedInnerElements.map(function (_a) {
+        var node = _a.node;
+        return node;
+    });
+    var innerTabbable = orderedInnerElements.filter(function (_a) {
+        var tabIndex = _a.tabIndex;
+        return tabIndex >= 0;
+    }).map(function (_a) {
+        var node = _a.node;
+        return node;
+    });
+    var newId = Object(_solver__WEBPACK_IMPORTED_MODULE_0__["newFocus"])(innerFocusables, innerTabbable, outerNodes, activeElement, lastNode);
+    if (newId === _solver__WEBPACK_IMPORTED_MODULE_0__["NEW_FOCUS"]) {
+        var focusNode = 
+        // first try only tabbable, and the fallback to all focusable, as long as at least one element should be picked for focus
+        Object(_utils_auto_focus__WEBPACK_IMPORTED_MODULE_4__["pickAutofocus"])(anyFocusable, innerTabbable, Object(_utils_parenting__WEBPACK_IMPORTED_MODULE_7__["allParentAutofocusables"])(entries, visibilityCache)) ||
+            Object(_utils_auto_focus__WEBPACK_IMPORTED_MODULE_4__["pickAutofocus"])(anyFocusable, innerFocusables, Object(_utils_parenting__WEBPACK_IMPORTED_MODULE_7__["allParentAutofocusables"])(entries, visibilityCache));
+        if (focusNode) {
+            return { node: focusNode };
+        }
+        else {
+            console.warn('focus-lock: cannot find any node to move focus into');
+            return undefined;
+        }
+    }
+    if (newId === undefined) {
+        return newId;
+    }
+    return orderedInnerElements[newId];
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (getFocusMerge);
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/focusables.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/focusables.js ***!
+  \***********************************************************/
+/*! exports provided: expandFocusableNodes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "expandFocusableNodes", function() { return expandFocusableNodes; });
+/* harmony import */ var _utils_all_affected__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/all-affected */ "./node_modules/focus-lock/dist/es2015/utils/all-affected.js");
+/* harmony import */ var _utils_is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+/* harmony import */ var _utils_parenting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/parenting */ "./node_modules/focus-lock/dist/es2015/utils/parenting.js");
+/* harmony import */ var _utils_tabOrder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/tabOrder */ "./node_modules/focus-lock/dist/es2015/utils/tabOrder.js");
+/* harmony import */ var _utils_tabUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/tabUtils */ "./node_modules/focus-lock/dist/es2015/utils/tabUtils.js");
+
+
+
+
+
+/**
+ * traverses all related nodes (including groups) returning a list of all nodes(outer and internal) with meta information
+ * This is low-level API!
+ * @returns list of focusable elements inside a given top(!) node.
+ * @see {@link getFocusableNodes} providing a simpler API
+ */
+var expandFocusableNodes = function (topNode) {
+    var entries = Object(_utils_all_affected__WEBPACK_IMPORTED_MODULE_0__["getAllAffectedNodes"])(topNode).filter(_utils_is__WEBPACK_IMPORTED_MODULE_1__["isNotAGuard"]);
+    var commonParent = Object(_utils_parenting__WEBPACK_IMPORTED_MODULE_2__["getTopCommonParent"])(topNode, topNode, entries);
+    var outerNodes = Object(_utils_tabOrder__WEBPACK_IMPORTED_MODULE_3__["orderByTabIndex"])(Object(_utils_tabUtils__WEBPACK_IMPORTED_MODULE_4__["getFocusables"])([commonParent], true), true, true);
+    var innerElements = Object(_utils_tabUtils__WEBPACK_IMPORTED_MODULE_4__["getFocusables"])(entries, false);
+    return outerNodes.map(function (_a) {
+        var node = _a.node, index = _a.index;
+        return ({
+            node: node,
+            index: index,
+            lockItem: innerElements.indexOf(node) >= 0,
+            guard: Object(_utils_is__WEBPACK_IMPORTED_MODULE_1__["isGuard"])(node),
+        });
+    });
+};
+
 
 /***/ }),
 
@@ -3089,30 +3266,46 @@ var getFocusMerge = function getFocusMerge(topNode, lastNode) {
 /*!******************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/index.js ***!
   \******************************************************/
-/*! exports provided: tabHook, focusInside, focusIsHidden, focusMerge, getFocusabledIn, constants, getAllAffectedNodes, default */
+/*! exports provided: constants, focusInside, focusIsHidden, moveFocusInside, focusSolver, expandFocusableNodes, getFocusableNodes, getTabbableNodes, focusNextElement, focusPrevElement, focusFirstElement, focusLastElement, getRelativeFocusable, captureFocusRestore, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tabHook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabHook */ "./node_modules/focus-lock/dist/es2015/tabHook.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "tabHook", function() { return _tabHook__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "constants", function() { return constants; });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
+/* harmony import */ var _focusInside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./focusInside */ "./node_modules/focus-lock/dist/es2015/focusInside.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusInside", function() { return _focusInside__WEBPACK_IMPORTED_MODULE_1__["focusInside"]; });
 
-/* harmony import */ var _focusMerge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./focusMerge */ "./node_modules/focus-lock/dist/es2015/focusMerge.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusMerge", function() { return _focusMerge__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony import */ var _focusIsHidden__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./focusIsHidden */ "./node_modules/focus-lock/dist/es2015/focusIsHidden.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusIsHidden", function() { return _focusIsHidden__WEBPACK_IMPORTED_MODULE_2__["focusIsHidden"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getFocusabledIn", function() { return _focusMerge__WEBPACK_IMPORTED_MODULE_1__["getFocusabledIn"]; });
+/* harmony import */ var _focusSolver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./focusSolver */ "./node_modules/focus-lock/dist/es2015/focusSolver.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusSolver", function() { return _focusSolver__WEBPACK_IMPORTED_MODULE_3__["focusSolver"]; });
 
-/* harmony import */ var _focusInside__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./focusInside */ "./node_modules/focus-lock/dist/es2015/focusInside.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusInside", function() { return _focusInside__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+/* harmony import */ var _focusables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./focusables */ "./node_modules/focus-lock/dist/es2015/focusables.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "expandFocusableNodes", function() { return _focusables__WEBPACK_IMPORTED_MODULE_4__["expandFocusableNodes"]; });
 
-/* harmony import */ var _focusIsHidden__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./focusIsHidden */ "./node_modules/focus-lock/dist/es2015/focusIsHidden.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusIsHidden", function() { return _focusIsHidden__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+/* harmony import */ var _moveFocusInside__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./moveFocusInside */ "./node_modules/focus-lock/dist/es2015/moveFocusInside.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "moveFocusInside", function() { return _moveFocusInside__WEBPACK_IMPORTED_MODULE_5__["moveFocusInside"]; });
 
-/* harmony import */ var _setFocus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./setFocus */ "./node_modules/focus-lock/dist/es2015/setFocus.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "constants", function() { return _constants__WEBPACK_IMPORTED_MODULE_5__; });
-/* harmony import */ var _utils_all_affected__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/all-affected */ "./node_modules/focus-lock/dist/es2015/utils/all-affected.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getAllAffectedNodes", function() { return _utils_all_affected__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+/* harmony import */ var _return_focus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./return-focus */ "./node_modules/focus-lock/dist/es2015/return-focus.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "captureFocusRestore", function() { return _return_focus__WEBPACK_IMPORTED_MODULE_6__["captureFocusRestore"]; });
+
+/* harmony import */ var _sibling__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sibling */ "./node_modules/focus-lock/dist/es2015/sibling.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusNextElement", function() { return _sibling__WEBPACK_IMPORTED_MODULE_7__["focusNextElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusPrevElement", function() { return _sibling__WEBPACK_IMPORTED_MODULE_7__["focusPrevElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusFirstElement", function() { return _sibling__WEBPACK_IMPORTED_MODULE_7__["focusFirstElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "focusLastElement", function() { return _sibling__WEBPACK_IMPORTED_MODULE_7__["focusLastElement"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRelativeFocusable", function() { return _sibling__WEBPACK_IMPORTED_MODULE_7__["getRelativeFocusable"]; });
+
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getFocusableNodes", function() { return _utils_DOMutils__WEBPACK_IMPORTED_MODULE_8__["getFocusableNodes"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getTabbableNodes", function() { return _utils_DOMutils__WEBPACK_IMPORTED_MODULE_8__["getTabbableNodes"]; });
 
 
 
@@ -3123,72 +3316,420 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/**
+ * magic symbols to control focus behavior from DOM
+ * see description of every particular one
+ */
+var constants = _constants__WEBPACK_IMPORTED_MODULE_0__;
 
-/* harmony default export */ __webpack_exports__["default"] = (_setFocus__WEBPACK_IMPORTED_MODULE_4__["default"]);
+/**
+ * @deprecated - please use {@link moveFocusInside} named export
+ */
+var deprecated_default_moveFocusInside = _moveFocusInside__WEBPACK_IMPORTED_MODULE_5__["moveFocusInside"];
+/* harmony default export */ __webpack_exports__["default"] = (deprecated_default_moveFocusInside);
+//
+
 
 /***/ }),
 
-/***/ "./node_modules/focus-lock/dist/es2015/setFocus.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/focus-lock/dist/es2015/setFocus.js ***!
-  \*********************************************************/
-/*! exports provided: focusOn, default */
+/***/ "./node_modules/focus-lock/dist/es2015/moveFocusInside.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/moveFocusInside.js ***!
+  \****************************************************************/
+/*! exports provided: moveFocusInside */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusOn", function() { return focusOn; });
-/* harmony import */ var _focusMerge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./focusMerge */ "./node_modules/focus-lock/dist/es2015/focusMerge.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moveFocusInside", function() { return moveFocusInside; });
+/* harmony import */ var _commands__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./commands */ "./node_modules/focus-lock/dist/es2015/commands.js");
+/* harmony import */ var _focusSolver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./focusSolver */ "./node_modules/focus-lock/dist/es2015/focusSolver.js");
 
-
-var focusOn = function focusOn(target) {
-  target.focus();
-  if (target.contentWindow) {
-    target.contentWindow.focus();
-  }
-};
 
 var guardCount = 0;
 var lockDisabled = false;
-
-/* harmony default export */ __webpack_exports__["default"] = (function (topNode, lastNode) {
-  var focusable = Object(_focusMerge__WEBPACK_IMPORTED_MODULE_0__["default"])(topNode, lastNode);
-
-  if (lockDisabled) {
-    return;
-  }
-
-  if (focusable) {
-    if (guardCount > 2) {
-      // eslint-disable-next-line no-console
-      console.error('FocusLock: focus-fighting detected. Only one focus management system could be active. ' + 'See https://github.com/theKashey/focus-lock/#focus-fighting');
-      lockDisabled = true;
-      setTimeout(function () {
-        lockDisabled = false;
-      }, 1);
-      return;
+/**
+ * The main functionality of the focus-lock package
+ *
+ * Contains focus at a given node.
+ * The last focused element will help to determine which element(first or last) should be focused.
+ * The found element will be focused.
+ *
+ * This is one time action (move), not a persistent focus-lock
+ *
+ * HTML markers (see {@link import('./constants').FOCUS_AUTO} constants) can control autofocus
+ * @see {@link focusSolver} for the same functionality without autofocus
+ */
+var moveFocusInside = function (topNode, lastNode, options) {
+    if (options === void 0) { options = {}; }
+    var focusable = Object(_focusSolver__WEBPACK_IMPORTED_MODULE_1__["focusSolver"])(topNode, lastNode);
+    // global local side effect to countain recursive lock activation and resolve focus-fighting
+    if (lockDisabled) {
+        return;
     }
-    guardCount++;
-    focusOn(focusable.node);
-    guardCount--;
-  }
-});
+    if (focusable) {
+        /** +FOCUS-FIGHTING prevention **/
+        if (guardCount > 2) {
+            // we have recursive entered back the lock activation
+            console.error('FocusLock: focus-fighting detected. Only one focus management system could be active. ' +
+                'See https://github.com/theKashey/focus-lock/#focus-fighting');
+            lockDisabled = true;
+            setTimeout(function () {
+                lockDisabled = false;
+            }, 1);
+            return;
+        }
+        guardCount++;
+        Object(_commands__WEBPACK_IMPORTED_MODULE_0__["focusOn"])(focusable.node, options.focusOptions);
+        guardCount--;
+    }
+};
+
 
 /***/ }),
 
-/***/ "./node_modules/focus-lock/dist/es2015/tabHook.js":
-/*!********************************************************!*\
-  !*** ./node_modules/focus-lock/dist/es2015/tabHook.js ***!
-  \********************************************************/
-/*! exports provided: default */
+/***/ "./node_modules/focus-lock/dist/es2015/return-focus.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/return-focus.js ***!
+  \*************************************************************/
+/*! exports provided: recordElementLocation, captureFocusRestore */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  attach: function attach() {},
-  detach: function detach() {}
-});
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recordElementLocation", function() { return recordElementLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "captureFocusRestore", function() { return captureFocusRestore; });
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+
+function weakRef(value) {
+    if (!value)
+        return null;
+    // #68 Safari 14.1 dont have it yet
+    // FIXME: remove in 2025
+    if (typeof WeakRef === 'undefined') {
+        return function () { return value || null; };
+    }
+    var w = value ? new WeakRef(value) : null;
+    return function () { return (w === null || w === void 0 ? void 0 : w.deref()) || null; };
+}
+var recordElementLocation = function (element) {
+    if (!element) {
+        return null;
+    }
+    var stack = [];
+    var currentElement = element;
+    while (currentElement && currentElement !== document.body) {
+        stack.push({
+            current: weakRef(currentElement),
+            parent: weakRef(currentElement.parentElement),
+            left: weakRef(currentElement.previousElementSibling),
+            right: weakRef(currentElement.nextElementSibling),
+        });
+        currentElement = currentElement.parentElement;
+    }
+    return {
+        element: weakRef(element),
+        stack: stack,
+        ownerDocument: element.ownerDocument,
+    };
+};
+var restoreFocusTo = function (location) {
+    var _a, _b, _c, _d, _e;
+    if (!location) {
+        return undefined;
+    }
+    var stack = location.stack, ownerDocument = location.ownerDocument;
+    var visibilityCache = new Map();
+    for (var _i = 0, stack_1 = stack; _i < stack_1.length; _i++) {
+        var line = stack_1[_i];
+        var parent_1 = (_a = line.parent) === null || _a === void 0 ? void 0 : _a.call(line);
+        // is it still here?
+        if (parent_1 && ownerDocument.contains(parent_1)) {
+            var left = (_b = line.left) === null || _b === void 0 ? void 0 : _b.call(line);
+            var savedCurrent = line.current();
+            var current = parent_1.contains(savedCurrent) ? savedCurrent : undefined;
+            var right = (_c = line.right) === null || _c === void 0 ? void 0 : _c.call(line);
+            var focusables = Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_0__["getTabbableNodes"])([parent_1], visibilityCache);
+            var aim = 
+            // that is element itself
+            (_e = (_d = current !== null && current !== void 0 ? current : 
+            // or something in it's place
+            left === null || left === void 0 ? void 0 : left.nextElementSibling) !== null && _d !== void 0 ? _d : 
+            // or somebody to the right, still close enough
+            right) !== null && _e !== void 0 ? _e : 
+            // or somebody to the left, something?
+            left;
+            while (aim) {
+                for (var _f = 0, focusables_1 = focusables; _f < focusables_1.length; _f++) {
+                    var focusable = focusables_1[_f];
+                    if (aim === null || aim === void 0 ? void 0 : aim.contains(focusable.node)) {
+                        return focusable.node;
+                    }
+                }
+                aim = aim.nextElementSibling;
+            }
+            if (focusables.length) {
+                // if parent contains a focusable - move there
+                return focusables[0].node;
+            }
+        }
+    }
+    // nothing matched
+    return undefined;
+};
+/**
+ * Captures the current focused element to restore focus as close as possible in the future
+ * Handles situations where the focused element is removed from the DOM or no longer focusable
+ * moving focus to the closest focusable element
+ * @param targetElement - element where focus should be restored
+ * @returns a function returning a new element to focus
+ */
+var captureFocusRestore = function (targetElement) {
+    var location = recordElementLocation(targetElement);
+    return function () {
+        return restoreFocusTo(location);
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/sibling.js":
+/*!********************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/sibling.js ***!
+  \********************************************************/
+/*! exports provided: getRelativeFocusable, focusNextElement, focusPrevElement, focusFirstElement, focusLastElement */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelativeFocusable", function() { return getRelativeFocusable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusNextElement", function() { return focusNextElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusPrevElement", function() { return focusPrevElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusFirstElement", function() { return focusFirstElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusLastElement", function() { return focusLastElement; });
+/* harmony import */ var _commands__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./commands */ "./node_modules/focus-lock/dist/es2015/commands.js");
+/* harmony import */ var _utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony import */ var _utils_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+
+
+
+/**
+ * for a given `element` in a given `scope` returns focusable siblings
+ * @param element - base element
+ * @param scope - common parent. Can be document, but better to narrow it down for performance reasons
+ * @returns {prev,next} - references to a focusable element before and after
+ * @returns undefined - if operation is not applicable
+ */
+var getRelativeFocusable = function (element, scope, useTabbables) {
+    if (!element || !scope) {
+        console.error('no element or scope given');
+        return {};
+    }
+    var shards = Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["asArray"])(scope);
+    if (shards.every(function (shard) { return !Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["contains"])(shard, element); })) {
+        console.error('Active element is not contained in the scope');
+        return {};
+    }
+    var focusables = useTabbables
+        ? Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getTabbableNodes"])(shards, new Map())
+        : Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getFocusableNodes"])(shards, new Map());
+    var current = focusables.findIndex(function (_a) {
+        var node = _a.node;
+        return node === element;
+    });
+    if (current === -1) {
+        // an edge case, when anchor element is not found
+        return undefined;
+    }
+    return {
+        prev: focusables[current - 1],
+        next: focusables[current + 1],
+        first: focusables[0],
+        last: focusables[focusables.length - 1],
+    };
+};
+var getBoundary = function (shards, useTabbables) {
+    var set = useTabbables
+        ? Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getTabbableNodes"])(Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["asArray"])(shards), new Map())
+        : Object(_utils_DOMutils__WEBPACK_IMPORTED_MODULE_1__["getFocusableNodes"])(Object(_utils_array__WEBPACK_IMPORTED_MODULE_2__["asArray"])(shards), new Map());
+    return {
+        first: set[0],
+        last: set[set.length - 1],
+    };
+};
+var defaultOptions = function (options) {
+    return Object.assign({
+        scope: document.body,
+        cycle: true,
+        onlyTabbable: true,
+    }, options);
+};
+var moveFocus = function (fromElement, options, cb) {
+    if (options === void 0) { options = {}; }
+    var newOptions = defaultOptions(options);
+    var solution = getRelativeFocusable(fromElement, newOptions.scope, newOptions.onlyTabbable);
+    if (!solution) {
+        return;
+    }
+    var target = cb(solution, newOptions.cycle);
+    if (target) {
+        Object(_commands__WEBPACK_IMPORTED_MODULE_0__["focusOn"])(target.node, newOptions.focusOptions);
+    }
+};
+/**
+ * focuses next element in the tab-order
+ * @param fromElement - common parent to scope active element search or tab cycle order
+ * @param {FocusNextOptions} [options] - focus options
+ */
+var focusNextElement = function (fromElement, options) {
+    if (options === void 0) { options = {}; }
+    moveFocus(fromElement, options, function (_a, cycle) {
+        var next = _a.next, first = _a.first;
+        return next || (cycle && first);
+    });
+};
+/**
+ * focuses prev element in the tab order
+ * @param fromElement - common parent to scope active element search or tab cycle order
+ * @param {FocusNextOptions} [options] - focus options
+ */
+var focusPrevElement = function (fromElement, options) {
+    if (options === void 0) { options = {}; }
+    moveFocus(fromElement, options, function (_a, cycle) {
+        var prev = _a.prev, last = _a.last;
+        return prev || (cycle && last);
+    });
+};
+var pickBoundary = function (scope, options, what) {
+    var _a;
+    var boundary = getBoundary(scope, (_a = options.onlyTabbable) !== null && _a !== void 0 ? _a : true);
+    var node = boundary[what];
+    if (node) {
+        Object(_commands__WEBPACK_IMPORTED_MODULE_0__["focusOn"])(node.node, options.focusOptions);
+    }
+};
+/**
+ * focuses first element in the tab-order
+ * @param {FocusNextOptions} options - focus options
+ */
+var focusFirstElement = function (scope, options) {
+    if (options === void 0) { options = {}; }
+    pickBoundary(scope, options, 'first');
+};
+/**
+ * focuses last element in the tab order
+ * @param {FocusNextOptions} options - focus options
+ */
+var focusLastElement = function (scope, options) {
+    if (options === void 0) { options = {}; }
+    pickBoundary(scope, options, 'last');
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/solver.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/solver.js ***!
+  \*******************************************************/
+/*! exports provided: NEW_FOCUS, newFocus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_FOCUS", function() { return NEW_FOCUS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newFocus", function() { return newFocus; });
+/* harmony import */ var _utils_correctFocus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/correctFocus */ "./node_modules/focus-lock/dist/es2015/utils/correctFocus.js");
+/* harmony import */ var _utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/firstFocus */ "./node_modules/focus-lock/dist/es2015/utils/firstFocus.js");
+/* harmony import */ var _utils_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+
+
+
+var NEW_FOCUS = 'NEW_FOCUS';
+/**
+ * Main solver for the "find next focus" question
+ * @param innerNodes - used to control "return focus"
+ * @param innerTabbables - used to control "autofocus"
+ * @param outerNodes
+ * @param activeElement
+ * @param lastNode
+ * @returns {number|string|undefined|*}
+ */
+var newFocus = function (innerNodes, innerTabbables, outerNodes, activeElement, lastNode) {
+    var cnt = innerNodes.length;
+    var firstFocus = innerNodes[0];
+    var lastFocus = innerNodes[cnt - 1];
+    var isOnGuard = Object(_utils_is__WEBPACK_IMPORTED_MODULE_2__["isGuard"])(activeElement);
+    // focus is inside
+    if (activeElement && innerNodes.indexOf(activeElement) >= 0) {
+        return undefined;
+    }
+    var activeIndex = activeElement !== undefined ? outerNodes.indexOf(activeElement) : -1;
+    var lastIndex = lastNode ? outerNodes.indexOf(lastNode) : activeIndex;
+    var lastNodeInside = lastNode ? innerNodes.indexOf(lastNode) : -1;
+    // no active focus (or focus is on the body)
+    if (activeIndex === -1) {
+        // known fallback
+        if (lastNodeInside !== -1) {
+            return lastNodeInside;
+        }
+        return NEW_FOCUS;
+    }
+    // new focus, nothing to calculate
+    if (lastNodeInside === -1) {
+        return NEW_FOCUS;
+    }
+    var indexDiff = activeIndex - lastIndex;
+    var firstNodeIndex = outerNodes.indexOf(firstFocus);
+    var lastNodeIndex = outerNodes.indexOf(lastFocus);
+    var correctedNodes = Object(_utils_correctFocus__WEBPACK_IMPORTED_MODULE_0__["correctNodes"])(outerNodes);
+    var correctedIndex = activeElement !== undefined ? correctedNodes.indexOf(activeElement) : -1;
+    var correctedIndexDiff = correctedIndex - (lastNode ? correctedNodes.indexOf(lastNode) : activeIndex);
+    // old focus
+    if (!indexDiff && lastNodeInside >= 0) {
+        return lastNodeInside;
+    }
+    // no tabbable elements, autofocus is not possible
+    if (innerTabbables.length === 0) {
+        // an edge case with no tabbable elements
+        // return the last focusable one
+        // with some probability this will prevent focus from cycling across the lock, but there is no tabbale elements to cycle to
+        return lastNodeInside;
+    }
+    var returnFirstNode = Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFocusable"])(innerNodes, innerTabbables[0]);
+    var returnLastNode = Object(_utils_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFocusable"])(innerNodes, innerTabbables[innerTabbables.length - 1]);
+    // first element
+    if (activeIndex <= firstNodeIndex && isOnGuard && Math.abs(indexDiff) > 1) {
+        return returnLastNode;
+    }
+    // last element
+    if (activeIndex >= lastNodeIndex && isOnGuard && Math.abs(indexDiff) > 1) {
+        return returnFirstNode;
+    }
+    // jump out, but not on the guard
+    if (indexDiff && Math.abs(correctedIndexDiff) > 1) {
+        return lastNodeInside;
+    }
+    // focus above lock
+    if (activeIndex <= firstNodeIndex) {
+        return returnLastNode;
+    }
+    // focus below lock
+    if (activeIndex > lastNodeIndex) {
+        return returnFirstNode;
+    }
+    // index is inside tab order, but outside Lock
+    if (indexDiff) {
+        if (Math.abs(indexDiff) > 1) {
+            return lastNodeInside;
+        }
+        return (cnt + lastNodeInside + indexDiff) % cnt;
+    }
+    // do nothing
+    return undefined;
+};
+
 
 /***/ }),
 
@@ -3196,85 +3737,99 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/utils/DOMutils.js ***!
   \***************************************************************/
-/*! exports provided: isVisible, notHiddenInput, getCommonParent, filterFocusable, getTabbableNodes, getAllTabbableNodes, parentAutofocusables */
+/*! exports provided: filterFocusable, filterAutoFocusable, getTabbableNodes, getFocusableNodes, parentAutofocusables, contains */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isVisible", function() { return isVisible; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notHiddenInput", function() { return notHiddenInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCommonParent", function() { return getCommonParent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterFocusable", function() { return filterFocusable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterAutoFocusable", function() { return filterAutoFocusable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTabbableNodes", function() { return getTabbableNodes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllTabbableNodes", function() { return getAllTabbableNodes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFocusableNodes", function() { return getFocusableNodes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parentAutofocusables", function() { return parentAutofocusables; });
-/* harmony import */ var _tabOrder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabOrder */ "./node_modules/focus-lock/dist/es2015/utils/tabOrder.js");
-/* harmony import */ var _tabUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabUtils */ "./node_modules/focus-lock/dist/es2015/utils/tabUtils.js");
-/* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "contains", function() { return contains; });
+/* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+/* harmony import */ var _is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+/* harmony import */ var _tabOrder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabOrder */ "./node_modules/focus-lock/dist/es2015/utils/tabOrder.js");
+/* harmony import */ var _tabUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabUtils */ "./node_modules/focus-lock/dist/es2015/utils/tabUtils.js");
 
 
 
-
-var isElementHidden = function isElementHidden(computedStyle) {
-  if (!computedStyle || !computedStyle.getPropertyValue) {
-    return false;
-  }
-  return computedStyle.getPropertyValue('display') === 'none' || computedStyle.getPropertyValue('visibility') === 'hidden';
-};
-
-var isVisible = function isVisible(node) {
-  return !node || node === document || node.nodeType === Node.DOCUMENT_NODE || !isElementHidden(window.getComputedStyle(node, null)) && isVisible(node.parentNode && node.parentNode.nodeType === node.DOCUMENT_FRAGMENT_NODE ? node.parentNode.host : node.parentNode);
-};
-
-var notHiddenInput = function notHiddenInput(node) {
-  return !((node.tagName === 'INPUT' || node.tagName === 'BUTTON') && (node.type === 'hidden' || node.disabled));
-};
-
-var getParents = function getParents(node) {
-  var parents = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-
-  parents.push(node);
-  if (node.parentNode) {
-    getParents(node.parentNode, parents);
-  }
-  return parents;
-};
-
-var getCommonParent = function getCommonParent(nodea, nodeb) {
-  var parentsA = getParents(nodea);
-  var parentsB = getParents(nodeb);
-
-  for (var i = 0; i < parentsA.length; i += 1) {
-    var currentParent = parentsA[i];
-    if (parentsB.indexOf(currentParent) >= 0) {
-      return currentParent;
-    }
-  }
-  return false;
-};
-
-var filterFocusable = function filterFocusable(nodes) {
-  return Object(_array__WEBPACK_IMPORTED_MODULE_2__["toArray"])(nodes).filter(function (node) {
-    return isVisible(node);
-  }).filter(function (node) {
-    return notHiddenInput(node);
-  });
-};
-
-var getTabbableNodes = function getTabbableNodes(topNodes, withGuards) {
-  return Object(_tabOrder__WEBPACK_IMPORTED_MODULE_0__["orderByTabIndex"])(filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_1__["getFocusables"])(topNodes, withGuards)), true, withGuards);
-};
 
 /**
- * actually anything focusable
+ * given list of focusable elements keeps the ones user can interact with
+ * @param nodes
+ * @param visibilityCache
  */
-var getAllTabbableNodes = function getAllTabbableNodes(topNodes) {
-  return Object(_tabOrder__WEBPACK_IMPORTED_MODULE_0__["orderByTabIndex"])(filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_1__["getFocusables"])(topNodes)), false);
+var filterFocusable = function (nodes, visibilityCache) {
+    return Object(_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(nodes)
+        .filter(function (node) { return Object(_is__WEBPACK_IMPORTED_MODULE_1__["isVisibleCached"])(visibilityCache, node); })
+        .filter(function (node) { return Object(_is__WEBPACK_IMPORTED_MODULE_1__["notHiddenInput"])(node); });
+};
+var filterAutoFocusable = function (nodes, cache) {
+    if (cache === void 0) { cache = new Map(); }
+    return Object(_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(nodes).filter(function (node) { return Object(_is__WEBPACK_IMPORTED_MODULE_1__["isAutoFocusAllowedCached"])(cache, node); });
+};
+/**
+ * !__WARNING__! Low level API.
+ * @returns all tabbable nodes
+ *
+ * @see {@link getFocusableNodes} to get any focusable element
+ *
+ * @param topNodes - array of top level HTMLElements to search inside
+ * @param visibilityCache - an cache to store intermediate measurements. Expected to be a fresh `new Map` on every call
+ */
+var getTabbableNodes = function (topNodes, visibilityCache, withGuards) {
+    return Object(_tabOrder__WEBPACK_IMPORTED_MODULE_2__["orderByTabIndex"])(filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_3__["getFocusables"])(topNodes, withGuards), visibilityCache), true, withGuards);
+};
+/**
+ * !__WARNING__! Low level API.
+ *
+ * @returns anything "focusable", not only tabbable. The difference is in `tabIndex=-1`
+ * (without guards, as long as they are not expected to be ever focused)
+ *
+ * @see {@link getTabbableNodes} to get only tabble nodes element
+ *
+ * @param topNodes - array of top level HTMLElements to search inside
+ * @param visibilityCache - an cache to store intermediate measurements. Expected to be a fresh `new Map` on every call
+ */
+var getFocusableNodes = function (topNodes, visibilityCache) {
+    return Object(_tabOrder__WEBPACK_IMPORTED_MODULE_2__["orderByTabIndex"])(filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_3__["getFocusables"])(topNodes), visibilityCache), false);
+};
+/**
+ * return list of nodes which are expected to be auto-focused
+ * @param topNode
+ * @param visibilityCache
+ */
+var parentAutofocusables = function (topNode, visibilityCache) {
+    return filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_3__["getParentAutofocusables"])(topNode), visibilityCache);
+};
+/*
+ * Determines if element is contained in scope, including nested shadow DOMs
+ */
+var contains = function (scope, element) {
+    if (scope.shadowRoot) {
+        return contains(scope.shadowRoot, element);
+    }
+    else {
+        if (Object.getPrototypeOf(scope).contains !== undefined &&
+            Object.getPrototypeOf(scope).contains.call(scope, element)) {
+            return true;
+        }
+        return Object(_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(scope.children).some(function (child) {
+            var _a;
+            if (child instanceof HTMLIFrameElement) {
+                var iframeBody = (_a = child.contentDocument) === null || _a === void 0 ? void 0 : _a.body;
+                if (iframeBody) {
+                    return contains(iframeBody, element);
+                }
+                return false;
+            }
+            return contains(child, element);
+        });
+    }
 };
 
-var parentAutofocusables = function parentAutofocusables(topNode) {
-  return filterFocusable(Object(_tabUtils__WEBPACK_IMPORTED_MODULE_1__["getParentAutofocusables"])(topNode));
-};
 
 /***/ }),
 
@@ -3282,56 +3837,65 @@ var parentAutofocusables = function parentAutofocusables(topNode) {
 /*!*******************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/utils/all-affected.js ***!
   \*******************************************************************/
-/*! exports provided: default */
+/*! exports provided: getAllAffectedNodes */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllAffectedNodes", function() { return getAllAffectedNodes; });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
 /* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 
-
-
-var filterNested = function filterNested(nodes) {
-  var l = nodes.length;
-  for (var i = 0; i < l; i += 1) {
-    var _loop = function _loop(j) {
-      if (i !== j) {
-        if (nodes[i].contains(nodes[j])) {
-          return {
-            v: filterNested(nodes.filter(function (x) {
-              return x !== nodes[j];
-            }))
-          };
+/**
+ * in case of multiple nodes nested inside each other
+ * keeps only top ones
+ * this is O(nlogn)
+ * @param nodes
+ * @returns {*}
+ */
+var filterNested = function (nodes) {
+    var contained = new Set();
+    var l = nodes.length;
+    for (var i = 0; i < l; i += 1) {
+        for (var j = i + 1; j < l; j += 1) {
+            var position = nodes[i].compareDocumentPosition(nodes[j]);
+            /* eslint-disable no-bitwise */
+            if ((position & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) {
+                contained.add(j);
+            }
+            if ((position & Node.DOCUMENT_POSITION_CONTAINS) > 0) {
+                contained.add(i);
+            }
+            /* eslint-enable */
         }
-      }
-    };
-
-    for (var j = 0; j < l; j += 1) {
-      var _ret = _loop(j);
-
-      if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
     }
-  }
-  return nodes;
+    return nodes.filter(function (_, index) { return !contained.has(index); });
+};
+/**
+ * finds top most parent for a node
+ * @param node
+ * @returns {*}
+ */
+var getTopParent = function (node) {
+    return node.parentNode ? getTopParent(node.parentNode) : node;
+};
+/**
+ * returns all "focus containers" inside a given node
+ * @param node - node or nodes to look inside
+ * @returns Element[]
+ */
+var getAllAffectedNodes = function (node) {
+    var nodes = Object(_array__WEBPACK_IMPORTED_MODULE_1__["asArray"])(node);
+    return nodes.filter(Boolean).reduce(function (acc, currentNode) {
+        var group = currentNode.getAttribute(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_GROUP"]);
+        acc.push.apply(acc, (group
+            ? filterNested(Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(getTopParent(currentNode).querySelectorAll("[".concat(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_GROUP"], "=\"").concat(group, "\"]:not([").concat(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_DISABLED"], "=\"disabled\"])"))))
+            : [currentNode]));
+        return acc;
+    }, []);
 };
 
-var getTopParent = function getTopParent(node) {
-  return node.parentNode ? getTopParent(node.parentNode) : node;
-};
-
-var getAllAffectedNodes = function getAllAffectedNodes(node) {
-  var nodes = Object(_array__WEBPACK_IMPORTED_MODULE_1__["asArray"])(node);
-  return nodes.filter(Boolean).reduce(function (acc, currentNode) {
-    var group = currentNode.getAttribute(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_GROUP"]);
-    acc.push.apply(acc, group ? filterNested(Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(getTopParent(currentNode).querySelectorAll('[' + _constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_GROUP"] + '="' + group + '"]:not([' + _constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_DISABLED"] + '="disabled"])'))) : [currentNode]);
-    return acc;
-  }, []);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (getAllAffectedNodes);
 
 /***/ }),
 
@@ -3339,31 +3903,71 @@ var getAllAffectedNodes = function getAllAffectedNodes(node) {
 /*!************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/utils/array.js ***!
   \************************************************************/
-/*! exports provided: toArray, arrayFind, asArray */
+/*! exports provided: toArray, asArray, getFirst */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toArray", function() { return toArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrayFind", function() { return arrayFind; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asArray", function() { return asArray; });
-var toArray = function toArray(a) {
-  var ret = Array(a.length);
-  for (var i = 0; i < a.length; ++i) {
-    ret[i] = a[i];
-  }
-  return ret;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFirst", function() { return getFirst; });
+/*
+IE11 support
+ */
+var toArray = function (a) {
+    var ret = Array(a.length);
+    for (var i = 0; i < a.length; ++i) {
+        ret[i] = a[i];
+    }
+    return ret;
+};
+var asArray = function (a) { return (Array.isArray(a) ? a : [a]); };
+var getFirst = function (a) { return (Array.isArray(a) ? a[0] : a); };
+
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/utils/auto-focus.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/utils/auto-focus.js ***!
+  \*****************************************************************/
+/*! exports provided: pickAutofocus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pickAutofocus", function() { return pickAutofocus; });
+/* harmony import */ var _DOMutils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony import */ var _firstFocus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./firstFocus */ "./node_modules/focus-lock/dist/es2015/utils/firstFocus.js");
+/* harmony import */ var _is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+
+
+
+var findAutoFocused = function (autoFocusables) {
+    return function (node) {
+        var _a;
+        var autofocus = (_a = Object(_is__WEBPACK_IMPORTED_MODULE_2__["getDataset"])(node)) === null || _a === void 0 ? void 0 : _a.autofocus;
+        return (
+        // @ts-expect-error
+        node.autofocus ||
+            //
+            (autofocus !== undefined && autofocus !== 'false') ||
+            //
+            autoFocusables.indexOf(node) >= 0);
+    };
+};
+var pickAutofocus = function (nodesIndexes, orderedNodes, groups) {
+    var nodes = nodesIndexes.map(function (_a) {
+        var node = _a.node;
+        return node;
+    });
+    var autoFocusable = Object(_DOMutils__WEBPACK_IMPORTED_MODULE_0__["filterAutoFocusable"])(nodes.filter(findAutoFocused(groups)));
+    if (autoFocusable && autoFocusable.length) {
+        return Object(_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFirstFocus"])(autoFocusable);
+    }
+    return Object(_firstFocus__WEBPACK_IMPORTED_MODULE_1__["pickFirstFocus"])(Object(_DOMutils__WEBPACK_IMPORTED_MODULE_0__["filterAutoFocusable"])(orderedNodes));
 };
 
-var arrayFind = function arrayFind(array, search) {
-  return array.filter(function (a) {
-    return a === search;
-  })[0];
-};
-
-var asArray = function asArray(a) {
-  return Array.isArray(a) ? a : [a];
-};
 
 /***/ }),
 
@@ -3378,36 +3982,32 @@ var asArray = function asArray(a) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "correctNode", function() { return correctNode; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "correctNodes", function() { return correctNodes; });
-var isRadio = function isRadio(node) {
-  return node.tagName === 'INPUT' && node.type === 'radio';
+/* harmony import */ var _is__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is */ "./node_modules/focus-lock/dist/es2015/utils/is.js");
+
+var findSelectedRadio = function (node, nodes) {
+    return nodes
+        .filter(_is__WEBPACK_IMPORTED_MODULE_0__["isRadioElement"])
+        .filter(function (el) { return el.name === node.name; })
+        .filter(function (el) { return el.checked; })[0] || node;
+};
+var correctNode = function (node, nodes) {
+    if (Object(_is__WEBPACK_IMPORTED_MODULE_0__["isRadioElement"])(node) && node.name) {
+        return findSelectedRadio(node, nodes);
+    }
+    return node;
+};
+/**
+ * giving a set of radio inputs keeps only selected (tabbable) ones
+ * @param nodes
+ */
+var correctNodes = function (nodes) {
+    // IE11 has no Set(array) constructor
+    var resultSet = new Set();
+    nodes.forEach(function (node) { return resultSet.add(correctNode(node, nodes)); });
+    // using filter to support IE11
+    return nodes.filter(function (node) { return resultSet.has(node); });
 };
 
-var findSelectedRadio = function findSelectedRadio(node, nodes) {
-  return nodes.filter(isRadio).filter(function (el) {
-    return el.name === node.name;
-  }).filter(function (el) {
-    return el.checked;
-  })[0] || node;
-};
-
-var correctNode = function correctNode(node, nodes) {
-  if (isRadio(node) && node.name) {
-    return findSelectedRadio(node, nodes);
-  }
-  return node;
-};
-
-var correctNodes = function correctNodes(nodes) {
-  // IE11 has no Set constructor
-  var resultSet = new Set();
-  nodes.forEach(function (node) {
-    return resultSet.add(correctNode(node, nodes));
-  });
-  // using filter to support IE11
-  return nodes.filter(function (node) {
-    return resultSet.has(node);
-  });
-};
 
 /***/ }),
 
@@ -3415,30 +4015,255 @@ var correctNodes = function correctNodes(nodes) {
 /*!*****************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/utils/firstFocus.js ***!
   \*****************************************************************/
-/*! exports provided: pickFocusable, default */
+/*! exports provided: pickFirstFocus, pickFocusable */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pickFirstFocus", function() { return pickFirstFocus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pickFocusable", function() { return pickFocusable; });
 /* harmony import */ var _correctFocus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./correctFocus */ "./node_modules/focus-lock/dist/es2015/utils/correctFocus.js");
 
-
-var pickFirstFocus = function pickFirstFocus(nodes) {
-  if (nodes[0] && nodes.length > 1) {
-    return Object(_correctFocus__WEBPACK_IMPORTED_MODULE_0__["correctNode"])(nodes[0], nodes);
-  }
-  return nodes[0];
+var pickFirstFocus = function (nodes) {
+    if (nodes[0] && nodes.length > 1) {
+        return Object(_correctFocus__WEBPACK_IMPORTED_MODULE_0__["correctNode"])(nodes[0], nodes);
+    }
+    return nodes[0];
+};
+var pickFocusable = function (nodes, node) {
+    return nodes.indexOf(Object(_correctFocus__WEBPACK_IMPORTED_MODULE_0__["correctNode"])(node, nodes));
 };
 
-var pickFocusable = function pickFocusable(nodes, index) {
-  if (nodes.length > 1) {
-    return nodes.indexOf(Object(_correctFocus__WEBPACK_IMPORTED_MODULE_0__["correctNode"])(nodes[index], nodes));
-  }
-  return index;
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/utils/getActiveElement.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/utils/getActiveElement.js ***!
+  \***********************************************************************/
+/*! exports provided: getActiveElement */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveElement", function() { return getActiveElement; });
+/* harmony import */ var _safe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./safe */ "./node_modules/focus-lock/dist/es2015/utils/safe.js");
+/**
+ * returns active element from document or from nested shadowdoms
+ */
+
+/**
+ * returns current active element. If the active element is a "container" itself(shadowRoot or iframe) returns active element inside it
+ * @param [inDocument]
+ */
+var getActiveElement = function (inDocument) {
+    if (inDocument === void 0) { inDocument = document; }
+    if (!inDocument || !inDocument.activeElement) {
+        return undefined;
+    }
+    var activeElement = inDocument.activeElement;
+    return (activeElement.shadowRoot
+        ? getActiveElement(activeElement.shadowRoot)
+        : activeElement instanceof HTMLIFrameElement && Object(_safe__WEBPACK_IMPORTED_MODULE_0__["safeProbe"])(function () { return activeElement.contentWindow.document; })
+            ? getActiveElement(activeElement.contentWindow.document)
+            : activeElement);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (pickFirstFocus);
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/utils/is.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/utils/is.js ***!
+  \*********************************************************/
+/*! exports provided: isVisibleCached, isAutoFocusAllowedCached, getDataset, isHTMLButtonElement, isHTMLInputElement, isRadioElement, notHiddenInput, isAutoFocusAllowed, isGuard, isNotAGuard, isDefined */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isVisibleCached", function() { return isVisibleCached; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isAutoFocusAllowedCached", function() { return isAutoFocusAllowedCached; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDataset", function() { return getDataset; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isHTMLButtonElement", function() { return isHTMLButtonElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isHTMLInputElement", function() { return isHTMLInputElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isRadioElement", function() { return isRadioElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notHiddenInput", function() { return notHiddenInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isAutoFocusAllowed", function() { return isAutoFocusAllowed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isGuard", function() { return isGuard; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNotAGuard", function() { return isNotAGuard; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDefined", function() { return isDefined; });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
+
+var isElementHidden = function (node) {
+    // we can measure only "elements"
+    // consider others as "visible"
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+        return false;
+    }
+    var computedStyle = window.getComputedStyle(node, null);
+    if (!computedStyle || !computedStyle.getPropertyValue) {
+        return false;
+    }
+    return (computedStyle.getPropertyValue('display') === 'none' || computedStyle.getPropertyValue('visibility') === 'hidden');
+};
+var getParentNode = function (node) {
+    // DOCUMENT_FRAGMENT_NODE can also point on ShadowRoot. In this case .host will point on the next node
+    return node.parentNode && node.parentNode.nodeType === Node.DOCUMENT_FRAGMENT_NODE
+        ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            node.parentNode.host
+        : node.parentNode;
+};
+var isTopNode = function (node) {
+    // @ts-ignore
+    return node === document || (node && node.nodeType === Node.DOCUMENT_NODE);
+};
+var isInert = function (node) { return node.hasAttribute('inert'); };
+/**
+ * @see https://github.com/testing-library/jest-dom/blob/main/src/to-be-visible.js
+ */
+var isVisibleUncached = function (node, checkParent) {
+    return !node || isTopNode(node) || (!isElementHidden(node) && !isInert(node) && checkParent(getParentNode(node)));
+};
+var isVisibleCached = function (visibilityCache, node) {
+    var cached = visibilityCache.get(node);
+    if (cached !== undefined) {
+        return cached;
+    }
+    var result = isVisibleUncached(node, isVisibleCached.bind(undefined, visibilityCache));
+    visibilityCache.set(node, result);
+    return result;
+};
+var isAutoFocusAllowedUncached = function (node, checkParent) {
+    return node && !isTopNode(node) ? (isAutoFocusAllowed(node) ? checkParent(getParentNode(node)) : false) : true;
+};
+var isAutoFocusAllowedCached = function (cache, node) {
+    var cached = cache.get(node);
+    if (cached !== undefined) {
+        return cached;
+    }
+    var result = isAutoFocusAllowedUncached(node, isAutoFocusAllowedCached.bind(undefined, cache));
+    cache.set(node, result);
+    return result;
+};
+var getDataset = function (node) {
+    // @ts-ignore
+    return node.dataset;
+};
+var isHTMLButtonElement = function (node) { return node.tagName === 'BUTTON'; };
+var isHTMLInputElement = function (node) { return node.tagName === 'INPUT'; };
+var isRadioElement = function (node) {
+    return isHTMLInputElement(node) && node.type === 'radio';
+};
+var notHiddenInput = function (node) {
+    return !((isHTMLInputElement(node) || isHTMLButtonElement(node)) && (node.type === 'hidden' || node.disabled));
+};
+var isAutoFocusAllowed = function (node) {
+    var attribute = node.getAttribute(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_NO_AUTOFOCUS"]);
+    return ![true, 'true', ''].includes(attribute);
+};
+var isGuard = function (node) { var _a; return Boolean(node && ((_a = getDataset(node)) === null || _a === void 0 ? void 0 : _a.focusGuard)); };
+var isNotAGuard = function (node) { return !isGuard(node); };
+var isDefined = function (x) { return Boolean(x); };
+
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/utils/parenting.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/utils/parenting.js ***!
+  \****************************************************************/
+/*! exports provided: getCommonParent, getTopCommonParent, allParentAutofocusables */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCommonParent", function() { return getCommonParent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTopCommonParent", function() { return getTopCommonParent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allParentAutofocusables", function() { return allParentAutofocusables; });
+/* harmony import */ var _DOMutils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOMutils */ "./node_modules/focus-lock/dist/es2015/utils/DOMutils.js");
+/* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
+
+
+
+var getParents = function (node, parents) {
+    if (parents === void 0) { parents = []; }
+    parents.push(node);
+    if (node.parentNode) {
+        getParents(node.parentNode.host || node.parentNode, parents);
+    }
+    return parents;
+};
+/**
+ * finds a parent for both nodeA and nodeB
+ * @param nodeA
+ * @param nodeB
+ * @returns {boolean|*}
+ */
+var getCommonParent = function (nodeA, nodeB) {
+    var parentsA = getParents(nodeA);
+    var parentsB = getParents(nodeB);
+    // tslint:disable-next-line:prefer-for-of
+    for (var i = 0; i < parentsA.length; i += 1) {
+        var currentParent = parentsA[i];
+        if (parentsB.indexOf(currentParent) >= 0) {
+            return currentParent;
+        }
+    }
+    return false;
+};
+var getTopCommonParent = function (baseActiveElement, leftEntry, rightEntries) {
+    var activeElements = Object(_array__WEBPACK_IMPORTED_MODULE_1__["asArray"])(baseActiveElement);
+    var leftEntries = Object(_array__WEBPACK_IMPORTED_MODULE_1__["asArray"])(leftEntry);
+    var activeElement = activeElements[0];
+    var topCommon = false;
+    leftEntries.filter(Boolean).forEach(function (entry) {
+        topCommon = getCommonParent(topCommon || entry, entry) || topCommon;
+        rightEntries.filter(Boolean).forEach(function (subEntry) {
+            var common = getCommonParent(activeElement, subEntry);
+            if (common) {
+                if (!topCommon || Object(_DOMutils__WEBPACK_IMPORTED_MODULE_0__["contains"])(common, topCommon)) {
+                    topCommon = common;
+                }
+                else {
+                    topCommon = getCommonParent(common, topCommon);
+                }
+            }
+        });
+    });
+    // TODO: add assert here?
+    return topCommon;
+};
+/**
+ * return list of nodes which are expected to be autofocused inside a given top nodes
+ * @param entries
+ * @param visibilityCache
+ */
+var allParentAutofocusables = function (entries, visibilityCache) {
+    return entries.reduce(function (acc, node) { return acc.concat(Object(_DOMutils__WEBPACK_IMPORTED_MODULE_0__["parentAutofocusables"])(node, visibilityCache)); }, []);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/focus-lock/dist/es2015/utils/safe.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/focus-lock/dist/es2015/utils/safe.js ***!
+  \***********************************************************/
+/*! exports provided: safeProbe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "safeProbe", function() { return safeProbe; });
+var safeProbe = function (cb) {
+    try {
+        return cb();
+    }
+    catch (e) {
+        return undefined;
+    }
+};
+
 
 /***/ }),
 
@@ -3455,30 +4280,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "orderByTabIndex", function() { return orderByTabIndex; });
 /* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
 
-
-var tabSort = function tabSort(a, b) {
-  var tabDiff = a.tabIndex - b.tabIndex;
-  var indexDiff = a.index - b.index;
-
-  if (tabDiff) {
-    if (!a.tabIndex) return 1;
-    if (!b.tabIndex) return -1;
-  }
-
-  return tabDiff || indexDiff;
+var tabSort = function (a, b) {
+    var aTab = Math.max(0, a.tabIndex);
+    var bTab = Math.max(0, b.tabIndex);
+    var tabDiff = aTab - bTab;
+    var indexDiff = a.index - b.index;
+    if (tabDiff) {
+        if (!aTab) {
+            return 1;
+        }
+        if (!bTab) {
+            return -1;
+        }
+    }
+    return tabDiff || indexDiff;
+};
+var getTabIndex = function (node) {
+    if (node.tabIndex < 0) {
+        // all "focusable" elements are already preselected
+        // but some might have implicit negative tabIndex
+        // return 0 for <audio without tabIndex attribute - it is "tabbable"
+        if (!node.hasAttribute('tabindex')) {
+            return 0;
+        }
+    }
+    return node.tabIndex;
+};
+var orderByTabIndex = function (nodes, filterNegative, keepGuards) {
+    return Object(_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(nodes)
+        .map(function (node, index) {
+        var tabIndex = getTabIndex(node);
+        return {
+            node: node,
+            index: index,
+            tabIndex: keepGuards && tabIndex === -1 ? ((node.dataset || {}).focusGuard ? 0 : -1) : tabIndex,
+        };
+    })
+        .filter(function (data) { return !filterNegative || data.tabIndex >= 0; })
+        .sort(tabSort);
 };
 
-var orderByTabIndex = function orderByTabIndex(nodes, filterNegative, keepGuards) {
-  return Object(_array__WEBPACK_IMPORTED_MODULE_0__["toArray"])(nodes).map(function (node, index) {
-    return {
-      node: node,
-      index: index,
-      tabIndex: keepGuards && node.tabIndex === -1 ? (node.dataset || {}).focusGuard ? 0 : -1 : node.tabIndex
-    };
-  }).filter(function (data) {
-    return !filterNegative || data.tabIndex >= 0;
-  }).sort(tabSort);
-};
 
 /***/ }),
 
@@ -3493,36 +4334,52 @@ var orderByTabIndex = function orderByTabIndex(nodes, filterNegative, keepGuards
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFocusables", function() { return getFocusables; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParentAutofocusables", function() { return getParentAutofocusables; });
-/* harmony import */ var _tabbables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tabbables */ "./node_modules/focus-lock/dist/es2015/utils/tabbables.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
 /* harmony import */ var _array__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./array */ "./node_modules/focus-lock/dist/es2015/utils/array.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./node_modules/focus-lock/dist/es2015/constants.js");
+/* harmony import */ var _tabbables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabbables */ "./node_modules/focus-lock/dist/es2015/utils/tabbables.js");
 
 
 
-
-var queryTabbables = _tabbables__WEBPACK_IMPORTED_MODULE_0__["default"].join(',');
-var queryGuardTabbables = queryTabbables + ', [data-focus-guard]';
-
-var getFocusables = function getFocusables(parents, withGuards) {
-  return parents.reduce(function (acc, parent) {
-    return acc.concat(
-    // add all tabbables inside
-    Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(parent.querySelectorAll(withGuards ? queryGuardTabbables : queryTabbables)),
-    // add if node is tabble itself
-    parent.parentNode ? Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(parent.parentNode.querySelectorAll(_tabbables__WEBPACK_IMPORTED_MODULE_0__["default"].join(','))).filter(function (node) {
-      return node === parent;
-    }) : []);
-  }, []);
+var queryTabbables = _tabbables__WEBPACK_IMPORTED_MODULE_2__["tabbables"].join(',');
+var queryGuardTabbables = "".concat(queryTabbables, ", [data-focus-guard]");
+var getFocusablesWithShadowDom = function (parent, withGuards) {
+    return Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])((parent.shadowRoot || parent).children).reduce(function (acc, child) {
+        return acc.concat(child.matches(withGuards ? queryGuardTabbables : queryTabbables) ? [child] : [], getFocusablesWithShadowDom(child));
+    }, []);
+};
+var getFocusablesWithIFrame = function (parent, withGuards) {
+    var _a;
+    // contentDocument of iframe will be null if current origin cannot access it
+    if (parent instanceof HTMLIFrameElement && ((_a = parent.contentDocument) === null || _a === void 0 ? void 0 : _a.body)) {
+        return getFocusables([parent.contentDocument.body], withGuards);
+    }
+    return [parent];
+};
+var getFocusables = function (parents, withGuards) {
+    return parents.reduce(function (acc, parent) {
+        var _a;
+        var focusableWithShadowDom = getFocusablesWithShadowDom(parent, withGuards);
+        var focusableWithIframes = (_a = []).concat.apply(_a, focusableWithShadowDom.map(function (node) { return getFocusablesWithIFrame(node, withGuards); }));
+        return acc.concat(
+        // add all tabbables inside and within shadow DOMs in DOM order
+        focusableWithIframes, 
+        // add if node is tabbable itself
+        parent.parentNode
+            ? Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(parent.parentNode.querySelectorAll(queryTabbables)).filter(function (node) { return node === parent; })
+            : []);
+    }, []);
+};
+/**
+ * return a list of focusable nodes within an area marked as "auto-focusable"
+ * @param parent
+ */
+var getParentAutofocusables = function (parent) {
+    var parentFocus = parent.querySelectorAll("[".concat(_constants__WEBPACK_IMPORTED_MODULE_0__["FOCUS_AUTO"], "]"));
+    return Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(parentFocus)
+        .map(function (node) { return getFocusables([node]); })
+        .reduce(function (acc, nodes) { return acc.concat(nodes); }, []);
 };
 
-var getParentAutofocusables = function getParentAutofocusables(parent) {
-  var parentFocus = parent.querySelectorAll('[' + _constants__WEBPACK_IMPORTED_MODULE_2__["FOCUS_AUTO"] + ']');
-  return Object(_array__WEBPACK_IMPORTED_MODULE_1__["toArray"])(parentFocus).map(function (node) {
-    return getFocusables([node]);
-  }).reduce(function (acc, nodes) {
-    return acc.concat(nodes);
-  }, []);
-};
 
 /***/ }),
 
@@ -3530,89 +4387,110 @@ var getParentAutofocusables = function getParentAutofocusables(parent) {
 /*!****************************************************************!*\
   !*** ./node_modules/focus-lock/dist/es2015/utils/tabbables.js ***!
   \****************************************************************/
+/*! exports provided: tabbables */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabbables", function() { return tabbables; });
+/**
+ * list of the object to be considered as focusable
+ */
+var tabbables = [
+    'button:enabled',
+    'select:enabled',
+    'textarea:enabled',
+    'input:enabled',
+    // elements with explicit roles will also use explicit tabindex
+    // '[role="button"]',
+    'a[href]',
+    'area[href]',
+    'summary',
+    'iframe',
+    'object',
+    'embed',
+    'audio[controls]',
+    'video[controls]',
+    '[tabindex]',
+    '[contenteditable]',
+    '[autofocus]',
+];
+
+
+/***/ }),
+
+/***/ "./node_modules/fscreen/dist/fscreen.esm.js":
+/*!**************************************************!*\
+  !*** ./node_modules/fscreen/dist/fscreen.esm.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (['button:enabled:not([readonly])', 'select:enabled:not([readonly])', 'textarea:enabled:not([readonly])', 'input:enabled:not([readonly])', 'a[href]', 'area[href]', 'iframe', 'object', 'embed', '[tabindex]', '[contenteditable]', '[autofocus]']);
-
-/***/ }),
-
-/***/ "./node_modules/fscreen/lib/index.js":
-/*!*******************************************!*\
-  !*** ./node_modules/fscreen/lib/index.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 var key = {
-  fullscreenEnabled: 0,
-  fullscreenElement: 1,
-  requestFullscreen: 2,
-  exitFullscreen: 3,
-  fullscreenchange: 4,
-  fullscreenerror: 5,
-  fullscreen: 6
+    fullscreenEnabled: 0,
+    fullscreenElement: 1,
+    requestFullscreen: 2,
+    exitFullscreen: 3,
+    fullscreenchange: 4,
+    fullscreenerror: 5,
+    fullscreen: 6
 };
-
-var webkit = ['webkitFullscreenEnabled', 'webkitFullscreenElement', 'webkitRequestFullscreen', 'webkitExitFullscreen', 'webkitfullscreenchange', 'webkitfullscreenerror', '-webkit-full-screen'];
-
-var moz = ['mozFullScreenEnabled', 'mozFullScreenElement', 'mozRequestFullScreen', 'mozCancelFullScreen', 'mozfullscreenchange', 'mozfullscreenerror', '-moz-full-screen'];
-
-var ms = ['msFullscreenEnabled', 'msFullscreenElement', 'msRequestFullscreen', 'msExitFullscreen', 'MSFullscreenChange', 'MSFullscreenError', '-ms-fullscreen'];
-
+var webkit = [
+    'webkitFullscreenEnabled',
+    'webkitFullscreenElement',
+    'webkitRequestFullscreen',
+    'webkitExitFullscreen',
+    'webkitfullscreenchange',
+    'webkitfullscreenerror',
+    '-webkit-full-screen',
+];
+var moz = [
+    'mozFullScreenEnabled',
+    'mozFullScreenElement',
+    'mozRequestFullScreen',
+    'mozCancelFullScreen',
+    'mozfullscreenchange',
+    'mozfullscreenerror',
+    '-moz-full-screen',
+];
+var ms = [
+    'msFullscreenEnabled',
+    'msFullscreenElement',
+    'msRequestFullscreen',
+    'msExitFullscreen',
+    'MSFullscreenChange',
+    'MSFullscreenError',
+    '-ms-fullscreen',
+];
 // so it doesn't throw if no window or document
 var document = typeof window !== 'undefined' && typeof window.document !== 'undefined' ? window.document : {};
-
-var vendor = 'fullscreenEnabled' in document && Object.keys(key) || webkit[0] in document && webkit || moz[0] in document && moz || ms[0] in document && ms || [];
-
-exports.default = {
-  requestFullscreen: function requestFullscreen(element) {
-    return element[vendor[key.requestFullscreen]]();
-  },
-  requestFullscreenFunction: function requestFullscreenFunction(element) {
-    return element[vendor[key.requestFullscreen]];
-  },
-  get exitFullscreen() {
-    return document[vendor[key.exitFullscreen]].bind(document);
-  },
-  get fullscreenPseudoClass() {
-    return ':' + vendor[key.fullscreen];
-  },
-  addEventListener: function addEventListener(type, handler, options) {
-    return document.addEventListener(vendor[key[type]], handler, options);
-  },
-  removeEventListener: function removeEventListener(type, handler, options) {
-    return document.removeEventListener(vendor[key[type]], handler, options);
-  },
-  get fullscreenEnabled() {
-    return Boolean(document[vendor[key.fullscreenEnabled]]);
-  },
-  set fullscreenEnabled(val) {},
-  get fullscreenElement() {
-    return document[vendor[key.fullscreenElement]];
-  },
-  set fullscreenElement(val) {},
-  get onfullscreenchange() {
-    return document[('on' + vendor[key.fullscreenchange]).toLowerCase()];
-  },
-  set onfullscreenchange(handler) {
-    return document[('on' + vendor[key.fullscreenchange]).toLowerCase()] = handler;
-  },
-  get onfullscreenerror() {
-    return document[('on' + vendor[key.fullscreenerror]).toLowerCase()];
-  },
-  set onfullscreenerror(handler) {
-    return document[('on' + vendor[key.fullscreenerror]).toLowerCase()] = handler;
-  }
+var vendor = (('fullscreenEnabled' in document && Object.keys(key)) ||
+    (webkit[0] in document && webkit) ||
+    (moz[0] in document && moz) ||
+    (ms[0] in document && ms) ||
+    []);
+var fscreen = {
+    requestFullscreen: function (element) { return element[vendor[key.requestFullscreen]](); },
+    requestFullscreenFunction: function (element) { return element[vendor[key.requestFullscreen]]; },
+    get exitFullscreen() { return document[vendor[key.exitFullscreen]].bind(document); },
+    get fullscreenPseudoClass() { return ":" + vendor[key.fullscreen]; },
+    addEventListener: function (type, handler, options) { return document.addEventListener(vendor[key[type]], handler, options); },
+    removeEventListener: function (type, handler, options) { return document.removeEventListener(vendor[key[type]], handler, options); },
+    get fullscreenEnabled() { return Boolean(document[vendor[key.fullscreenEnabled]]); },
+    set fullscreenEnabled(val) { },
+    get fullscreenElement() { return document[vendor[key.fullscreenElement]]; },
+    set fullscreenElement(val) { },
+    get onfullscreenchange() { return document[("on" + vendor[key.fullscreenchange]).toLowerCase()]; },
+    set onfullscreenchange(handler) { return document[("on" + vendor[key.fullscreenchange]).toLowerCase()] = handler; },
+    get onfullscreenerror() { return document[("on" + vendor[key.fullscreenerror]).toLowerCase()]; },
+    set onfullscreenerror(handler) { return document[("on" + vendor[key.fullscreenerror]).toLowerCase()] = handler; },
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (fscreen);
+//# sourceMappingURL=fscreen.esm.js.map
+
 
 /***/ }),
 
@@ -6974,14 +7852,15 @@ module.exports = exports["default"];
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.20';
+  var VERSION = '4.17.21';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
 
   /** Error message constants. */
   var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
-      FUNC_ERROR_TEXT = 'Expected a function';
+      FUNC_ERROR_TEXT = 'Expected a function',
+      INVALID_TEMPL_VAR_ERROR_TEXT = 'Invalid `variable` option passed into `_.template`';
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -7114,10 +7993,11 @@ module.exports = exports["default"];
   var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
       reHasRegExpChar = RegExp(reRegExpChar.source);
 
-  /** Used to match leading and trailing whitespace. */
-  var reTrim = /^\s+|\s+$/g,
-      reTrimStart = /^\s+/,
-      reTrimEnd = /\s+$/;
+  /** Used to match leading whitespace. */
+  var reTrimStart = /^\s+/;
+
+  /** Used to match a single whitespace character. */
+  var reWhitespace = /\s/;
 
   /** Used to match wrap detail comments. */
   var reWrapComment = /\{(?:\n\/\* \[wrapped with .+\] \*\/)?\n?/,
@@ -7126,6 +8006,18 @@ module.exports = exports["default"];
 
   /** Used to match words composed of alphanumeric characters. */
   var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
+
+  /**
+   * Used to validate the `validate` option in `_.template` variable.
+   *
+   * Forbids characters which could potentially change the meaning of the function argument definition:
+   * - "()," (modification of function parameters)
+   * - "=" (default value)
+   * - "[]{}" (destructuring of function parameters)
+   * - "/" (beginning of a comment)
+   * - whitespace
+   */
+  var reForbiddenIdentifierChars = /[()=,{}\[\]\/\s]/;
 
   /** Used to match backslashes in property paths. */
   var reEscapeChar = /\\(\\)?/g;
@@ -7956,6 +8848,19 @@ module.exports = exports["default"];
   }
 
   /**
+   * The base implementation of `_.trim`.
+   *
+   * @private
+   * @param {string} string The string to trim.
+   * @returns {string} Returns the trimmed string.
+   */
+  function baseTrim(string) {
+    return string
+      ? string.slice(0, trimmedEndIndex(string) + 1).replace(reTrimStart, '')
+      : string;
+  }
+
+  /**
    * The base implementation of `_.unary` without support for storing metadata.
    *
    * @private
@@ -8286,6 +9191,21 @@ module.exports = exports["default"];
     return hasUnicode(string)
       ? unicodeToArray(string)
       : asciiToArray(string);
+  }
+
+  /**
+   * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
+   * character of `string`.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the index of the last non-whitespace character.
+   */
+  function trimmedEndIndex(string) {
+    var index = string.length;
+
+    while (index-- && reWhitespace.test(string.charAt(index))) {}
+    return index;
   }
 
   /**
@@ -19456,7 +20376,7 @@ module.exports = exports["default"];
       if (typeof value != 'string') {
         return value === 0 ? value : +value;
       }
-      value = value.replace(reTrim, '');
+      value = baseTrim(value);
       var isBinary = reIsBinary.test(value);
       return (isBinary || reIsOctal.test(value))
         ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
@@ -21828,6 +22748,12 @@ module.exports = exports["default"];
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
       }
+      // Throw an error if a forbidden character was found in `variable`, to prevent
+      // potential command injection attacks.
+      else if (reForbiddenIdentifierChars.test(variable)) {
+        throw new Error(INVALID_TEMPL_VAR_ERROR_TEXT);
+      }
+
       // Cleanup code by stripping empty strings.
       source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
         .replace(reEmptyStringMiddle, '$1')
@@ -21941,7 +22867,7 @@ module.exports = exports["default"];
     function trim(string, chars, guard) {
       string = toString(string);
       if (string && (guard || chars === undefined)) {
-        return string.replace(reTrim, '');
+        return baseTrim(string);
       }
       if (!string || !(chars = baseToString(chars))) {
         return string;
@@ -21976,7 +22902,7 @@ module.exports = exports["default"];
     function trimEnd(string, chars, guard) {
       string = toString(string);
       if (string && (guard || chars === undefined)) {
-        return string.replace(reTrimEnd, '');
+        return string.slice(0, trimmedEndIndex(string) + 1);
       }
       if (!string || !(chars = baseToString(chars))) {
         return string;
@@ -24558,7 +25484,7 @@ var printWarning = function() {};
 if (true) {
   var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
   var loggedTypeFailures = {};
-  var has = Function.call.bind(Object.prototype.hasOwnProperty);
+  var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
 
   printWarning = function(text) {
     var message = 'Warning: ' + text;
@@ -24570,7 +25496,7 @@ if (true) {
       // This error was thrown as a convenience so that you can use this stack
       // to find the callsite that caused this warning to fire.
       throw new Error(message);
-    } catch (x) {}
+    } catch (x) { /**/ }
   };
 }
 
@@ -24599,7 +25525,8 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
           if (typeof typeSpecs[typeSpecName] !== 'function') {
             var err = Error(
               (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
             );
             err.name = 'Invariant Violation';
             throw err;
@@ -24671,9 +25598,9 @@ var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index
 var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 
 var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var has = __webpack_require__(/*! ./lib/has */ "./node_modules/prop-types/lib/has.js");
 var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var has = Function.call.bind(Object.prototype.hasOwnProperty);
 var printWarning = function() {};
 
 if (true) {
@@ -24774,6 +25701,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
   var ReactPropTypes = {
     array: createPrimitiveTypeChecker('array'),
+    bigint: createPrimitiveTypeChecker('bigint'),
     bool: createPrimitiveTypeChecker('boolean'),
     func: createPrimitiveTypeChecker('function'),
     number: createPrimitiveTypeChecker('number'),
@@ -24819,8 +25747,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
    * is prohibitively expensive if they are created too often, such as what
    * happens in oneOfType() for any type before the one that matched.
    */
-  function PropTypeError(message) {
+  function PropTypeError(message, data) {
     this.message = message;
+    this.data = data && typeof data === 'object' ? data: {};
     this.stack = '';
   }
   // Make `instanceof Error` still work for returned errors.
@@ -24855,7 +25784,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
           ) {
             printWarning(
               'You are manually calling a React.PropTypes validation ' +
-              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
               'and will throw in the standalone `prop-types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +
               'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
@@ -24894,7 +25823,10 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
         // 'of type `object`'.
         var preciseType = getPreciseType(propValue);
 
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+        return new PropTypeError(
+          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+          {expectedType: expectedType}
+        );
       }
       return null;
     }
@@ -25038,14 +25970,19 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     }
 
     function validate(props, propName, componentName, location, propFullName) {
+      var expectedTypes = [];
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
-        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+        if (checkerResult == null) {
           return null;
         }
+        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+          expectedTypes.push(checkerResult.data.expectedType);
+        }
       }
-
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
     }
     return createChainableTypeChecker(validate);
   }
@@ -25060,6 +25997,13 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     return createChainableTypeChecker(validate);
   }
 
+  function invalidValidatorError(componentName, location, propFullName, key, type) {
+    return new PropTypeError(
+      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+    );
+  }
+
   function createShapeTypeChecker(shapeTypes) {
     function validate(props, propName, componentName, location, propFullName) {
       var propValue = props[propName];
@@ -25069,8 +26013,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
       for (var key in shapeTypes) {
         var checker = shapeTypes[key];
-        if (!checker) {
-          continue;
+        if (typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
         }
         var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
         if (error) {
@@ -25089,16 +26033,18 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       if (propType !== 'object') {
         return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
       }
-      // We need to check all keys in case some are required but missing from
-      // props.
+      // We need to check all keys in case some are required but missing from props.
       var allKeys = assign({}, props[propName], shapeTypes);
       for (var key in allKeys) {
         var checker = shapeTypes[key];
+        if (has(shapeTypes, key) && typeof checker !== 'function') {
+          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+        }
         if (!checker) {
           return new PropTypeError(
             'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
             '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
-            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
           );
         }
         var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
@@ -25299,6 +26245,18 @@ if (true) {
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/has.js":
+/*!********************************************!*\
+  !*** ./node_modules/prop-types/lib/has.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 
 /***/ }),
@@ -25537,9 +26495,7 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient) {
       handleStateChangeOnClient(state);
     }
 
-    var SideEffect =
-    /*#__PURE__*/
-    function (_PureComponent) {
+    var SideEffect = /*#__PURE__*/function (_PureComponent) {
       Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(SideEffect, _PureComponent);
 
       function SideEffect() {
@@ -25569,7 +26525,7 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient) {
       };
 
       _proto.render = function render() {
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(WrappedComponent, this.props);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(WrappedComponent, this.props);
       };
 
       return SideEffect;
@@ -25594,7 +26550,7 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -50164,7 +51120,7 @@ function injectIntoDevTools(devToolsConfig) {
     // Enables DevTools to append owner stacks to error messages in DEV mode.
     getCurrentFiber:  function () {
       return current;
-    } 
+    }
   }));
 }
 var IsSomeRendererActing$1 = ReactSharedInternals.IsSomeRendererActing;
@@ -50516,7 +51472,7 @@ implementation) {
   };
 }
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
 setAttemptContinuousHydration(attemptContinuousHydration$1);
@@ -50676,25 +51632,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var AutoFocusInside = function AutoFocusInside(_ref) {
-  var disabled = _ref.disabled,
-      children = _ref.children,
-      className = _ref.className;
+  var _ref$disabled = _ref.disabled,
+    disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+    children = _ref.children,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? undefined : _ref$className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, Object(_util__WEBPACK_IMPORTED_MODULE_4__["inlineProp"])(focus_lock_constants__WEBPACK_IMPORTED_MODULE_3__["FOCUS_AUTO"], !disabled), {
     className: className
   }), children);
 };
-
 AutoFocusInside.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node.isRequired,
   disabled: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
   className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
 } : undefined;
-AutoFocusInside.defaultProps = {
-  disabled: false,
-  className: undefined
-};
 /* harmony default export */ __webpack_exports__["default"] = (AutoFocusInside);
 
 /***/ }),
@@ -50724,9 +51676,9 @@ var hiddenGuard = {
   top: '1px',
   left: '1px'
 };
-
 var InFocusGuard = function InFocusGuard(_ref) {
-  var children = _ref.children;
+  var _ref$children = _ref.children,
+    children = _ref$children === void 0 ? null : _ref$children;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     key: "guard-first",
     "data-focus-guard": true,
@@ -50739,13 +51691,9 @@ var InFocusGuard = function InFocusGuard(_ref) {
     style: hiddenGuard
   }));
 };
-
 InFocusGuard.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
 } : undefined;
-InFocusGuard.defaultProps = {
-  children: null
-};
 /* harmony default export */ __webpack_exports__["default"] = (InFocusGuard);
 
 /***/ }),
@@ -50771,22 +51719,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var FreeFocusInside = function FreeFocusInside(_ref) {
   var children = _ref.children,
-      className = _ref.className;
+    className = _ref.className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, Object(_util__WEBPACK_IMPORTED_MODULE_4__["inlineProp"])(focus_lock_constants__WEBPACK_IMPORTED_MODULE_3__["FOCUS_ALLOW"], true), {
     className: className
   }), children);
 };
-
 FreeFocusInside.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node.isRequired,
   className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
 } : undefined;
-FreeFocusInside.defaultProps = {
-  className: undefined
-};
 /* harmony default export */ __webpack_exports__["default"] = (FreeFocusInside);
 
 /***/ }),
@@ -50809,6 +51752,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var use_callback_ref__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-callback-ref */ "./node_modules/use-callback-ref/dist/es2015/index.js");
 /* harmony import */ var _FocusGuard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FocusGuard */ "./node_modules/react-focus-lock/dist/es2015/FocusGuard.js");
 /* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./medium */ "./node_modules/react-focus-lock/dist/es2015/medium.js");
+/* harmony import */ var _scope__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scope */ "./node_modules/react-focus-lock/dist/es2015/scope.js");
+
 
 
 
@@ -50817,125 +51762,134 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var emptyArray = [];
-var FocusLock = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, parentRef) {
+var FocusLock = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function FocusLockUI(props, parentRef) {
   var _extends2;
-
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](),
-      realObserved = _React$useState[0],
-      setObserved = _React$useState[1];
-
+    realObserved = _React$useState[0],
+    setObserved = _React$useState[1];
   var observed = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]();
   var isActive = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](false);
   var originalFocusedElement = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](null);
-  var children = props.children,
-      disabled = props.disabled,
-      noFocusGuards = props.noFocusGuards,
-      persistentFocus = props.persistentFocus,
-      crossFrame = props.crossFrame,
-      autoFocus = props.autoFocus,
-      allowTextSelection = props.allowTextSelection,
-      group = props.group,
-      className = props.className,
-      whiteList = props.whiteList,
-      _props$shards = props.shards,
-      shards = _props$shards === void 0 ? emptyArray : _props$shards,
-      _props$as = props.as,
-      Container = _props$as === void 0 ? 'div' : _props$as,
-      _props$lockProps = props.lockProps,
-      containerProps = _props$lockProps === void 0 ? {} : _props$lockProps,
-      SideCar = props.sideCar,
-      shouldReturnFocus = props.returnFocus,
-      onActivationCallback = props.onActivation,
-      onDeactivationCallback = props.onDeactivation;
-
   var _React$useState2 = react__WEBPACK_IMPORTED_MODULE_1__["useState"]({}),
-      id = _React$useState2[0]; // SIDE EFFECT CALLBACKS
-
-
-  var onActivation = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function () {
-    originalFocusedElement.current = originalFocusedElement.current || document && document.activeElement;
-
+    update = _React$useState2[1];
+  var children = props.children,
+    _props$disabled = props.disabled,
+    disabled = _props$disabled === void 0 ? false : _props$disabled,
+    _props$noFocusGuards = props.noFocusGuards,
+    noFocusGuards = _props$noFocusGuards === void 0 ? false : _props$noFocusGuards,
+    _props$persistentFocu = props.persistentFocus,
+    persistentFocus = _props$persistentFocu === void 0 ? false : _props$persistentFocu,
+    _props$crossFrame = props.crossFrame,
+    crossFrame = _props$crossFrame === void 0 ? true : _props$crossFrame,
+    _props$autoFocus = props.autoFocus,
+    autoFocus = _props$autoFocus === void 0 ? true : _props$autoFocus,
+    allowTextSelection = props.allowTextSelection,
+    group = props.group,
+    className = props.className,
+    whiteList = props.whiteList,
+    hasPositiveIndices = props.hasPositiveIndices,
+    _props$shards = props.shards,
+    shards = _props$shards === void 0 ? emptyArray : _props$shards,
+    _props$as = props.as,
+    Container = _props$as === void 0 ? 'div' : _props$as,
+    _props$lockProps = props.lockProps,
+    containerProps = _props$lockProps === void 0 ? {} : _props$lockProps,
+    SideCar = props.sideCar,
+    _props$returnFocus = props.returnFocus,
+    shouldReturnFocus = _props$returnFocus === void 0 ? false : _props$returnFocus,
+    focusOptions = props.focusOptions,
+    onActivationCallback = props.onActivation,
+    onDeactivationCallback = props.onDeactivation;
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_1__["useState"]({}),
+    id = _React$useState3[0];
+  var onActivation = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (_ref) {
+    var captureFocusRestore = _ref.captureFocusRestore;
+    if (!originalFocusedElement.current) {
+      var _document;
+      var activeElement = (_document = document) == null ? void 0 : _document.activeElement;
+      originalFocusedElement.current = activeElement;
+      if (activeElement !== document.body) {
+        originalFocusedElement.current = captureFocusRestore(activeElement);
+      }
+    }
     if (observed.current && onActivationCallback) {
       onActivationCallback(observed.current);
     }
-
     isActive.current = true;
+    update();
   }, [onActivationCallback]);
   var onDeactivation = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function () {
     isActive.current = false;
-
     if (onDeactivationCallback) {
       onDeactivationCallback(observed.current);
     }
+    update();
   }, [onDeactivationCallback]);
   var returnFocus = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (allowDefer) {
-    var current = originalFocusedElement.current;
-
-    if (Boolean(shouldReturnFocus) && current && current.focus) {
-      var focusOptions = typeof shouldReturnFocus === 'object' ? shouldReturnFocus : undefined;
-      originalFocusedElement.current = null;
-
-      if (allowDefer) {
-        // React might return focus after update
-        // it's safer to defer the action
-        Promise.resolve().then(function () {
-          return current.focus(focusOptions);
-        });
-      } else {
-        current.focus(focusOptions);
+    var focusRestore = originalFocusedElement.current;
+    if (focusRestore) {
+      var returnFocusTo = (typeof focusRestore === 'function' ? focusRestore() : focusRestore) || document.body;
+      var howToReturnFocus = typeof shouldReturnFocus === 'function' ? shouldReturnFocus(returnFocusTo) : shouldReturnFocus;
+      if (howToReturnFocus) {
+        var returnFocusOptions = typeof howToReturnFocus === 'object' ? howToReturnFocus : undefined;
+        originalFocusedElement.current = null;
+        if (allowDefer) {
+          Promise.resolve().then(function () {
+            return returnFocusTo.focus(returnFocusOptions);
+          });
+        } else {
+          returnFocusTo.focus(returnFocusOptions);
+        }
       }
     }
-  }, [shouldReturnFocus]); // MEDIUM CALLBACKS
-
+  }, [shouldReturnFocus]);
   var onFocus = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (event) {
     if (isActive.current) {
       _medium__WEBPACK_IMPORTED_MODULE_6__["mediumFocus"].useMedium(event);
     }
   }, []);
-  var onBlur = _medium__WEBPACK_IMPORTED_MODULE_6__["mediumBlur"].useMedium; // REF PROPAGATION
-  // not using real refs due to race conditions
-
+  var onBlur = _medium__WEBPACK_IMPORTED_MODULE_6__["mediumBlur"].useMedium;
   var setObserveNode = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (newObserved) {
     if (observed.current !== newObserved) {
       observed.current = newObserved;
       setObserved(newObserved);
     }
   }, []);
-
   if (true) {
     if (typeof allowTextSelection !== 'undefined') {
-      // eslint-disable-next-line no-console
       console.warn('React-Focus-Lock: allowTextSelection is deprecated and enabled by default');
     }
-
     react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
-      if (!observed.current) {
-        // eslint-disable-next-line no-console
+      if (!observed.current && typeof Container !== 'string') {
         console.error('FocusLock: could not obtain ref to internal node');
       }
     }, []);
   }
-
   var lockProps = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])((_extends2 = {}, _extends2[focus_lock_constants__WEBPACK_IMPORTED_MODULE_3__["FOCUS_DISABLED"]] = disabled && 'disabled', _extends2[focus_lock_constants__WEBPACK_IMPORTED_MODULE_3__["FOCUS_GROUP"]] = group, _extends2), containerProps);
-
   var hasLeadingGuards = noFocusGuards !== true;
   var hasTailingGuards = hasLeadingGuards && noFocusGuards !== 'tail';
   var mergedRef = Object(use_callback_ref__WEBPACK_IMPORTED_MODULE_4__["useMergeRefs"])([parentRef, setObserveNode]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, hasLeadingGuards && [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  var focusScopeValue = react__WEBPACK_IMPORTED_MODULE_1__["useMemo"](function () {
+    return {
+      observed: observed,
+      shards: shards,
+      enabled: !disabled,
+      active: isActive.current
+    };
+  }, [disabled, isActive.current, shards, realObserved]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, hasLeadingGuards && [
+  /*#__PURE__*/
+  react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     key: "guard-first",
     "data-focus-guard": true,
     tabIndex: disabled ? -1 : 0,
     style: _FocusGuard__WEBPACK_IMPORTED_MODULE_5__["hiddenGuard"]
-  }),
-  /*#__PURE__*/
-  // nearest focus guard
-  react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  }), hasPositiveIndices ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     key: "guard-nearest",
     "data-focus-guard": true,
     tabIndex: disabled ? -1 : 1,
     style: _FocusGuard__WEBPACK_IMPORTED_MODULE_5__["hiddenGuard"]
-  }) // first tabbed element guard
-  ], !disabled && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, {
+  }) : null], !disabled && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, {
     id: id,
     sideCar: _medium__WEBPACK_IMPORTED_MODULE_6__["mediumSidecar"],
     observed: realObserved,
@@ -50947,14 +51901,17 @@ var FocusLock = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](fu
     shards: shards,
     onActivation: onActivation,
     onDeactivation: onDeactivation,
-    returnFocus: returnFocus
+    returnFocus: returnFocus,
+    focusOptions: focusOptions
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Container, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     ref: mergedRef
   }, lockProps, {
     className: className,
     onBlur: onBlur,
     onFocus: onFocus
-  }), children), hasTailingGuards && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_scope__WEBPACK_IMPORTED_MODULE_7__["focusScope"].Provider, {
+    value: focusScopeValue
+  }, children)), hasTailingGuards && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     "data-focus-guard": true,
     tabIndex: disabled ? -1 : 0,
     style: _FocusGuard__WEBPACK_IMPORTED_MODULE_5__["hiddenGuard"]
@@ -50963,8 +51920,10 @@ var FocusLock = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](fu
 FocusLock.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_2__["node"],
   disabled: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
-  returnFocus: Object(prop_types__WEBPACK_IMPORTED_MODULE_2__["oneOfType"])([prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"], prop_types__WEBPACK_IMPORTED_MODULE_2__["object"]]),
+  returnFocus: Object(prop_types__WEBPACK_IMPORTED_MODULE_2__["oneOfType"])([prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"], prop_types__WEBPACK_IMPORTED_MODULE_2__["object"], prop_types__WEBPACK_IMPORTED_MODULE_2__["func"]]),
+  focusOptions: prop_types__WEBPACK_IMPORTED_MODULE_2__["object"],
   noFocusGuards: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
+  hasPositiveIndices: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
   allowTextSelection: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
   autoFocus: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
   persistentFocus: prop_types__WEBPACK_IMPORTED_MODULE_2__["bool"],
@@ -50979,24 +51938,6 @@ FocusLock.propTypes =  true ? {
   onDeactivation: prop_types__WEBPACK_IMPORTED_MODULE_2__["func"],
   sideCar: prop_types__WEBPACK_IMPORTED_MODULE_2__["any"].isRequired
 } : undefined;
-FocusLock.defaultProps = {
-  children: undefined,
-  disabled: false,
-  returnFocus: false,
-  noFocusGuards: false,
-  autoFocus: true,
-  persistentFocus: false,
-  crossFrame: true,
-  allowTextSelection: undefined,
-  group: undefined,
-  className: undefined,
-  whiteList: undefined,
-  shards: undefined,
-  as: 'div',
-  lockProps: {},
-  onActivation: undefined,
-  onDeactivation: undefined
-};
 /* harmony default export */ __webpack_exports__["default"] = (FocusLock);
 
 /***/ }),
@@ -51030,7 +51971,6 @@ var useFocusInside = function useFocusInside(observedRef) {
     var enabled = true;
     _medium__WEBPACK_IMPORTED_MODULE_5__["mediumEffect"].useMedium(function (car) {
       var observed = observedRef && observedRef.current;
-
       if (enabled && observed) {
         if (!car.focusInside(observed)) {
           car.moveFocusInside(observed, null);
@@ -51042,11 +51982,11 @@ var useFocusInside = function useFocusInside(observedRef) {
     };
   }, [observedRef]);
 };
-
 function MoveFocusInside(_ref) {
-  var isDisabled = _ref.disabled,
-      className = _ref.className,
-      children = _ref.children;
+  var _ref$disabled = _ref.disabled,
+    isDisabled = _ref$disabled === void 0 ? false : _ref$disabled,
+    className = _ref.className,
+    children = _ref.children;
   var ref = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](null);
   useFocusInside(isDisabled ? undefined : ref);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, Object(_util__WEBPACK_IMPORTED_MODULE_4__["inlineProp"])(focus_lock_constants__WEBPACK_IMPORTED_MODULE_3__["FOCUS_AUTO"], !isDisabled), {
@@ -51054,16 +51994,11 @@ function MoveFocusInside(_ref) {
     className: className
   }), children);
 }
-
 MoveFocusInside.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node.isRequired,
   disabled: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
   className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
 } : undefined;
-MoveFocusInside.defaultProps = {
-  disabled: false,
-  className: undefined
-};
 /* harmony default export */ __webpack_exports__["default"] = (MoveFocusInside);
 
 /***/ }),
@@ -51091,131 +52026,111 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var focusOnBody = function focusOnBody() {
   return document && document.activeElement === document.body;
 };
-
 var isFreeFocus = function isFreeFocus() {
   return focusOnBody() || Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusIsHidden"])();
 };
-
 var lastActiveTrap = null;
 var lastActiveFocus = null;
 var lastPortaledElement = null;
 var focusWasOutsideWindow = false;
-
 var defaultWhitelist = function defaultWhitelist() {
   return true;
 };
-
 var focusWhitelisted = function focusWhitelisted(activeElement) {
   return (lastActiveTrap.whiteList || defaultWhitelist)(activeElement);
 };
-
 var recordPortal = function recordPortal(observerNode, portaledElement) {
   lastPortaledElement = {
     observerNode: observerNode,
     portaledElement: portaledElement
   };
 };
-
 var focusIsPortaledPair = function focusIsPortaledPair(element) {
   return lastPortaledElement && lastPortaledElement.portaledElement === element;
 };
-
 function autoGuard(startIndex, end, step, allNodes) {
   var lastGuard = null;
   var i = startIndex;
-
   do {
     var item = allNodes[i];
-
     if (item.guard) {
       if (item.node.dataset.focusAutoGuard) {
         lastGuard = item;
       }
     } else if (item.lockItem) {
       if (i !== startIndex) {
-        // we will tab to the next element
         return;
       }
-
       lastGuard = null;
     } else {
       break;
     }
   } while ((i += step) !== end);
-
   if (lastGuard) {
     lastGuard.node.tabIndex = 0;
   }
 }
-
-var extractRef = function extractRef(ref) {
-  return ref && 'current' in ref ? ref.current : ref;
-};
-
 var focusWasOutside = function focusWasOutside(crossFrameOption) {
   if (crossFrameOption) {
-    // with cross frame return true for any value
     return Boolean(focusWasOutsideWindow);
-  } // in other case return only of focus went a while aho
-
-
+  }
   return focusWasOutsideWindow === 'meanwhile';
 };
-
+var checkInHost = function checkInHost(check, el, boundary) {
+  return el && (el.host === check && (!el.activeElement || boundary.contains(el.activeElement)) || el.parentNode && checkInHost(check, el.parentNode, boundary));
+};
+var withinHost = function withinHost(activeElement, workingArea) {
+  return workingArea.some(function (area) {
+    return checkInHost(activeElement, area, area);
+  });
+};
 var activateTrap = function activateTrap() {
   var result = false;
-
   if (lastActiveTrap) {
     var _lastActiveTrap = lastActiveTrap,
-        observed = _lastActiveTrap.observed,
-        persistentFocus = _lastActiveTrap.persistentFocus,
-        autoFocus = _lastActiveTrap.autoFocus,
-        shards = _lastActiveTrap.shards,
-        crossFrame = _lastActiveTrap.crossFrame;
+      observed = _lastActiveTrap.observed,
+      persistentFocus = _lastActiveTrap.persistentFocus,
+      autoFocus = _lastActiveTrap.autoFocus,
+      shards = _lastActiveTrap.shards,
+      crossFrame = _lastActiveTrap.crossFrame,
+      focusOptions = _lastActiveTrap.focusOptions;
     var workingNode = observed || lastPortaledElement && lastPortaledElement.portaledElement;
     var activeElement = document && document.activeElement;
-
     if (workingNode) {
-      var workingArea = [workingNode].concat(shards.map(extractRef).filter(Boolean));
-
+      var workingArea = [workingNode].concat(shards.map(_util__WEBPACK_IMPORTED_MODULE_4__["extractRef"]).filter(Boolean));
       if (!activeElement || focusWhitelisted(activeElement)) {
         if (persistentFocus || focusWasOutside(crossFrame) || !isFreeFocus() || !lastActiveFocus && autoFocus) {
-          if (workingNode && !(Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusInside"])(workingArea) || focusIsPortaledPair(activeElement, workingNode))) {
+          if (workingNode && !(Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusInside"])(workingArea) || activeElement && withinHost(activeElement, workingArea) || focusIsPortaledPair(activeElement, workingNode))) {
             if (document && !lastActiveFocus && activeElement && !autoFocus) {
-              // Check if blur() exists, which is missing on certain elements on IE
               if (activeElement.blur) {
                 activeElement.blur();
               }
-
               document.body.focus();
             } else {
-              result = Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["default"])(workingArea, lastActiveFocus);
+              result = Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["moveFocusInside"])(workingArea, lastActiveFocus, {
+                focusOptions: focusOptions
+              });
               lastPortaledElement = {};
             }
           }
-
           focusWasOutsideWindow = false;
           lastActiveFocus = document && document.activeElement;
         }
       }
-
-      if (document) {
+      if (document && activeElement !== document.activeElement && document.querySelector('[data-focus-auto-guard]')) {
         var newActiveElement = document && document.activeElement;
-        var allNodes = Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["getFocusabledIn"])(workingArea);
+        var allNodes = Object(focus_lock__WEBPACK_IMPORTED_MODULE_3__["expandFocusableNodes"])(workingArea);
         var focusedIndex = allNodes.map(function (_ref) {
           var node = _ref.node;
           return node;
         }).indexOf(newActiveElement);
-
         if (focusedIndex > -1) {
-          // remove old focus
           allNodes.filter(function (_ref2) {
             var guard = _ref2.guard,
-                node = _ref2.node;
+              node = _ref2.node;
             return guard && node.dataset.focusAutoGuard;
           }).forEach(function (_ref3) {
             var node = _ref3.node;
@@ -51227,36 +52142,27 @@ var activateTrap = function activateTrap() {
       }
     }
   }
-
   return result;
 };
-
 var onTrap = function onTrap(event) {
   if (activateTrap() && event) {
-    // prevent scroll jump
     event.stopPropagation();
     event.preventDefault();
   }
 };
-
 var onBlur = function onBlur() {
   return Object(_util__WEBPACK_IMPORTED_MODULE_4__["deferAction"])(activateTrap);
 };
-
 var onFocus = function onFocus(event) {
-  // detect portal
   var source = event.target;
   var currentNode = event.currentTarget;
-
   if (!currentNode.contains(source)) {
     recordPortal(currentNode, source);
   }
 };
-
 var FocusWatcher = function FocusWatcher() {
   return null;
 };
-
 var FocusTrap = function FocusTrap(_ref4) {
   var children = _ref4.children;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
@@ -51264,84 +52170,73 @@ var FocusTrap = function FocusTrap(_ref4) {
     onFocus: onFocus
   }, children);
 };
-
 FocusTrap.propTypes =  true ? {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
 } : undefined;
-
 var onWindowBlur = function onWindowBlur() {
-  focusWasOutsideWindow = 'just'; // using setTimeout to set  this variable after React/sidecar reaction
-
-  setTimeout(function () {
+  focusWasOutsideWindow = 'just';
+  Object(_util__WEBPACK_IMPORTED_MODULE_4__["deferAction"])(function () {
     focusWasOutsideWindow = 'meanwhile';
-  }, 0);
+  });
 };
-
 var attachHandler = function attachHandler() {
-  document.addEventListener('focusin', onTrap, true);
+  document.addEventListener('focusin', onTrap);
   document.addEventListener('focusout', onBlur);
   window.addEventListener('blur', onWindowBlur);
 };
-
 var detachHandler = function detachHandler() {
-  document.removeEventListener('focusin', onTrap, true);
+  document.removeEventListener('focusin', onTrap);
   document.removeEventListener('focusout', onBlur);
   window.removeEventListener('blur', onWindowBlur);
 };
-
 function reducePropsToState(propsList) {
   return propsList.filter(function (_ref5) {
     var disabled = _ref5.disabled;
     return !disabled;
   });
 }
-
+var focusLockAPI = {
+  moveFocusInside: focus_lock__WEBPACK_IMPORTED_MODULE_3__["moveFocusInside"],
+  focusInside: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusInside"],
+  focusNextElement: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusNextElement"],
+  focusPrevElement: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusPrevElement"],
+  focusFirstElement: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusFirstElement"],
+  focusLastElement: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusLastElement"],
+  captureFocusRestore: focus_lock__WEBPACK_IMPORTED_MODULE_3__["captureFocusRestore"]
+};
 function handleStateChangeOnClient(traps) {
   var trap = traps.slice(-1)[0];
-
   if (trap && !lastActiveTrap) {
     attachHandler();
   }
-
   var lastTrap = lastActiveTrap;
   var sameTrap = lastTrap && trap && trap.id === lastTrap.id;
   lastActiveTrap = trap;
-
   if (lastTrap && !sameTrap) {
-    lastTrap.onDeactivation(); // return focus only of last trap was removed
-
+    lastTrap.onDeactivation();
     if (!traps.filter(function (_ref6) {
       var id = _ref6.id;
       return id === lastTrap.id;
     }).length) {
-      // allow defer is no other trap is awaiting restore
       lastTrap.returnFocus(!trap);
     }
   }
-
   if (trap) {
     lastActiveFocus = null;
-
     if (!sameTrap || lastTrap.observed !== trap.observed) {
-      trap.onActivation();
+      trap.onActivation(focusLockAPI);
     }
-
     activateTrap(true);
     Object(_util__WEBPACK_IMPORTED_MODULE_4__["deferAction"])(activateTrap);
   } else {
     detachHandler();
     lastActiveFocus = null;
   }
-} // bind medium
-
-
+}
 _medium__WEBPACK_IMPORTED_MODULE_5__["mediumFocus"].assignSyncMedium(onFocus);
 _medium__WEBPACK_IMPORTED_MODULE_5__["mediumBlur"].assignMedium(onBlur);
 _medium__WEBPACK_IMPORTED_MODULE_5__["mediumEffect"].assignMedium(function (cb) {
-  return cb({
-    moveFocusInside: focus_lock__WEBPACK_IMPORTED_MODULE_3__["default"],
-    focusInside: focus_lock__WEBPACK_IMPORTED_MODULE_3__["focusInside"]
-  });
+  return cb(focusLockAPI);
 });
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_clientside_effect__WEBPACK_IMPORTED_MODULE_2__["default"])(reducePropsToState, handleStateChangeOnClient)(FocusWatcher));
 
@@ -51351,7 +52246,7 @@ _medium__WEBPACK_IMPORTED_MODULE_5__["mediumEffect"].assignMedium(function (cb) 
 /*!*********************************************************!*\
   !*** ./node_modules/react-focus-lock/dist/es2015/UI.js ***!
   \*********************************************************/
-/*! exports provided: AutoFocusInside, MoveFocusInside, FreeFocusInside, InFocusGuard, FocusLockUI, useFocusInside, default */
+/*! exports provided: AutoFocusInside, MoveFocusInside, FreeFocusInside, InFocusGuard, FocusLockUI, useFocusInside, useFocusController, useFocusScope, useFocusState, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51372,6 +52267,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _FocusGuard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FocusGuard */ "./node_modules/react-focus-lock/dist/es2015/FocusGuard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InFocusGuard", function() { return _FocusGuard__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _use_focus_scope__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./use-focus-scope */ "./node_modules/react-focus-lock/dist/es2015/use-focus-scope.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useFocusController", function() { return _use_focus_scope__WEBPACK_IMPORTED_MODULE_5__["useFocusController"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useFocusScope", function() { return _use_focus_scope__WEBPACK_IMPORTED_MODULE_5__["useFocusScope"]; });
+
+/* harmony import */ var _use_focus_state__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./use-focus-state */ "./node_modules/react-focus-lock/dist/es2015/use-focus-state.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useFocusState", function() { return _use_focus_state__WEBPACK_IMPORTED_MODULE_6__["useFocusState"]; });
+
+
 
 
 
@@ -51400,7 +52305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mediumFocus = Object(use_sidecar__WEBPACK_IMPORTED_MODULE_0__["createMedium"])({}, function (_ref) {
   var target = _ref.target,
-      currentTarget = _ref.currentTarget;
+    currentTarget = _ref.currentTarget;
   return {
     target: target,
     currentTarget: currentTarget
@@ -51409,8 +52314,63 @@ var mediumFocus = Object(use_sidecar__WEBPACK_IMPORTED_MODULE_0__["createMedium"
 var mediumBlur = Object(use_sidecar__WEBPACK_IMPORTED_MODULE_0__["createMedium"])();
 var mediumEffect = Object(use_sidecar__WEBPACK_IMPORTED_MODULE_0__["createMedium"])();
 var mediumSidecar = Object(use_sidecar__WEBPACK_IMPORTED_MODULE_0__["createSidecarMedium"])({
-  async: true
+  async: true,
+  ssr: typeof document !== 'undefined'
 });
+
+/***/ }),
+
+/***/ "./node_modules/react-focus-lock/dist/es2015/nano-events.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-focus-lock/dist/es2015/nano-events.js ***!
+  \******************************************************************/
+/*! exports provided: createNanoEvents */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNanoEvents", function() { return createNanoEvents; });
+var createNanoEvents = function createNanoEvents() {
+  return {
+    emit: function emit(event) {
+      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+      for (var i = 0, callbacks = this.events[event] || [], length = callbacks.length; i < length; i++) {
+        callbacks[i].apply(callbacks, args);
+      }
+    },
+    events: {},
+    on: function on(event, cb) {
+      var _this$events,
+        _this = this;
+      ((_this$events = this.events)[event] || (_this$events[event] = [])).push(cb);
+      return function () {
+        var _this$events$event;
+        _this.events[event] = (_this$events$event = _this.events[event]) == null ? void 0 : _this$events$event.filter(function (i) {
+          return cb !== i;
+        });
+      };
+    }
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-focus-lock/dist/es2015/scope.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-focus-lock/dist/es2015/scope.js ***!
+  \************************************************************/
+/*! exports provided: focusScope */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusScope", function() { return focusScope; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var focusScope = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])(undefined);
 
 /***/ }),
 
@@ -51433,32 +52393,228 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/react-focus-lock/dist/es2015/use-focus-scope.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-focus-lock/dist/es2015/use-focus-scope.js ***!
+  \**********************************************************************/
+/*! exports provided: useFocusController, useFocusScope */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFocusController", function() { return useFocusController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFocusScope", function() { return useFocusScope; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scope__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scope */ "./node_modules/react-focus-lock/dist/es2015/scope.js");
+/* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./medium */ "./node_modules/react-focus-lock/dist/es2015/medium.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util */ "./node_modules/react-focus-lock/dist/es2015/util.js");
+
+
+
+
+
+var collapseRefs = function collapseRefs(shards) {
+  return shards.map(_util__WEBPACK_IMPORTED_MODULE_4__["extractRef"]).filter(Boolean);
+};
+var withMedium = function withMedium(fn) {
+  return new Promise(function (resolve) {
+    return _medium__WEBPACK_IMPORTED_MODULE_3__["mediumEffect"].useMedium(function () {
+      resolve(fn.apply(void 0, arguments));
+    });
+  });
+};
+var useFocusController = function useFocusController() {
+  for (var _len = arguments.length, shards = new Array(_len), _key = 0; _key < _len; _key++) {
+    shards[_key] = arguments[_key];
+  }
+  if (!shards.length) {
+    throw new Error('useFocusController requires at least one target element');
+  }
+  var ref = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(shards);
+  ref.current = shards;
+  return Object(react__WEBPACK_IMPORTED_MODULE_1__["useMemo"])(function () {
+    return {
+      autoFocus: function autoFocus(focusOptions) {
+        if (focusOptions === void 0) {
+          focusOptions = {};
+        }
+        return withMedium(function (car) {
+          return car.moveFocusInside(collapseRefs(ref.current), null, focusOptions);
+        });
+      },
+      focusNext: function focusNext(options) {
+        return withMedium(function (car) {
+          car.moveFocusInside(collapseRefs(ref.current), null);
+          car.focusNextElement(document.activeElement, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+            scope: collapseRefs(ref.current)
+          }, options));
+        });
+      },
+      focusPrev: function focusPrev(options) {
+        return withMedium(function (car) {
+          car.moveFocusInside(collapseRefs(ref.current), null);
+          car.focusPrevElement(document.activeElement, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+            scope: collapseRefs(ref.current)
+          }, options));
+        });
+      },
+      focusFirst: function focusFirst(options) {
+        return withMedium(function (car) {
+          car.focusFirstElement(collapseRefs(ref.current), options);
+        });
+      },
+      focusLast: function focusLast(options) {
+        return withMedium(function (car) {
+          car.focusLastElement(collapseRefs(ref.current), options);
+        });
+      }
+    };
+  }, []);
+};
+var useFocusScope = function useFocusScope() {
+  var scope = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_scope__WEBPACK_IMPORTED_MODULE_2__["focusScope"]);
+  if (!scope) {
+    throw new Error('FocusLock is required to operate with FocusScope');
+  }
+  return useFocusController.apply(void 0, [scope.observed].concat(scope.shards));
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-focus-lock/dist/es2015/use-focus-state.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-focus-lock/dist/es2015/use-focus-state.js ***!
+  \**********************************************************************/
+/*! exports provided: useFocusState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFocusState", function() { return useFocusState; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nano_events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nano-events */ "./node_modules/react-focus-lock/dist/es2015/nano-events.js");
+
+
+var mainbus = Object(_nano_events__WEBPACK_IMPORTED_MODULE_1__["createNanoEvents"])();
+var subscribeCounter = 0;
+var onFocusIn = function onFocusIn(event) {
+  return mainbus.emit('assign', event.target);
+};
+var onFocusOut = function onFocusOut(event) {
+  return mainbus.emit('reset', event.target);
+};
+var useDocumentFocusSubscribe = function useDocumentFocusSubscribe() {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!subscribeCounter) {
+      document.addEventListener('focusin', onFocusIn);
+      document.addEventListener('focusout', onFocusOut);
+    }
+    subscribeCounter += 1;
+    return function () {
+      subscribeCounter -= 1;
+      if (!subscribeCounter) {
+        document.removeEventListener('focusin', onFocusIn);
+        document.removeEventListener('focusout', onFocusOut);
+      }
+    };
+  }, []);
+};
+var getFocusState = function getFocusState(target, current) {
+  if (target === current) {
+    return 'self';
+  }
+  if (current.contains(target)) {
+    return 'within';
+  }
+  return 'within-boundary';
+};
+var useFocusState = function useFocusState(callbacks) {
+  if (callbacks === void 0) {
+    callbacks = {};
+  }
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+    active = _useState[0],
+    setActive = _useState[1];
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+    state = _useState2[0],
+    setState = _useState2[1];
+  var ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var focusState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])({});
+  var stateTracker = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (ref.current) {
+      var isAlreadyFocused = ref.current === document.activeElement || ref.current.contains(document.activeElement);
+      setActive(isAlreadyFocused);
+      setState(getFocusState(document.activeElement, ref.current));
+      if (isAlreadyFocused && callbacks.onFocus) {
+        callbacks.onFocus();
+      }
+    }
+  }, []);
+  var onFocus = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (e) {
+    focusState.current = {
+      focused: true,
+      state: getFocusState(e.target, e.currentTarget)
+    };
+  }, []);
+  useDocumentFocusSubscribe();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var fout = mainbus.on('reset', function () {
+      focusState.current = {};
+    });
+    var fin = mainbus.on('assign', function () {
+      var newState = focusState.current.focused || false;
+      setActive(newState);
+      setState(focusState.current.state || '');
+      if (newState !== stateTracker.current) {
+        stateTracker.current = newState;
+        if (newState) {
+          callbacks.onFocus && callbacks.onFocus();
+        } else {
+          callbacks.onBlur && callbacks.onBlur();
+        }
+      }
+    });
+    return function () {
+      fout();
+      fin();
+    };
+  }, []);
+  return {
+    active: active,
+    state: state,
+    onFocus: onFocus,
+    ref: ref
+  };
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-focus-lock/dist/es2015/util.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-focus-lock/dist/es2015/util.js ***!
   \***********************************************************/
-/*! exports provided: deferAction, inlineProp */
+/*! exports provided: deferAction, inlineProp, extractRef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deferAction", function() { return deferAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inlineProp", function() { return inlineProp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractRef", function() { return extractRef; });
 function deferAction(action) {
-  // Hidding setImmediate from Webpack to avoid inserting polyfill
-  var _window = window,
-      setImmediate = _window.setImmediate;
-
-  if (typeof setImmediate !== 'undefined') {
-    setImmediate(action);
-  } else {
-    setTimeout(action, 1);
-  }
+  setTimeout(action, 1);
 }
 var inlineProp = function inlineProp(name, value) {
   var obj = {};
   obj[name] = value;
   return obj;
+};
+var extractRef = function extractRef(ref) {
+  return ref && 'current' in ref ? ref.current : ref;
 };
 
 /***/ }),
@@ -51473,7 +52629,7 @@ var inlineProp = function inlineProp(name, value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FocusOn", function() { return FocusOn; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _UI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UI */ "./node_modules/react-focus-on/dist/es2015/UI.js");
@@ -51483,9 +52639,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RequireSideCar = function (props) {
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_sidecar__WEBPACK_IMPORTED_MODULE_3__["default"], tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, props));
+    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_sidecar__WEBPACK_IMPORTED_MODULE_3__["default"], Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props));
 };
-var FocusOn = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, ref) { return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_UI__WEBPACK_IMPORTED_MODULE_2__["FocusOn"], tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, props, { ref: ref, sideCar: RequireSideCar })); });
+var FocusOn = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, ref) { return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_UI__WEBPACK_IMPORTED_MODULE_2__["FocusOn"], Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, { ref: ref, sideCar: RequireSideCar })); });
 
 
 /***/ }),
@@ -51500,11 +52656,13 @@ var FocusOn = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Effect", function() { return Effect; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var aria_hidden__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! aria-hidden */ "./node_modules/aria-hidden/dist/es2015/index.js");
-/* harmony import */ var _InteractivityDisabler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InteractivityDisabler */ "./node_modules/react-focus-on/dist/es2015/InteractivityDisabler.js");
-/* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./medium */ "./node_modules/react-focus-on/dist/es2015/medium.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var aria_hidden__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! aria-hidden */ "./node_modules/aria-hidden/dist/es2015/index.js");
+/* harmony import */ var _InteractivityDisabler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InteractivityDisabler */ "./node_modules/react-focus-on/dist/es2015/InteractivityDisabler.js");
+/* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./medium */ "./node_modules/react-focus-on/dist/es2015/medium.js");
+
 
 
 
@@ -51515,10 +52673,10 @@ var extractRef = function (ref) {
 };
 function Effect(_a) {
     var setLockProps = _a.setLockProps, onEscapeKey = _a.onEscapeKey, onClickOutside = _a.onClickOutside, shards = _a.shards, onActivation = _a.onActivation, onDeactivation = _a.onDeactivation, noIsolation = _a.noIsolation;
-    var _b = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(undefined), activeNode = _b[0], setActiveNode = _b[1];
-    var lastEventTarget = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-    var mouseTouches = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0);
-    react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    var _b = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(undefined), activeNode = _b[0], setActiveNode = _b[1];
+    var lastEventTarget = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+    var mouseTouches = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(0);
+    react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
         var onKeyDown = function (event) {
             if (!event.defaultPrevented) {
                 if ((event.code === 'Escape' ||
@@ -51568,7 +52726,7 @@ function Effect(_a) {
             };
         }
     }, [activeNode, onClickOutside, onEscapeKey]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
         if (activeNode) {
             if (onActivation) {
                 onActivation(activeNode);
@@ -51580,11 +52738,13 @@ function Effect(_a) {
             };
         }
     }, [!!activeNode]);
-    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
         var _undo = function () { return null; };
         var unmounted = false;
         var onNodeActivation = function (node) {
-            _undo = Object(aria_hidden__WEBPACK_IMPORTED_MODULE_1__["hideOthers"])([node].concat((shards || []).map(extractRef)), document.body, noIsolation ? undefined : _medium__WEBPACK_IMPORTED_MODULE_3__["focusHiddenMarker"]);
+            if (!noIsolation) {
+                _undo = Object(aria_hidden__WEBPACK_IMPORTED_MODULE_2__["hideOthers"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArrays"])([node], (shards || []).map(extractRef)), document.body, _medium__WEBPACK_IMPORTED_MODULE_4__["focusHiddenMarker"]);
+            }
             setActiveNode(function () { return node; });
         };
         var onNodeDeactivation = function () {
@@ -51608,7 +52768,7 @@ function Effect(_a) {
             setLockProps(false);
         };
     }, []);
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_InteractivityDisabler__WEBPACK_IMPORTED_MODULE_2__["InteractivityDisabler"], null);
+    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_InteractivityDisabler__WEBPACK_IMPORTED_MODULE_3__["InteractivityDisabler"], null);
 }
 
 
@@ -51648,7 +52808,7 @@ var InteractivityDisabler = function () { return react__WEBPACK_IMPORTED_MODULE_
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FocusOn", function() { return FocusOn; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-remove-scroll/UI */ "./node_modules/react-remove-scroll/dist/es2015/UI.js");
@@ -51668,19 +52828,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var PREVENT_SCROLL = { preventScroll: true };
 var FocusOn = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, parentRef) {
     var _a = react__WEBPACK_IMPORTED_MODULE_1__["useState"](false), lockProps = _a[0], setLockProps = _a[1];
-    var children = props.children, autoFocus = props.autoFocus, shards = props.shards, _b = props.enabled, enabled = _b === void 0 ? true : _b, _c = props.scrollLock, scrollLock = _c === void 0 ? true : _c, _d = props.focusLock, focusLock = _d === void 0 ? true : _d, _e = props.returnFocus, returnFocus = _e === void 0 ? true : _e, inert = props.inert, allowPinchZoom = props.allowPinchZoom, sideCar = props.sideCar, className = props.className, shouldIgnore = props.shouldIgnore, style = props.style, as = props.as, rest = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](props, ["children", "autoFocus", "shards", "enabled", "scrollLock", "focusLock", "returnFocus", "inert", "allowPinchZoom", "sideCar", "className", "shouldIgnore", "style", "as"]);
+    var children = props.children, autoFocus = props.autoFocus, shards = props.shards, crossFrame = props.crossFrame, _b = props.enabled, enabled = _b === void 0 ? true : _b, _c = props.scrollLock, scrollLock = _c === void 0 ? true : _c, _d = props.focusLock, focusLock = _d === void 0 ? true : _d, _e = props.returnFocus, returnFocus = _e === void 0 ? true : _e, inert = props.inert, allowPinchZoom = props.allowPinchZoom, sideCar = props.sideCar, className = props.className, shouldIgnore = props.shouldIgnore, preventScrollOnFocus = props.preventScrollOnFocus, style = props.style, as = props.as, gapMode = props.gapMode, rest = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(props, ["children", "autoFocus", "shards", "crossFrame", "enabled", "scrollLock", "focusLock", "returnFocus", "inert", "allowPinchZoom", "sideCar", "className", "shouldIgnore", "preventScrollOnFocus", "style", "as", "gapMode"]);
     var SideCar = sideCar;
-    var onActivation = lockProps.onActivation, onDeactivation = lockProps.onDeactivation, restProps = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](lockProps, ["onActivation", "onDeactivation"]);
+    var onActivation = lockProps.onActivation, onDeactivation = lockProps.onDeactivation, restProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(lockProps, ["onActivation", "onDeactivation"]);
+    var appliedLockProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, restProps), { as: as,
+        style: style,
+        sideCar: sideCar,
+        shards: shards,
+        allowPinchZoom: allowPinchZoom,
+        gapMode: gapMode,
+        inert: inert, enabled: enabled && scrollLock });
     return (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null,
-        react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react_focus_lock_UI__WEBPACK_IMPORTED_MODULE_3__["default"], { ref: parentRef, sideCar: sideCar, disabled: !(lockProps && enabled && focusLock), returnFocus: returnFocus, autoFocus: autoFocus, shards: shards, onActivation: onActivation, onDeactivation: onDeactivation, className: className, as: react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_2__["RemoveScroll"], whiteList: shouldIgnore, lockProps: tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, restProps, { sideCar: sideCar,
-                shards: shards,
-                allowPinchZoom: allowPinchZoom,
-                as: as,
-                inert: inert,
-                style: style, enabled: enabled && scrollLock }) }, children),
-        enabled && (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, rest, { sideCar: _medium__WEBPACK_IMPORTED_MODULE_4__["effectCar"], setLockProps: setLockProps, shards: shards })))));
+        react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react_focus_lock_UI__WEBPACK_IMPORTED_MODULE_3__["default"], { ref: parentRef, sideCar: sideCar, disabled: !(lockProps && enabled && focusLock), returnFocus: returnFocus, autoFocus: autoFocus, shards: shards, crossFrame: crossFrame, onActivation: onActivation, onDeactivation: onDeactivation, className: className, whiteList: shouldIgnore, lockProps: appliedLockProps, focusOptions: preventScrollOnFocus ? PREVENT_SCROLL : undefined, as: react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_2__["RemoveScroll"] }, children),
+        enabled && (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, rest, { sideCar: _medium__WEBPACK_IMPORTED_MODULE_4__["effectCar"], setLockProps: setLockProps, shards: shards })))));
 });
 
 
@@ -51743,7 +52906,7 @@ var focusHiddenMarker = 'data-focus-on-hidden';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "classNames", function() { return classNames; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-remove-scroll/UI */ "./node_modules/react-remove-scroll/dist/es2015/UI.js");
 /* harmony import */ var react_focus_lock_UI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-focus-lock/UI */ "./node_modules/react-focus-lock/dist/es2015/UI.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AutoFocusInside", function() { return react_focus_lock_UI__WEBPACK_IMPORTED_MODULE_2__["AutoFocusInside"]; });
@@ -51755,7 +52918,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var classNames = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_1__["RemoveScroll"].classNames);
+var classNames = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, react_remove_scroll_UI__WEBPACK_IMPORTED_MODULE_1__["RemoveScroll"].classNames);
 
 
 /***/ }),
@@ -51784,6 +52947,420 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-focus-on/node_modules/tslib/tslib.es6.js ***!
+  \*********************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__esDecorate", function() { return __esDecorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__runInitializers", function() { return __runInitializers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__propKey", function() { return __propKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__setFunctionName", function() { return __setFunctionName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArray", function() { return __spreadArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldIn", function() { return __classPrivateFieldIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__addDisposableResource", function() { return __addDisposableResource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__disposeResources", function() { return __disposeResources; });
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null)
+        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for (var i = decorators.length - 1; i >= 0; i--) {
+        var context = {};
+        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        }
+        else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+};
+
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i = 0; i < initializers.length; i++) {
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+};
+
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+};
+
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+/** @deprecated */
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+function __addDisposableResource(env, value, async) {
+    if (value !== null && value !== void 0) {
+        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+        var dispose;
+        if (async) {
+            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+            dispose = value[Symbol.asyncDispose];
+        }
+        if (dispose === void 0) {
+            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+            dispose = value[Symbol.dispose];
+        }
+        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+        env.stack.push({ value: value, dispose: dispose, async: async });
+    }
+    else if (async) {
+        env.stack.push({ async: true });
+    }
+    return value;
+}
+
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+function __disposeResources(env) {
+    function fail(e) {
+        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+        env.hasError = true;
+    }
+    function next() {
+        while (env.stack.length) {
+            var rec = env.stack.pop();
+            try {
+                var result = rec.dispose && rec.dispose.call(rec.value);
+                if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+            }
+            catch (e) {
+                fail(e);
+            }
+        }
+        if (env.hasError) throw env.error;
+    }
+    return next();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    __extends: __extends,
+    __assign: __assign,
+    __rest: __rest,
+    __decorate: __decorate,
+    __param: __param,
+    __metadata: __metadata,
+    __awaiter: __awaiter,
+    __generator: __generator,
+    __createBinding: __createBinding,
+    __exportStar: __exportStar,
+    __values: __values,
+    __read: __read,
+    __spread: __spread,
+    __spreadArrays: __spreadArrays,
+    __spreadArray: __spreadArray,
+    __await: __await,
+    __asyncGenerator: __asyncGenerator,
+    __asyncDelegator: __asyncDelegator,
+    __asyncValues: __asyncValues,
+    __makeTemplateObject: __makeTemplateObject,
+    __importStar: __importStar,
+    __importDefault: __importDefault,
+    __classPrivateFieldGet: __classPrivateFieldGet,
+    __classPrivateFieldSet: __classPrivateFieldSet,
+    __classPrivateFieldIn: __classPrivateFieldIn,
+    __addDisposableResource: __addDisposableResource,
+    __disposeResources: __disposeResources,
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/react-full-screen/dist/index.js":
 /*!******************************************************!*\
   !*** ./node_modules/react-full-screen/dist/index.js ***!
@@ -51808,7 +53385,7 @@ var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-type
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _fscreen = __webpack_require__(/*! fscreen */ "./node_modules/fscreen/lib/index.js");
+var _fscreen = __webpack_require__(/*! fscreen */ "./node_modules/fscreen/dist/fscreen.esm.js");
 
 var _fscreen2 = _interopRequireDefault(_fscreen);
 
@@ -56209,38 +57786,71 @@ module.exports = {
 /*!***********************************************************************!*\
   !*** ./node_modules/react-remove-scroll-bar/dist/es2015/component.js ***!
   \***********************************************************************/
-/*! exports provided: RemoveScrollBar */
+/*! exports provided: lockAttribute, useLockAttribute, RemoveScrollBar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lockAttribute", function() { return lockAttribute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLockAttribute", function() { return useLockAttribute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoveScrollBar", function() { return RemoveScrollBar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_style_singleton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-style-singleton */ "./node_modules/react-style-singleton/dist/es2015/index.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./node_modules/react-remove-scroll-bar/dist/es2015/utils.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "./node_modules/react-remove-scroll-bar/dist/es2015/constants.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./node_modules/react-remove-scroll-bar/dist/es2015/constants.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./node_modules/react-remove-scroll-bar/dist/es2015/utils.js");
 
 
 
 
 var Style = Object(react_style_singleton__WEBPACK_IMPORTED_MODULE_1__["styleSingleton"])();
+var lockAttribute = 'data-scroll-locked';
+// important tip - once we measure scrollBar width and remove them
+// we could not repeat this operation
+// thus we are using style-singleton - only the first "yet correct" style will be applied.
 var getStyles = function (_a, allowRelative, gapMode, important) {
     var left = _a.left, top = _a.top, right = _a.right, gap = _a.gap;
     if (gapMode === void 0) { gapMode = 'margin'; }
-    return "\n  ." + _constants__WEBPACK_IMPORTED_MODULE_3__["noScrollbarsClassName"] + " {\n   overflow: hidden " + important + ";\n   padding-right: " + gap + "px " + important + ";\n  }\n  body {\n    overflow: hidden " + important + ";\n    " + [
-        allowRelative && "position: relative " + important + ";",
-        gapMode === 'margin' && "\n    padding-left: " + left + "px;\n    padding-top: " + top + "px;\n    padding-right: " + right + "px;\n    margin-left:0;\n    margin-top:0;\n    margin-right: " + gap + "px " + important + ";\n    ",
-        gapMode === 'padding' && "padding-right: " + gap + "px " + important + ";",
-    ].filter(Boolean).join('') + "\n  }\n  \n  ." + _constants__WEBPACK_IMPORTED_MODULE_3__["zeroRightClassName"] + " {\n    right: " + gap + "px " + important + ";\n  }\n  \n  ." + _constants__WEBPACK_IMPORTED_MODULE_3__["fullWidthClassName"] + " {\n    margin-right: " + gap + "px " + important + ";\n  }\n  \n  ." + _constants__WEBPACK_IMPORTED_MODULE_3__["zeroRightClassName"] + " ." + _constants__WEBPACK_IMPORTED_MODULE_3__["zeroRightClassName"] + " {\n    right: 0 " + important + ";\n  }\n  \n  ." + _constants__WEBPACK_IMPORTED_MODULE_3__["fullWidthClassName"] + " ." + _constants__WEBPACK_IMPORTED_MODULE_3__["fullWidthClassName"] + " {\n    margin-right: 0 " + important + ";\n  }\n";
+    return "\n  .".concat(_constants__WEBPACK_IMPORTED_MODULE_2__["noScrollbarsClassName"], " {\n   overflow: hidden ").concat(important, ";\n   padding-right: ").concat(gap, "px ").concat(important, ";\n  }\n  body[").concat(lockAttribute, "] {\n    overflow: hidden ").concat(important, ";\n    overscroll-behavior: contain;\n    ").concat([
+        allowRelative && "position: relative ".concat(important, ";"),
+        gapMode === 'margin' &&
+            "\n    padding-left: ".concat(left, "px;\n    padding-top: ").concat(top, "px;\n    padding-right: ").concat(right, "px;\n    margin-left:0;\n    margin-top:0;\n    margin-right: ").concat(gap, "px ").concat(important, ";\n    "),
+        gapMode === 'padding' && "padding-right: ".concat(gap, "px ").concat(important, ";"),
+    ]
+        .filter(Boolean)
+        .join(''), "\n  }\n  \n  .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"], " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["fullWidthClassName"], " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"], " .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"], " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["fullWidthClassName"], " .").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["fullWidthClassName"], " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(_constants__WEBPACK_IMPORTED_MODULE_2__["removedBarSizeVariable"], ": ").concat(gap, "px;\n  }\n");
 };
-var RemoveScrollBar = function (props) {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__["useState"](Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getGapWidth"])(props.gapMode)), gap = _a[0], setGap = _a[1];
+var getCurrentUseCounter = function () {
+    var counter = parseInt(document.body.getAttribute(lockAttribute) || '0', 10);
+    return isFinite(counter) ? counter : 0;
+};
+var useLockAttribute = function () {
     react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
-        setGap(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getGapWidth"])(props.gapMode));
-    }, [props.gapMode]);
-    var noRelative = props.noRelative, noImportant = props.noImportant, _b = props.gapMode, gapMode = _b === void 0 ? 'margin' : _b;
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : '') });
+        document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
+        return function () {
+            var newCounter = getCurrentUseCounter() - 1;
+            if (newCounter <= 0) {
+                document.body.removeAttribute(lockAttribute);
+            }
+            else {
+                document.body.setAttribute(lockAttribute, newCounter.toString());
+            }
+        };
+    }, []);
+};
+/**
+ * Removes page scrollbar and blocks page scroll when mounted
+ */
+var RemoveScrollBar = function (_a) {
+    var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? 'margin' : _b;
+    useLockAttribute();
+    /*
+     gap will be measured on every component mount
+     however it will be used only by the "first" invocation
+     due to singleton nature of <Style
+     */
+    var gap = react__WEBPACK_IMPORTED_MODULE_0__["useMemo"](function () { return Object(_utils__WEBPACK_IMPORTED_MODULE_3__["getGapWidth"])(gapMode); }, [gapMode]);
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? '!important' : '') });
 };
 
 
@@ -56250,7 +57860,7 @@ var RemoveScrollBar = function (props) {
 /*!***********************************************************************!*\
   !*** ./node_modules/react-remove-scroll-bar/dist/es2015/constants.js ***!
   \***********************************************************************/
-/*! exports provided: zeroRightClassName, fullWidthClassName, noScrollbarsClassName */
+/*! exports provided: zeroRightClassName, fullWidthClassName, noScrollbarsClassName, removedBarSizeVariable */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56258,9 +57868,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "zeroRightClassName", function() { return zeroRightClassName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fullWidthClassName", function() { return fullWidthClassName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noScrollbarsClassName", function() { return noScrollbarsClassName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removedBarSizeVariable", function() { return removedBarSizeVariable; });
 var zeroRightClassName = 'right-scroll-bar-position';
 var fullWidthClassName = 'width-before-scroll-bar';
 var noScrollbarsClassName = 'with-scroll-bars-hidden';
+/**
+ * Name of a CSS variable containing the amount of "hidden" scrollbar
+ * ! might be undefined ! use will fallback!
+ */
+var removedBarSizeVariable = '--removed-body-scroll-bar-size';
 
 
 /***/ }),
@@ -56269,7 +57885,7 @@ var noScrollbarsClassName = 'with-scroll-bars-hidden';
 /*!*******************************************************************!*\
   !*** ./node_modules/react-remove-scroll-bar/dist/es2015/index.js ***!
   \*******************************************************************/
-/*! exports provided: RemoveScrollBar, zeroRightClassName, fullWidthClassName, noScrollbarsClassName, getGapWidth */
+/*! exports provided: RemoveScrollBar, zeroRightClassName, fullWidthClassName, noScrollbarsClassName, removedBarSizeVariable, getGapWidth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56277,15 +57893,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component */ "./node_modules/react-remove-scroll-bar/dist/es2015/component.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RemoveScrollBar", function() { return _component__WEBPACK_IMPORTED_MODULE_0__["RemoveScrollBar"]; });
 
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./node_modules/react-remove-scroll-bar/dist/es2015/utils.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getGapWidth", function() { return _utils__WEBPACK_IMPORTED_MODULE_1__["getGapWidth"]; });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./node_modules/react-remove-scroll-bar/dist/es2015/constants.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "zeroRightClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["zeroRightClassName"]; });
 
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./node_modules/react-remove-scroll-bar/dist/es2015/constants.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "zeroRightClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fullWidthClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["fullWidthClassName"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fullWidthClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_2__["fullWidthClassName"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "noScrollbarsClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["noScrollbarsClassName"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "noScrollbarsClassName", function() { return _constants__WEBPACK_IMPORTED_MODULE_2__["noScrollbarsClassName"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removedBarSizeVariable", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["removedBarSizeVariable"]; });
+
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./node_modules/react-remove-scroll-bar/dist/es2015/utils.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getGapWidth", function() { return _utils__WEBPACK_IMPORTED_MODULE_2__["getGapWidth"]; });
 
 
 
@@ -56318,11 +57936,7 @@ var getOffset = function (gapMode) {
     var left = cs[gapMode === 'padding' ? 'paddingLeft' : 'marginLeft'];
     var top = cs[gapMode === 'padding' ? 'paddingTop' : 'marginTop'];
     var right = cs[gapMode === 'padding' ? 'paddingRight' : 'marginRight'];
-    return [
-        parse(left),
-        parse(top),
-        parse(right),
-    ];
+    return [parse(left), parse(top), parse(right)];
 };
 var getGapWidth = function (gapMode) {
     if (gapMode === void 0) { gapMode = 'margin'; }
@@ -56355,59 +57969,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTouchXY", function() { return getTouchXY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDeltaXY", function() { return getDeltaXY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoveScrollSideCar", function() { return RemoveScrollSideCar; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_remove_scroll_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-remove-scroll-bar */ "./node_modules/react-remove-scroll-bar/dist/es2015/index.js");
-/* harmony import */ var react_style_singleton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-style-singleton */ "./node_modules/react-style-singleton/dist/es2015/index.js");
-/* harmony import */ var _handleScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./handleScroll */ "./node_modules/react-remove-scroll/dist/es2015/handleScroll.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-remove-scroll/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_remove_scroll_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-remove-scroll-bar */ "./node_modules/react-remove-scroll-bar/dist/es2015/index.js");
+/* harmony import */ var react_style_singleton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-style-singleton */ "./node_modules/react-style-singleton/dist/es2015/index.js");
 /* harmony import */ var _aggresiveCapture__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./aggresiveCapture */ "./node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js");
+/* harmony import */ var _handleScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./handleScroll */ "./node_modules/react-remove-scroll/dist/es2015/handleScroll.js");
+
 
 
 
 
 
 var getTouchXY = function (event) {
-    return 'changedTouches' in event
-        ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY]
-        : [0, 0];
+    return 'changedTouches' in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
 };
 var getDeltaXY = function (event) { return [event.deltaX, event.deltaY]; };
 var extractRef = function (ref) {
     return ref && 'current' in ref ? ref.current : ref;
 };
-var deltaCompare = function (x, y) {
-    return x[0] === y[0] && x[1] === y[1];
-};
-var generateStyle = function (id) { return "\n  .block-interactivity-" + id + " {pointer-events: none;}\n  .allow-interactivity-" + id + " {pointer-events: all;}\n"; };
+var deltaCompare = function (x, y) { return x[0] === y[0] && x[1] === y[1]; };
+var generateStyle = function (id) { return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n"); };
 var idCounter = 0;
 var lockStack = [];
 function RemoveScrollSideCar(props) {
-    var shouldPreventQueue = react__WEBPACK_IMPORTED_MODULE_0__["useRef"]([]);
-    var touchStartRef = react__WEBPACK_IMPORTED_MODULE_0__["useRef"]([0, 0]);
-    var activeAxis = react__WEBPACK_IMPORTED_MODULE_0__["useRef"]();
-    var id = react__WEBPACK_IMPORTED_MODULE_0__["useState"](idCounter++)[0];
-    var Style = react__WEBPACK_IMPORTED_MODULE_0__["useState"](function () { return Object(react_style_singleton__WEBPACK_IMPORTED_MODULE_2__["styleSingleton"])(); })[0];
-    var lastProps = react__WEBPACK_IMPORTED_MODULE_0__["useRef"](props);
-    react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    var shouldPreventQueue = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]([]);
+    var touchStartRef = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]([0, 0]);
+    var activeAxis = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]();
+    var id = react__WEBPACK_IMPORTED_MODULE_1__["useState"](idCounter++)[0];
+    var Style = react__WEBPACK_IMPORTED_MODULE_1__["useState"](react_style_singleton__WEBPACK_IMPORTED_MODULE_3__["styleSingleton"])[0];
+    var lastProps = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](props);
+    react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
         lastProps.current = props;
     }, [props]);
-    react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
         if (props.inert) {
-            document.body.classList.add("block-interactivity-" + id);
-            var allow_1 = [
-                props.lockRef.current
-            ].concat((props.shards || []).map(extractRef)).filter(Boolean);
-            allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-" + id); });
+            document.body.classList.add("block-interactivity-".concat(id));
+            var allow_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArray"])([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
+            allow_1.forEach(function (el) { return el.classList.add("allow-interactivity-".concat(id)); });
             return function () {
-                document.body.classList.remove("block-interactivity-" + id);
-                allow_1.forEach(function (el) {
-                    return el.classList.remove("allow-interactivity-" + id);
-                });
+                document.body.classList.remove("block-interactivity-".concat(id));
+                allow_1.forEach(function (el) { return el.classList.remove("allow-interactivity-".concat(id)); });
             };
         }
         return;
     }, [props.inert, props.lockRef.current, props.shards]);
-    var shouldCancelEvent = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (event, parent) {
+    var shouldCancelEvent = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (event, parent) {
         if ('touches' in event && event.touches.length === 2) {
             return !lastProps.current.allowPinchZoom;
         }
@@ -56418,7 +58026,11 @@ function RemoveScrollSideCar(props) {
         var currentAxis;
         var target = event.target;
         var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? 'h' : 'v';
-        var canBeScrolledInMainDirection = Object(_handleScroll__WEBPACK_IMPORTED_MODULE_3__["locationCouldBeScrolled"])(moveDirection, target);
+        // allow horizontal touch move on Range inputs. They will not cause any scroll
+        if ('touches' in event && moveDirection === 'h' && target.type === 'range') {
+            return false;
+        }
+        var canBeScrolledInMainDirection = Object(_handleScroll__WEBPACK_IMPORTED_MODULE_5__["locationCouldBeScrolled"])(moveDirection, target);
         if (!canBeScrolledInMainDirection) {
             return true;
         }
@@ -56427,38 +58039,34 @@ function RemoveScrollSideCar(props) {
         }
         else {
             currentAxis = moveDirection === 'v' ? 'h' : 'v';
-            canBeScrolledInMainDirection = Object(_handleScroll__WEBPACK_IMPORTED_MODULE_3__["locationCouldBeScrolled"])(moveDirection, target);
+            canBeScrolledInMainDirection = Object(_handleScroll__WEBPACK_IMPORTED_MODULE_5__["locationCouldBeScrolled"])(moveDirection, target);
             // other axis might be not scrollable
         }
         if (!canBeScrolledInMainDirection) {
             return false;
         }
-        if (!activeAxis.current &&
-            'changedTouches' in event &&
-            (deltaX || deltaY)) {
+        if (!activeAxis.current && 'changedTouches' in event && (deltaX || deltaY)) {
             activeAxis.current = currentAxis;
         }
         if (!currentAxis) {
             return true;
         }
         var cancelingAxis = activeAxis.current || currentAxis;
-        return Object(_handleScroll__WEBPACK_IMPORTED_MODULE_3__["handleScroll"])(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
+        return Object(_handleScroll__WEBPACK_IMPORTED_MODULE_5__["handleScroll"])(cancelingAxis, parent, event, cancelingAxis === 'h' ? deltaX : deltaY, true);
     }, []);
-    var shouldPrevent = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (_event) {
+    var shouldPrevent = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (_event) {
         var event = _event;
         if (!lockStack.length || lockStack[lockStack.length - 1] !== Style) {
             // not the last active
             return;
         }
         var delta = 'deltaY' in event ? getDeltaXY(event) : getTouchXY(event);
-        var sourceEvent = shouldPreventQueue.current.filter(function (e) {
-            return e.name === event.type &&
-                e.target === event.target &&
-                deltaCompare(e.delta, delta);
-        })[0];
+        var sourceEvent = shouldPreventQueue.current.filter(function (e) { return e.name === event.type && (e.target === event.target || event.target === e.shadowParent) && deltaCompare(e.delta, delta); })[0];
         // self event, and should be canceled
         if (sourceEvent && sourceEvent.should) {
-            event.preventDefault();
+            if (event.cancelable) {
+                event.preventDefault();
+            }
             return;
         }
         // outside or shard event
@@ -56467,37 +58075,37 @@ function RemoveScrollSideCar(props) {
                 .map(extractRef)
                 .filter(Boolean)
                 .filter(function (node) { return node.contains(event.target); });
-            var shouldStop = shardNodes.length > 0
-                ? shouldCancelEvent(event, shardNodes[0])
-                : !lastProps.current.noIsolation;
+            var shouldStop = shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation;
             if (shouldStop) {
-                event.preventDefault();
+                if (event.cancelable) {
+                    event.preventDefault();
+                }
             }
         }
     }, []);
-    var shouldCancel = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (name, delta, target, should) {
-        var event = { name: name, delta: delta, target: target, should: should };
+    var shouldCancel = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (name, delta, target, should) {
+        var event = { name: name, delta: delta, target: target, should: should, shadowParent: getOutermostShadowParent(target) };
         shouldPreventQueue.current.push(event);
         setTimeout(function () {
             shouldPreventQueue.current = shouldPreventQueue.current.filter(function (e) { return e !== event; });
         }, 1);
     }, []);
-    var scrollTouchStart = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (event) {
+    var scrollTouchStart = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (event) {
         touchStartRef.current = getTouchXY(event);
         activeAxis.current = undefined;
     }, []);
-    var scrollWheel = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (event) {
+    var scrollWheel = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (event) {
         shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    var scrollTouchMove = react__WEBPACK_IMPORTED_MODULE_0__["useCallback"](function (event) {
+    var scrollTouchMove = react__WEBPACK_IMPORTED_MODULE_1__["useCallback"](function (event) {
         shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
         lockStack.push(Style);
         props.setCallbacks({
             onScrollCapture: scrollWheel,
             onWheelCapture: scrollWheel,
-            onTouchMoveCapture: scrollTouchMove
+            onTouchMoveCapture: scrollTouchMove,
         });
         document.addEventListener('wheel', shouldPrevent, _aggresiveCapture__WEBPACK_IMPORTED_MODULE_4__["nonPassive"]);
         document.addEventListener('touchmove', shouldPrevent, _aggresiveCapture__WEBPACK_IMPORTED_MODULE_4__["nonPassive"]);
@@ -56510,9 +58118,20 @@ function RemoveScrollSideCar(props) {
         };
     }, []);
     var removeScrollBar = props.removeScrollBar, inert = props.inert;
-    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null,
-        inert ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Style, { styles: generateStyle(id) }) : null,
-        removeScrollBar ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_remove_scroll_bar__WEBPACK_IMPORTED_MODULE_1__["RemoveScrollBar"], { gapMode: "margin" }) : null));
+    return (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null,
+        inert ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Style, { styles: generateStyle(id) }) : null,
+        removeScrollBar ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react_remove_scroll_bar__WEBPACK_IMPORTED_MODULE_2__["RemoveScrollBar"], { gapMode: props.gapMode }) : null));
+}
+function getOutermostShadowParent(node) {
+    var shadowParent = null;
+    while (node !== null) {
+        if (node instanceof ShadowRoot) {
+            shadowParent = node.host;
+            node = node.host;
+        }
+        node = node.parentNode;
+    }
+    return shadowParent;
 }
 
 
@@ -56528,12 +58147,12 @@ function RemoveScrollSideCar(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoveScroll", function() { return RemoveScroll; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/react-remove-scroll/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_remove_scroll_bar_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-remove-scroll-bar/constants */ "./node_modules/react-remove-scroll-bar/dist/es2015/constants.js");
-/* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./medium */ "./node_modules/react-remove-scroll/dist/es2015/medium.js");
-/* harmony import */ var use_callback_ref__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-callback-ref */ "./node_modules/use-callback-ref/dist/es2015/index.js");
+/* harmony import */ var use_callback_ref__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-callback-ref */ "./node_modules/use-callback-ref/dist/es2015/index.js");
+/* harmony import */ var _medium__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./medium */ "./node_modules/react-remove-scroll/dist/es2015/medium.js");
 
 
 
@@ -56550,27 +58169,24 @@ var RemoveScroll = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (pr
     var _a = react__WEBPACK_IMPORTED_MODULE_1__["useState"]({
         onScrollCapture: nothing,
         onWheelCapture: nothing,
-        onTouchMoveCapture: nothing
+        onTouchMoveCapture: nothing,
     }), callbacks = _a[0], setCallbacks = _a[1];
-    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, rest = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as"]);
+    var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? 'div' : _b, gapMode = props.gapMode, rest = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noIsolation", "inert", "allowPinchZoom", "as", "gapMode"]);
     var SideCar = sideCar;
-    var containerRef = Object(use_callback_ref__WEBPACK_IMPORTED_MODULE_4__["useMergeRefs"])([
-        ref,
-        parentRef
-    ]);
-    var containerProps = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, rest, callbacks);
+    var containerRef = Object(use_callback_ref__WEBPACK_IMPORTED_MODULE_3__["useMergeRefs"])([ref, parentRef]);
+    var containerProps = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, rest), callbacks);
     return (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null,
-        enabled && (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, { sideCar: _medium__WEBPACK_IMPORTED_MODULE_3__["effectCar"], removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref })),
-        forwardProps ? (react__WEBPACK_IMPORTED_MODULE_1__["cloneElement"](react__WEBPACK_IMPORTED_MODULE_1__["Children"].only(children), tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, containerProps, { ref: containerRef }))) : (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Container, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, containerProps, { className: className, ref: containerRef }), children))));
+        enabled && (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SideCar, { sideCar: _medium__WEBPACK_IMPORTED_MODULE_4__["effectCar"], removeScrollBar: removeScrollBar, shards: shards, noIsolation: noIsolation, inert: inert, setCallbacks: setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode: gapMode })),
+        forwardProps ? (react__WEBPACK_IMPORTED_MODULE_1__["cloneElement"](react__WEBPACK_IMPORTED_MODULE_1__["Children"].only(children), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, containerProps), { ref: containerRef }))) : (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Container, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, containerProps, { className: className, ref: containerRef }), children))));
 });
 RemoveScroll.defaultProps = {
     enabled: true,
     removeScrollBar: true,
-    inert: false
+    inert: false,
 };
 RemoveScroll.classNames = {
     fullWidth: react_remove_scroll_bar_constants__WEBPACK_IMPORTED_MODULE_2__["fullWidthClassName"],
-    zeroRight: react_remove_scroll_bar_constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"]
+    zeroRight: react_remove_scroll_bar_constants__WEBPACK_IMPORTED_MODULE_2__["zeroRightClassName"],
 };
 
 
@@ -56594,9 +58210,11 @@ if (typeof window !== 'undefined') {
             get: function () {
                 passiveSupported = true;
                 return true;
-            }
+            },
         });
+        // @ts-ignore
         window.addEventListener('test', options, options);
+        // @ts-ignore
         window.removeEventListener('test', options, options);
     }
     catch (err) {
@@ -56619,21 +58237,28 @@ var nonPassive = passiveSupported ? { passive: false } : false;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "locationCouldBeScrolled", function() { return locationCouldBeScrolled; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleScroll", function() { return handleScroll; });
-var elementCouldBeVScrolled = function (node) {
-    var styles = window.getComputedStyle(node);
-    return (styles.overflowY !== 'hidden' && // not-not-scrollable
-        !(styles.overflowY === styles.overflowX && styles.overflowY === 'visible') // scrollable
-    );
+var alwaysContainsScroll = function (node) {
+    // textarea will always _contain_ scroll inside self. It only can be hidden
+    return node.tagName === 'TEXTAREA';
 };
-var elementCouldBeHScrolled = function (node) {
+var elementCanBeScrolled = function (node, overflow) {
     var styles = window.getComputedStyle(node);
-    return (styles.overflowX !== 'hidden' && // not-not-scrollable
-        !(styles.overflowY === styles.overflowX && styles.overflowX === 'visible') // scrollable
-    );
+    return (
+    // not-not-scrollable
+    styles[overflow] !== 'hidden' &&
+        // contains scroll inside self
+        !(styles.overflowY === styles.overflowX && !alwaysContainsScroll(node) && styles[overflow] === 'visible'));
 };
+var elementCouldBeVScrolled = function (node) { return elementCanBeScrolled(node, 'overflowY'); };
+var elementCouldBeHScrolled = function (node) { return elementCanBeScrolled(node, 'overflowX'); };
 var locationCouldBeScrolled = function (axis, node) {
+    var ownerDocument = node.ownerDocument;
     var current = node;
     do {
+        // Skip over shadow root
+        if (typeof ShadowRoot !== 'undefined' && current instanceof ShadowRoot) {
+            current = current.host;
+        }
         var isScrollable = elementCouldBeScrolled(axis, current);
         if (isScrollable) {
             var _a = getScrollVariables(axis, current), s = _a[1], d = _a[2];
@@ -56642,16 +58267,24 @@ var locationCouldBeScrolled = function (axis, node) {
             }
         }
         current = current.parentNode;
-    } while (current && current !== document.body);
+    } while (current && current !== ownerDocument.body);
     return false;
 };
 var getVScrollVariables = function (_a) {
     var scrollTop = _a.scrollTop, scrollHeight = _a.scrollHeight, clientHeight = _a.clientHeight;
-    return [scrollTop, scrollHeight, clientHeight];
+    return [
+        scrollTop,
+        scrollHeight,
+        clientHeight,
+    ];
 };
 var getHScrollVariables = function (_a) {
     var scrollLeft = _a.scrollLeft, scrollWidth = _a.scrollWidth, clientWidth = _a.clientWidth;
-    return [scrollLeft, scrollWidth, clientWidth];
+    return [
+        scrollLeft,
+        scrollWidth,
+        clientWidth,
+    ];
 };
 var elementCouldBeScrolled = function (axis, node) {
     return axis === 'v' ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
@@ -56659,8 +58292,17 @@ var elementCouldBeScrolled = function (axis, node) {
 var getScrollVariables = function (axis, node) {
     return axis === 'v' ? getVScrollVariables(node) : getHScrollVariables(node);
 };
+var getDirectionFactor = function (axis, direction) {
+    /**
+     * If the element's direction is rtl (right-to-left), then scrollLeft is 0 when the scrollbar is at its rightmost position,
+     * and then increasingly negative as you scroll towards the end of the content.
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+     */
+    return axis === 'h' && direction === 'rtl' ? -1 : 1;
+};
 var handleScroll = function (axis, endTarget, event, sourceDelta, noOverscroll) {
-    var delta = sourceDelta;
+    var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
+    var delta = directionFactor * sourceDelta;
     // find scrollable target
     var target = event.target;
     var targetInLock = endTarget.contains(target);
@@ -56670,27 +58312,31 @@ var handleScroll = function (axis, endTarget, event, sourceDelta, noOverscroll) 
     var availableScrollTop = 0;
     do {
         var _a = getScrollVariables(axis, target), position = _a[0], scroll_1 = _a[1], capacity = _a[2];
-        var elementScroll = scroll_1 - capacity - position;
+        var elementScroll = scroll_1 - capacity - directionFactor * position;
         if (position || elementScroll) {
             if (elementCouldBeScrolled(axis, target)) {
                 availableScroll += elementScroll;
                 availableScrollTop += position;
             }
         }
-        target = target.parentNode;
+        if (target instanceof ShadowRoot) {
+            target = target.host;
+        }
+        else {
+            target = target.parentNode;
+        }
     } while (
     // portaled content
     (!targetInLock && target !== document.body) ||
         // self content
         (targetInLock && (endTarget.contains(target) || endTarget === target)));
+    // handle epsilon around 0 (non standard zoom levels)
     if (isDeltaPositive &&
-        ((noOverscroll && availableScroll === 0) ||
-            (!noOverscroll && delta > availableScroll))) {
+        ((noOverscroll && Math.abs(availableScroll) < 1) || (!noOverscroll && delta > availableScroll))) {
         shouldCancelScroll = true;
     }
     else if (!isDeltaPositive &&
-        ((noOverscroll && availableScrollTop === 0) ||
-            (!noOverscroll && -delta > availableScrollTop))) {
+        ((noOverscroll && Math.abs(availableScrollTop) < 1) || (!noOverscroll && -delta > availableScrollTop))) {
         shouldCancelScroll = true;
     }
     return shouldCancelScroll;
@@ -56736,6 +58382,420 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/react-remove-scroll/node_modules/tslib/tslib.es6.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-remove-scroll/node_modules/tslib/tslib.es6.js ***!
+  \**************************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__esDecorate", function() { return __esDecorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__runInitializers", function() { return __runInitializers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__propKey", function() { return __propKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__setFunctionName", function() { return __setFunctionName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArray", function() { return __spreadArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldIn", function() { return __classPrivateFieldIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__addDisposableResource", function() { return __addDisposableResource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__disposeResources", function() { return __disposeResources; });
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null)
+        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for (var i = decorators.length - 1; i >= 0; i--) {
+        var context = {};
+        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        }
+        else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+};
+
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i = 0; i < initializers.length; i++) {
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+};
+
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+};
+
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+/** @deprecated */
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+function __addDisposableResource(env, value, async) {
+    if (value !== null && value !== void 0) {
+        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+        var dispose;
+        if (async) {
+            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+            dispose = value[Symbol.asyncDispose];
+        }
+        if (dispose === void 0) {
+            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+            dispose = value[Symbol.dispose];
+        }
+        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+        env.stack.push({ value: value, dispose: dispose, async: async });
+    }
+    else if (async) {
+        env.stack.push({ async: true });
+    }
+    return value;
+}
+
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+function __disposeResources(env) {
+    function fail(e) {
+        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+        env.hasError = true;
+    }
+    function next() {
+        while (env.stack.length) {
+            var rec = env.stack.pop();
+            try {
+                var result = rec.dispose && rec.dispose.call(rec.value);
+                if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+            }
+            catch (e) {
+                fail(e);
+            }
+        }
+        if (env.hasError) throw env.error;
+    }
+    return next();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    __extends: __extends,
+    __assign: __assign,
+    __rest: __rest,
+    __decorate: __decorate,
+    __param: __param,
+    __metadata: __metadata,
+    __awaiter: __awaiter,
+    __generator: __generator,
+    __createBinding: __createBinding,
+    __exportStar: __exportStar,
+    __values: __values,
+    __read: __read,
+    __spread: __spread,
+    __spreadArrays: __spreadArrays,
+    __spreadArray: __spreadArray,
+    __await: __await,
+    __asyncGenerator: __asyncGenerator,
+    __asyncDelegator: __asyncDelegator,
+    __asyncValues: __asyncValues,
+    __makeTemplateObject: __makeTemplateObject,
+    __importStar: __importStar,
+    __importDefault: __importDefault,
+    __classPrivateFieldGet: __classPrivateFieldGet,
+    __classPrivateFieldSet: __classPrivateFieldSet,
+    __classPrivateFieldIn: __classPrivateFieldIn,
+    __addDisposableResource: __addDisposableResource,
+    __disposeResources: __disposeResources,
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/react-style-singleton/dist/es2015/component.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/react-style-singleton/dist/es2015/component.js ***!
@@ -56748,11 +58808,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styleSingleton", function() { return styleSingleton; });
 /* harmony import */ var _hook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hook */ "./node_modules/react-style-singleton/dist/es2015/hook.js");
 
+/**
+ * create a Component to add styles on demand
+ * - styles are added when first instance is mounted
+ * - styles are removed when the last instance is unmounted
+ * - changing styles in runtime does nothing unless dynamic is set. But with multiple components that can lead to the undefined behavior
+ */
 var styleSingleton = function () {
     var useStyle = Object(_hook__WEBPACK_IMPORTED_MODULE_0__["styleHookSingleton"])();
     var Sheet = function (_a) {
-        var styles = _a.styles;
-        useStyle(styles);
+        var styles = _a.styles, dynamic = _a.dynamic;
+        useStyle(styles, dynamic);
         return null;
     };
     return Sheet;
@@ -56776,15 +58842,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _singleton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./singleton */ "./node_modules/react-style-singleton/dist/es2015/singleton.js");
 
 
+/**
+ * creates a hook to control style singleton
+ * @see {@link styleSingleton} for a safer component version
+ * @example
+ * ```tsx
+ * const useStyle = styleHookSingleton();
+ * ///
+ * useStyle('body { overflow: hidden}');
+ */
 var styleHookSingleton = function () {
     var sheet = Object(_singleton__WEBPACK_IMPORTED_MODULE_1__["stylesheetSingleton"])();
-    return function (styles) {
+    return function (styles, isDynamic) {
         react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
             sheet.add(styles);
             return function () {
                 sheet.remove();
             };
-        }, []);
+        }, [styles && isDynamic]);
     };
 };
 
@@ -56840,7 +58915,9 @@ function makeStyleTag() {
     return tag;
 }
 function injectStyles(tag, css) {
+    // @ts-ignore
     if (tag.styleSheet) {
+        // @ts-ignore
         tag.styleSheet.cssText = css;
     }
     else {
@@ -56857,7 +58934,7 @@ var stylesheetSingleton = function () {
     return {
         add: function (style) {
             if (counter == 0) {
-                if (stylesheet = makeStyleTag()) {
+                if ((stylesheet = makeStyleTag())) {
                     injectStyles(stylesheet, style);
                     insertStyleTag(stylesheet);
                 }
@@ -56870,7 +58947,7 @@ var stylesheetSingleton = function () {
                 stylesheet.parentNode && stylesheet.parentNode.removeChild(stylesheet);
                 stylesheet = null;
             }
-        }
+        },
     };
 };
 
@@ -60546,7 +62623,7 @@ function range(start, end, max) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.13.1
+/** @license React v16.14.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -60566,7 +62643,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
-var ReactVersion = '16.13.1';
+var ReactVersion = '16.14.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -64962,260 +67039,6 @@ function createIsUnavailable(elementDocument) {
 
 /***/ }),
 
-/***/ "./node_modules/tslib/tslib.es6.js":
-/*!*****************************************!*\
-  !*** ./node_modules/tslib/tslib.es6.js ***!
-  \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __createBinding(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, privateMap) {
-    if (!privateMap.has(receiver)) {
-        throw new TypeError("attempted to get private field on non-instance");
-    }
-    return privateMap.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, privateMap, value) {
-    if (!privateMap.has(receiver)) {
-        throw new TypeError("attempted to set private field on non-instance");
-    }
-    privateMap.set(receiver, value);
-    return value;
-}
-
-
-/***/ }),
-
 /***/ "./node_modules/use-callback-ref/dist/es2015/assignRef.js":
 /*!****************************************************************!*\
   !*** ./node_modules/use-callback-ref/dist/es2015/assignRef.js ***!
@@ -65282,7 +67105,7 @@ function createCallbackRef(callback) {
                 current = value;
                 callback(value, last);
             }
-        }
+        },
     };
 }
 
@@ -65350,8 +67173,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergeRefs", function() { return mergeRefs; });
-/* harmony import */ var _createRef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createRef */ "./node_modules/use-callback-ref/dist/es2015/createRef.js");
-/* harmony import */ var _assignRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assignRef */ "./node_modules/use-callback-ref/dist/es2015/assignRef.js");
+/* harmony import */ var _assignRef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assignRef */ "./node_modules/use-callback-ref/dist/es2015/assignRef.js");
+/* harmony import */ var _createRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createRef */ "./node_modules/use-callback-ref/dist/es2015/createRef.js");
 
 
 /**
@@ -65368,9 +67191,7 @@ __webpack_require__.r(__webpack_exports__);
  * }
  */
 function mergeRefs(refs) {
-    return Object(_createRef__WEBPACK_IMPORTED_MODULE_0__["createCallbackRef"])(function (newValue) {
-        return refs.forEach(function (ref) { return Object(_assignRef__WEBPACK_IMPORTED_MODULE_1__["assignRef"])(ref, newValue); });
-    });
+    return Object(_createRef__WEBPACK_IMPORTED_MODULE_1__["createCallbackRef"])(function (newValue) { return refs.forEach(function (ref) { return Object(_assignRef__WEBPACK_IMPORTED_MODULE_0__["assignRef"])(ref, newValue); }); });
 }
 
 
@@ -65408,8 +67229,9 @@ var nullCallback = function () { return null; };
 var weakMem = new WeakMap();
 var weakMemoize = function (ref) {
     var usedRef = ref || nullCallback;
-    if (weakMem.has(usedRef)) {
-        return weakMem.get(usedRef);
+    var storedRef = weakMem.get(usedRef);
+    if (storedRef) {
+        return storedRef;
     }
     var cb = refToCallback(usedRef);
     weakMem.set(usedRef, cb);
@@ -65452,6 +67274,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createRef */ "./node_modules/use-callback-ref/dist/es2015/createRef.js");
 
 
+/**
+ * Transforms one ref to another
+ * @example
+ * ```tsx
+ * const ResizableWithRef = forwardRef((props, ref) =>
+ *   <Resizable {...props} ref={transformRef(ref, i => i ? i.resizable : null)}/>
+ * );
+ * ```
+ */
 function transformRef(ref, transformer) {
     return Object(_createRef__WEBPACK_IMPORTED_MODULE_1__["createCallbackRef"])(function (value) { return Object(_assignRef__WEBPACK_IMPORTED_MODULE_0__["assignRef"])(ref, transformer(value)); });
 }
@@ -65469,10 +67300,15 @@ function transformRef(ref, transformer) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMergeRefs", function() { return useMergeRefs; });
-/* harmony import */ var _useRef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useRef */ "./node_modules/use-callback-ref/dist/es2015/useRef.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assignRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assignRef */ "./node_modules/use-callback-ref/dist/es2015/assignRef.js");
+/* harmony import */ var _useRef__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useRef */ "./node_modules/use-callback-ref/dist/es2015/useRef.js");
 
 
+
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"] : react__WEBPACK_IMPORTED_MODULE_0__["useEffect"];
+var currentValues = new WeakMap();
 /**
  * Merges two or more refs together providing a single interface to set their value
  * @param {RefObject|Ref} refs
@@ -65488,9 +67324,30 @@ __webpack_require__.r(__webpack_exports__);
  * }
  */
 function useMergeRefs(refs, defaultValue) {
-    return Object(_useRef__WEBPACK_IMPORTED_MODULE_0__["useCallbackRef"])(defaultValue, function (newValue) {
+    var callbackRef = Object(_useRef__WEBPACK_IMPORTED_MODULE_2__["useCallbackRef"])(defaultValue || null, function (newValue) {
         return refs.forEach(function (ref) { return Object(_assignRef__WEBPACK_IMPORTED_MODULE_1__["assignRef"])(ref, newValue); });
     });
+    // handle refs changes - added or removed
+    useIsomorphicLayoutEffect(function () {
+        var oldValue = currentValues.get(callbackRef);
+        if (oldValue) {
+            var prevRefs_1 = new Set(oldValue);
+            var nextRefs_1 = new Set(refs);
+            var current_1 = callbackRef.current;
+            prevRefs_1.forEach(function (ref) {
+                if (!nextRefs_1.has(ref)) {
+                    Object(_assignRef__WEBPACK_IMPORTED_MODULE_1__["assignRef"])(ref, null);
+                }
+            });
+            nextRefs_1.forEach(function (ref) {
+                if (!prevRefs_1.has(ref)) {
+                    Object(_assignRef__WEBPACK_IMPORTED_MODULE_1__["assignRef"])(ref, current_1);
+                }
+            });
+        }
+        currentValues.set(callbackRef, refs);
+    }, [refs]);
+    return callbackRef;
 }
 
 
@@ -65540,8 +67397,8 @@ function useCallbackRef(initialValue, callback) {
                     ref.value = value;
                     ref.callback(value, last);
                 }
-            }
-        }
+            },
+        },
     }); })[0];
     // update callback
     ref.callback = callback;
@@ -65561,8 +67418,8 @@ function useCallbackRef(initialValue, callback) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useTransformRef", function() { return useTransformRef; });
-/* harmony import */ var _useRef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useRef */ "./node_modules/use-callback-ref/dist/es2015/useRef.js");
-/* harmony import */ var _assignRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assignRef */ "./node_modules/use-callback-ref/dist/es2015/assignRef.js");
+/* harmony import */ var _assignRef__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assignRef */ "./node_modules/use-callback-ref/dist/es2015/assignRef.js");
+/* harmony import */ var _useRef__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useRef */ "./node_modules/use-callback-ref/dist/es2015/useRef.js");
 
 
 /**
@@ -65579,9 +67436,7 @@ __webpack_require__.r(__webpack_exports__);
  * );
  */
 function useTransformRef(ref, transformer) {
-    return Object(_useRef__WEBPACK_IMPORTED_MODULE_0__["useCallbackRef"])(undefined, function (value) {
-        return Object(_assignRef__WEBPACK_IMPORTED_MODULE_1__["assignRef"])(ref, transformer(value));
-    });
+    return Object(_useRef__WEBPACK_IMPORTED_MODULE_1__["useCallbackRef"])(null, function (value) { return Object(_assignRef__WEBPACK_IMPORTED_MODULE_0__["assignRef"])(ref, transformer(value)); });
 }
 
 
@@ -65638,13 +67493,13 @@ var env = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "exportSidecar", function() { return exportSidecar; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
 var SideCar = function (_a) {
-    var sideCar = _a.sideCar, rest = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](_a, ["sideCar"]);
+    var sideCar = _a.sideCar, rest = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(_a, ["sideCar"]);
     if (!sideCar) {
         throw new Error('Sidecar: please provide `sideCar` property to import the right car');
     }
@@ -65652,7 +67507,7 @@ var SideCar = function (_a) {
     if (!Target) {
         throw new Error('Sidecar medium not found');
     }
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Target, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, rest));
+    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Target, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, rest));
 };
 SideCar.isSideCarExport = true;
 function exportSidecar(medium, exported) {
@@ -65673,13 +67528,14 @@ function exportSidecar(medium, exported) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidecar", function() { return sidecar; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _hook__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hook */ "./node_modules/use-sidecar/dist/es2015/hook.js");
 
 
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 function sidecar(importer, errorComponent) {
     var ErrorCase = function () { return errorComponent; };
     return function Sidecar(props) {
@@ -65687,7 +67543,8 @@ function sidecar(importer, errorComponent) {
         if (error && errorComponent) {
             return ErrorCase;
         }
-        return Car ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Car, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, props)) : null;
+        // @ts-expect-error type shenanigans
+        return Car ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Car, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props)) : null;
     };
 }
 
@@ -65710,19 +67567,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var cache = new WeakMap();
+var NO_OPTIONS = {};
 function useSidecar(importer, effect) {
-    var options = effect && effect.options || {};
+    var options = (effect && effect.options) || NO_OPTIONS;
     if (_env__WEBPACK_IMPORTED_MODULE_1__["env"].isNode && !options.ssr) {
         return [null, null];
     }
-    var couldUseCache = _env__WEBPACK_IMPORTED_MODULE_1__["env"].forceCache || (_env__WEBPACK_IMPORTED_MODULE_1__["env"].isNode && !!options.ssr) || (!options.async);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return useRealSidecar(importer, effect);
+}
+function useRealSidecar(importer, effect) {
+    var options = (effect && effect.options) || NO_OPTIONS;
+    var couldUseCache = _env__WEBPACK_IMPORTED_MODULE_1__["env"].forceCache || (_env__WEBPACK_IMPORTED_MODULE_1__["env"].isNode && !!options.ssr) || !options.async;
     var _a = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(couldUseCache ? function () { return cache.get(importer); } : undefined), Car = _a[0], setCar = _a[1];
     var _b = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null), error = _b[0], setError = _b[1];
     Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
         if (!Car) {
-            importer()
-                .then(function (car) {
-                var resolved = effect ? effect.read() : (car.default || car);
+            importer().then(function (car) {
+                var resolved = effect ? effect.read() : car.default || car;
                 if (!resolved) {
                     console.error('Sidecar error: with importer', importer);
                     var error_1;
@@ -65743,7 +67605,6 @@ function useSidecar(importer, effect) {
     }, []);
     return [Car, error];
 }
-;
 
 
 /***/ }),
@@ -65798,7 +67659,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createMedium", function() { return createMedium; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSidecarMedium", function() { return createSidecarMedium; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js");
 
 function ItoI(a) {
     return a;
@@ -65870,10 +67731,11 @@ function createMedium(defaults, middleware) {
     if (middleware === void 0) { middleware = ItoI; }
     return innerCreateMedium(defaults, middleware);
 }
+// eslint-disable-next-line @typescript-eslint/ban-types
 function createSidecarMedium(options) {
     if (options === void 0) { options = {}; }
     var medium = innerCreateMedium(null);
-    medium.options = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ async: true, ssr: false }, options);
+    medium.options = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ async: true, ssr: false }, options);
     return medium;
 }
 
@@ -65890,14 +67752,13 @@ function createSidecarMedium(options) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderCar", function() { return renderCar; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
-function renderCar(WrappedComponent, defaults, options) {
-    if (options === void 0) { options = {}; }
+function renderCar(WrappedComponent, defaults) {
     function State(_a) {
         var stateRef = _a.stateRef, props = _a.props;
         var renderTarget = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function SideTarget() {
@@ -65910,24 +67771,439 @@ function renderCar(WrappedComponent, defaults, options) {
             });
             return null;
         }, []);
-        return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](WrappedComponent, tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, props, { children: renderTarget }));
+        // @ts-ignore
+        return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](WrappedComponent, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, props, { children: renderTarget }));
     }
     var Children = react__WEBPACK_IMPORTED_MODULE_1__["memo"](function (_a) {
         var stateRef = _a.stateRef, defaultState = _a.defaultState, children = _a.children;
         var _b = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(defaultState.current), state = _b[0], setState = _b[1];
-        react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+        Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
             stateRef.current = setState;
         }, []);
         return children.apply(void 0, state);
     }, function () { return true; });
     return function Combiner(props) {
         var defaultState = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](defaults(props));
-        var ref = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](function (state) { return defaultState.current = state; });
+        var ref = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](function (state) { return (defaultState.current = state); });
         return (react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null,
             react__WEBPACK_IMPORTED_MODULE_1__["createElement"](State, { stateRef: ref, props: props }),
             react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Children, { stateRef: ref, defaultState: defaultState, children: props.children })));
     };
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/use-sidecar/node_modules/tslib/tslib.es6.js ***!
+  \******************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__esDecorate", function() { return __esDecorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__runInitializers", function() { return __runInitializers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__propKey", function() { return __propKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__setFunctionName", function() { return __setFunctionName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArray", function() { return __spreadArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldIn", function() { return __classPrivateFieldIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__addDisposableResource", function() { return __addDisposableResource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__disposeResources", function() { return __disposeResources; });
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise, SuppressedError, Symbol */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null)
+        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for (var i = decorators.length - 1; i >= 0; i--) {
+        var context = {};
+        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        }
+        else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+};
+
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i = 0; i < initializers.length; i++) {
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+};
+
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+};
+
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+/** @deprecated */
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+function __addDisposableResource(env, value, async) {
+    if (value !== null && value !== void 0) {
+        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+        var dispose;
+        if (async) {
+            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+            dispose = value[Symbol.asyncDispose];
+        }
+        if (dispose === void 0) {
+            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+            dispose = value[Symbol.dispose];
+        }
+        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+        env.stack.push({ value: value, dispose: dispose, async: async });
+    }
+    else if (async) {
+        env.stack.push({ async: true });
+    }
+    return value;
+}
+
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+function __disposeResources(env) {
+    function fail(e) {
+        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+        env.hasError = true;
+    }
+    function next() {
+        while (env.stack.length) {
+            var rec = env.stack.pop();
+            try {
+                var result = rec.dispose && rec.dispose.call(rec.value);
+                if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
+            }
+            catch (e) {
+                fail(e);
+            }
+        }
+        if (env.hasError) throw env.error;
+    }
+    return next();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    __extends: __extends,
+    __assign: __assign,
+    __rest: __rest,
+    __decorate: __decorate,
+    __param: __param,
+    __metadata: __metadata,
+    __awaiter: __awaiter,
+    __generator: __generator,
+    __createBinding: __createBinding,
+    __exportStar: __exportStar,
+    __values: __values,
+    __read: __read,
+    __spread: __spread,
+    __spreadArrays: __spreadArrays,
+    __spreadArray: __spreadArray,
+    __await: __await,
+    __asyncGenerator: __asyncGenerator,
+    __asyncDelegator: __asyncDelegator,
+    __asyncValues: __asyncValues,
+    __makeTemplateObject: __makeTemplateObject,
+    __importStar: __importStar,
+    __importDefault: __importDefault,
+    __classPrivateFieldGet: __classPrivateFieldGet,
+    __classPrivateFieldSet: __classPrivateFieldSet,
+    __classPrivateFieldIn: __classPrivateFieldIn,
+    __addDisposableResource: __addDisposableResource,
+    __disposeResources: __disposeResources,
+});
 
 
 /***/ }),
@@ -66004,9 +68280,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 __webpack_require__(/*! ./components/Carousel */ "./resources/js/components/Carousel.js");
-
 __webpack_require__(/*! ../less/js/products */ "./resources/less/js/products.js");
 
 /***/ }),
@@ -66019,6 +68293,7 @@ __webpack_require__(/*! ../less/js/products */ "./resources/less/js/products.js"
 /***/ (function(module, exports, __webpack_require__) {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -66027,13 +68302,17 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+
 // import Echo from 'laravel-echo';
+
 // window.Pusher = require('pusher-js');
+
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: process.env.MIX_PUSHER_APP_KEY,
@@ -66058,46 +68337,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-images */ "./node_modules/react-images/dist/react-images.es.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
 
 
 
 function Carousel(_ref) {
   var _ref$images = _ref.images,
-      images = _ref$images === void 0 ? [] : _ref$images;
+    images = _ref$images === void 0 ? [] : _ref$images;
   if (images.length === 0) return null;
   var maxImagesInPreview = 4;
-
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      modalIsOpen = _useState2[0],
-      setModalIsOpen = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    modalIsOpen = _useState2[0],
+    setModalIsOpen = _useState2[1];
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      currentIndex = _useState4[0],
-      setCurrentIndex = _useState4[1];
-
+    _useState4 = _slicedToArray(_useState3, 2),
+    currentIndex = _useState4[0],
+    setCurrentIndex = _useState4[1];
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(images[0]),
-      _useState6 = _slicedToArray(_useState5, 2),
-      mainImage = _useState6[0],
-      setMainImage = _useState6[1];
-
+    _useState6 = _slicedToArray(_useState5, 2),
+    mainImage = _useState6[0],
+    setMainImage = _useState6[1];
   var toggleModal = function toggleModal() {
     setModalIsOpen(!modalIsOpen);
   };
-
   var openGallery = function openGallery(idx) {
     return function () {
       setMainImage(images[idx]);
@@ -66105,11 +68372,9 @@ function Carousel(_ref) {
       setModalIsOpen(true);
     };
   };
-
   var wrapImages = function wrapImages(images) {
     if (images.length > maxImagesInPreview) return images.slice(0, maxImagesInPreview - 1);else return images;
   };
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sales__gallery"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -66139,10 +68404,8 @@ function Carousel(_ref) {
     views: images
   })) : null));
 }
-
 /* harmony default export */ __webpack_exports__["default"] = (Carousel);
 var elem = document.getElementById('carousel-component');
-
 if (elem) {
   var images = Array.from(elem.querySelectorAll('img')).map(function (x) {
     return {
@@ -66240,7 +68503,6 @@ $('.c-prop').on('click', function () {
   cnt = $('#selectQty').val();
   total = price * cnt;
   $('#textTotal').html('$' + total.toFixed(2));
-
   if ($(this).data('count') > 10) {
     $('#textCount').html('yes');
   } else if ($(this).data('count') && $(this).data('count') <= 10) {
@@ -66258,8 +68520,8 @@ $('#selectQty').on('change', function () {
 });
 $('.btnCartAdd').on('click', function (e) {
   e.preventDefault();
-  var formData = $('#formProduct').serialize(); //console.log(formData);
-
+  var formData = $('#formProduct').serialize();
+  //console.log(formData);
   $.ajax({
     type: "POST",
     url: "/cart-add",
@@ -66271,29 +68533,25 @@ $('.btnCartAdd').on('click', function (e) {
       var etotal = 0;
       location.reload();
       return;
-
       for (item in cart_data) {
         cnt++;
         clearCart();
         cartDrawItem(item);
         etotal += item['price'] * item['qty'];
       }
-
       updateCounter(cnt);
       return response;
     },
     error: function error() {}
   });
 });
-
 function clearCart() {
   $('#divCart').html('');
 }
-
-function cartDrawItem(item) {//var text=$('#divCart').html();
+function cartDrawItem(item) {
+  //var text=$('#divCart').html();
   //console.log(text);
 }
-
 function updateCounter(cnt) {
   if (cnt > 0) {
     $('.cart-counter').each(function (idx) {
@@ -66304,9 +68562,9 @@ function updateCounter(cnt) {
     $('.cart-counter').addClass('d-none');
   }
 }
-
 $('.aCartPlus').on('click', function (e) {
-  e.preventDefault(); //console.log(placesAutocomplete.autocomplete);
+  e.preventDefault();
+  //console.log(placesAutocomplete.autocomplete);
 
   inp = $(this).closest('.c-cart__info').find("input");
   var product_id = $(this).data('itemid');
@@ -66326,11 +68584,9 @@ $('.aCartPlus').on('click', function (e) {
       updateCTotal(data['cart_etotal']);
       inp.val(parseInt(inp.val()) + 1);
       state = $('#inputState').val();
-
       if (state != '') {
         getShipping(state);
       }
-
       updateTotal();
     },
     error: function error() {}
@@ -66342,7 +68598,6 @@ $('.aCartRemove').on('click', function (e) {
   cartRemove(uid);
   $(this).closest('.cartItem').remove();
 });
-
 function cartRemove(uid) {
   $.ajax({
     type: "GET",
@@ -66358,13 +68613,11 @@ function cartRemove(uid) {
     error: function error() {}
   });
 }
-
 $('.aCartMinus').on('click', function (e) {
   e.preventDefault();
   inp = $(this).closest('.c-cart__info').find("input");
   var item_uid = $(this).data('uid');
   var item_cnt = parseInt(inp.val());
-
   if (item_cnt <= 1) {
     ret = cartRemove(item_uid);
     updateCounter(ret['cart_count']);
@@ -66372,7 +68625,6 @@ $('.aCartMinus').on('click', function (e) {
     $(this).closest('.cartItem').remove();
     return;
   }
-
   var product_id = $(this).data('itemid');
   var product_size = $(this).data('size');
   var product_price = $(this).data('price');
@@ -66388,20 +68640,17 @@ $('.aCartMinus').on('click', function (e) {
       var data = response;
       updateCounter(data['cart_count']);
       updateCTotal(data['cart_etotal']);
-      inp.val(item_cnt - 1); //placesAutocomplete.onChange;
-
+      inp.val(item_cnt - 1);
+      //placesAutocomplete.onChange;
       state = $('#inputState').val();
-
       if (state != '') {
         getShipping(state);
       }
-
       updateTotal();
     },
     error: function error() {}
   });
 });
-
 function getShipping(state) {
   $('#inputState').val(state);
   $.ajax({
@@ -66415,7 +68664,6 @@ function getShipping(state) {
       var toAdd = '';
       $.each(data['shipping'], function (idx, item) {
         toAdd += '<option value="' + item['name'] + '/' + item['price'] + '">' + item['name'];
-
         if (item['price'] == 0) {
           toAdd += ' - FREE</option>';
         } else {
@@ -66430,13 +68678,11 @@ function getShipping(state) {
     error: function error() {}
   });
 }
-
 $('#selectShipping').on('change', function () {
   svalue = $(this).val();
   var temp = svalue.split('/');
   updateShipping(temp[1]);
 });
-
 function updateTax(tax) {
   if (tax) {
     tvalue = $('#inputSTotal').val() * tax / 100;
@@ -66445,31 +68691,29 @@ function updateTax(tax) {
     updateTotal();
   }
 }
-
 function updateShipping(val) {
   val = parseInt(val);
   $('#inputShipping').val(val);
   $('.textShipping').html(val.toFixed(2));
   updateTotal();
 }
-
 function updateCTotal(total) {
   $('#inputSTotal').val(total);
   $('.textETotal').html('$' + total.toFixed(2));
   $('.textETotal2').html(total.toFixed(2));
   updateTotal();
 }
-
 function updateTotal() {
   stotal = parseFloat($('#inputSTotal').val());
   tax = parseFloat(stotal * parseFloat($('#inputTax').val()) / 100);
-  shipping = parseFloat($('#inputShipping').val()); //console.log(stotal,tax,shipping);
+  shipping = parseFloat($('#inputShipping').val());
+  //console.log(stotal,tax,shipping);
 
   promo_val = 0;
-
   if ($('#inputCouponVal').data('val') != '') {
     promo_val = parseFloat($('#inputCouponVal').data('val'));
-    promo_type = $('#inputCouponVal').data('type'); //console.log(promo_val,promo_type);
+    promo_type = $('#inputCouponVal').data('type');
+    //console.log(promo_val,promo_type);
 
     if (promo_type == 1) {
       promo = -stotal * promo_val / 100;
@@ -66478,25 +68722,19 @@ function updateTotal() {
       promo = promo_val;
     }
   }
-
   total = stotal;
-
   if (tax) {
     total += tax;
   }
-
   if (shipping) {
     total += shipping;
   }
-
   if (promo) {
     total += promo;
   }
-
   $('#inputTotal').val(total);
   $('.textTotal').html(total.toFixed(2));
 }
-
 $('#btnOrder').on('click', function () {
   /*
       form=$('#formOrder');
@@ -66514,7 +68752,6 @@ $('#chkSameShipping').on('click', function () {
     $('input[name="address_b"]').val($('input[name="address"]').val());
   }
 });
-
 if ($('#address-input').length) {
   var placesAutocomplete = places({
     appId: 'pl1CSXYWSFGN',
@@ -66534,7 +68771,6 @@ if ($('#address-input').length) {
     getShipping(e.suggestion.administrative);
   });
 }
-
 if ($('#address-input2').length) {
   var placesAutocomplete2 = places({
     appId: 'pl1CSXYWSFGN',
@@ -66550,28 +68786,25 @@ if ($('#address-input2').length) {
       }
     }
   });
-  placesAutocomplete2.on('change', function resultSelected(e) {//getShipping(e.suggestion.administrative);
+  placesAutocomplete2.on('change', function resultSelected(e) {
+    //getShipping(e.suggestion.administrative);
   });
 }
-
 $('#btnCoupon').on('click', function (e) {
   e.preventDefault();
   code = $('#inputCouponCode').val();
-
   if (code === '') {
     return;
   }
-
   $.get('/coupon-check', {
     coupon: code
   }, function (data) {
     $('#textCouponError').html('');
-
     if (data != '') {
       coupon = JSON.parse(data);
       dc = 0;
-
-      if (coupon['type'] == 1) //percent
+      if (coupon['type'] == 1)
+        //percent
         {
           dc = -parseFloat($('#inputSTotal').val()) * coupon['value'] / 100;
           $('#inputCouponVal').val(dc);
@@ -66583,7 +68816,6 @@ $('#btnCoupon').on('click', function (e) {
         $('#inputCouponVal').data('val', coupon['value']);
         $('#inputCouponVal').data('type', 2);
       }
-
       $('.textCoupon').html(dc.toFixed(2));
       $('.divPromoCode').removeClass('d-none').addClass('d-flex');
     } else {
@@ -66591,21 +68823,19 @@ $('#btnCoupon').on('click', function (e) {
       $('.divPromoCode').addClass('d-none').removeClass('d-flex');
       $('#inputCouponVal').val(0);
     }
-
     updateTotal();
   });
 });
 $('#formOrder').on('submit', function (e) {
   cc_input = $('input[name="card_number"]');
   cc_input.val(cc_input.data('ccNumber'));
-
   if ($('#nav-card').hasClass('active')) {
     $('#inputCheckoutType').val('card');
   } else {
     $('#inputCheckoutType').val('pp');
-  } //inputCheckoutType
+  }
 
-
+  //inputCheckoutType
   $('#preloader').removeClass('d-none');
 });
 
@@ -66618,8 +68848,8 @@ $('#formOrder').on('submit', function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/domains/greene.local/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/domains/greene.local/resources/less/app.less */"./resources/less/app.less");
+__webpack_require__(/*! /Users/arsenijsokolov/Desktop/greene/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/arsenijsokolov/Desktop/greene/resources/less/app.less */"./resources/less/app.less");
 
 
 /***/ })

@@ -1,13 +1,10 @@
 // Payment Info Component
 // Author: Zachary Forrest, modified by Brad Frost
 // Requires: jQuery, Modernizer, jQuery.inputmask
-
 (function ($) {
-
 	"use strict";
 
 	$.fn.paymentInfo = function (method) {
-
 		// Global variables.
 		var methods,
 			helpers,

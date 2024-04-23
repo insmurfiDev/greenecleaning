@@ -1,0 +1,108 @@
+.page-services__header {
+    margin-top: 80px;
+    height: 170px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.page-services__header-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.page-services__header-title {
+    font-family: var(--ff-poppins);
+    font-size: 32px;
+    color: var(--white-100);
+}
+.page-services__header-book {
+    background: var(--white-100);
+    color: var(--green-100);
+}
+.page-services__text-block {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 56px;
+}
+.page-services__text-block-title {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--ff-poppins);
+    color: var(--green-100);
+    margin-bottom: 16px;
+    line-height: 48px;
+}
+.page-services__text-block-text {
+    font-size: 16px;
+    font-family: var(--ff-poppins);
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-80);
+}
+
+.page-services__products {
+    background: var(--dark-green-100);
+		margin-top: 56px;
+}
+.page-services__products-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 33px;
+}
+.page-services__products-list__product {
+    border: 1px solid var(--white-100);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page-services__products-list__product-icon-wrapper {
+    width: 80px;
+    height: 80px;
+}
+.page-services__products-list__product-icon-wrapper svg {
+    width: 100%;
+    height: 100%;
+}
+.page-services__products-list__product-title {
+    font-family: var(--ff-poppins);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: var(--white-100);
+}
+
+.page-services__products-list__product-description {
+    font-family: var(--ff-poppins);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--white-80);
+}
+.page-services__products-list__product-link {
+    border: 1px solid var(--white-100);
+    color: var(--white-100) !important;
+    margin-top: 8px;
+}
+.page-services__footnote {
+    margin-top: 56px;
+    margin-bottom: 310px;
+    font-family: var(--ff-poppins);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 760px) {
+	.page-services__header{
+		margin-top: 0;
+	}
+	.page-services__products-list{
+		grid-template-columns: 1fr;
+	}
+}

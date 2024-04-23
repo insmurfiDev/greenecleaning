@@ -1,0 +1,1 @@
+<input {{$attributes->merge(['class' => 'page-checkout__form-field'])}} />

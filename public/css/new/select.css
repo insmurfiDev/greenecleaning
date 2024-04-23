@@ -1,0 +1,38 @@
+.gr-select {
+    border: 1px solid var(--light-gray-100);
+    padding: 0 8px;
+		position: relative;
+		height: 46px;
+}
+.gr-select__selected{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.gr-select-opened .gr-select__options{
+	transform: scale(1);
+}
+.gr-select__options{
+	top: 46px;
+	position: absolute;
+	background: white;
+	box-shadow: 0 0 1em rgba(0,0,0,.2);
+	width: 100%;
+	left: 0;
+	z-index: 10;
+	overflow: hidden;
+	transition: .1s ease-in;
+	transform-origin: top;
+	transform: scale(0);
+}
+.gr-select__options-option{
+	padding: 7px 9px;
+	cursor: pointer;
+	transition: .2s ease-out;
+}
+.gr-select__options-option:hover{
+	color: var(--white);
+	background: var(--light-green-100);
+}

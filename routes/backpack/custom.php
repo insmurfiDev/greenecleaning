@@ -22,4 +22,11 @@ Route::group([
     Route::crud('coupon', 'CouponCrudController');
     Route::crud('tax', 'TaxCrudController');
     Route::crud('order', 'OrderCrudController');
+    Route::crud('location', 'LocationCrudController');
+    Route::crud('flat_size', 'FlatSizeCrudController');
+    Route::crud('cleaning_type', 'CleaningTypeCrudController');
+    Route::crud('bathroom_size', 'BathroomSizeCrudController');
+    Route::crud('extras', 'ExtrasCrudController');
+    Route::crud('time_window', 'TimeWindowCrudController');
+    Route::crud('cleaning', 'CleaningCrudController');
 }); // this should be the absolute last line of this file
